@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es-es">
+    <head>
+        <title>Tablas en HTML5</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <h1>Tablas en HTML5</h1>
+        <table border="1" summary="Películas">
+            <caption>Mis películas favoritas</caption>
+            <thead>
+                <!--Creación de una FILA con la etiqueta tr-->
+                <tr>
+                    <!--Creación de una COLUMNA CABECERA dentro de la fila con la etiqueta th-->
+                    <th>Título</th>
+                    <th>Género</th>
+                    <th>Año</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--Creación de una FILA con la etiqueta tr-->
+                <tr>
+                    <!--Creación de una COLUMNA dentro de la fila con la etiqueta td-->
+                    <td>El Señor de los Anillos</td>
+                    <td>Aventuras</td>
+                    <td>2004</td>
+                </tr>
+                <!--Creación de una FILA etiqueta tr-->
+                <tr>
+                    <!--Creación de una COLUMNA dentro de la fila con la etiqueta td-->
+                    <td>Jocker</td>
+                    <td colspan="2" rowspan="2">Drama</td>
+                </tr>
+                <!--Creación de una FILA con la etiqueta tr-->
+                <tr>
+                    <!--Creación de una COLUMNA dentro de la fila con la etiqueta td-->
+                    <td>Batman vs Superman</td>    
+                </tr>         
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" align="center">
+                        Curso HTML5 UDemy
+                    </td>
+                </tr>
+            </tfoot>               
+        </table>
+        <h1>Elementos en bloque y en línea</h1>        
+        <p>
+            <h2>Elementos en bloque</h2>
+            <img src="imagen/block_level_elements.png" width="800px" />
+            <br/>
+            <!--Ejemplo-->
+            <div>Hola </div>
+            <div>Hola2 </div>
+        </p>
+        <p>
+            <h2>Elementos en línea</h2>
+            <img src="imagen/inline_elements.png" width="800px" /> 
+            <br/> 
+            <!--Ejemplo-->     
+            <span>Hola </span>
+            <span>Hola2 </span>
+        </p>
+        
+    </body>
+</html>

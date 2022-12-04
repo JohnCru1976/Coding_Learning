@@ -1,0 +1,58 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+ul li{
+    font-size: 20px;
+}
+
+ul li:first-child{
+    color: purple;
+    font-weight: bold;
+}
+
+ul li:nth-child(2){
+    color: red;
+    font-style: italic;
+}
+
+ul li:last-child{
+    color: grey;
+    text-decoration-line: underline ;
+}
+
+#enlace{
+    font-size: 30px;
+    color:coral
+}
+
+/* Cuando aún no se ha visitado el enlace */
+#enlace:link{
+    font-size: 30px;
+    color:rgb(189, 64, 6)
+}
+/* Una vez visitado el enlace */
+#enlace:visited{
+    font-size: unset;
+    color:springgreen;
+}
+
+#enlace:hover{
+    font-size: 50px;
+    color:red;
+}
+
+/* Cuando se pulsa el enlace */
+#enlace:active{
+    color:green;
+    font-family: sans-serif;
+}
+
+input[type="text"]{
+    margin-top: 20px;
+    padding: 10px;
+}
+
+input[type="text"]:focus{
+    border: 3px solid red;
+}

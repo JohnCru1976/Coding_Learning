@@ -1,0 +1,107 @@
+/*********SELECTORES*********/
+
+/****** Selector universal ******/
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;    
+}
+
+/****** Selector de etiqueta ******/
+h1{
+    color: white;
+    background: red;
+    padding: 10px;
+}
+
+a{
+    font-size: 18px;
+    color:green;
+    text-decoration: none;
+}
+
+footer a{
+    color: red;
+}
+
+/****** Selector de id # ******/
+#descripcion{
+    border: 5px solid black;    
+    padding: 15px;
+}
+
+#titulo{
+    background: blue;
+    border: 2px dashed black;
+    
+}
+
+/****** Selector de clase ******/
+.parrafo{
+    font-style: italic;
+    /*text-decoration: underline;*/
+    font-weight: bold;
+}
+
+.parrafo1, .parrafo3{
+    background: green;
+    color: white;
+    padding: 10px;
+}
+
+.parrafo3{
+    background: orange;
+    color: black;
+}
+
+/****** Selector de atributo ******/
+/* Se usa sobre todo en formularios */
+
+#usuario form{
+    padding: 10px;
+    margin-top: 10px;
+    border: 3px solid blue;
+}
+
+#usuario form *{
+    /* NUEVA REGLA */
+    display: block;
+}
+
+/* Esto es un selector de atributo */
+input[type="text"]{
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 400px;
+}
+
+input[type="submit"]{   
+    background: forestgreen; 
+    padding: 15px;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    text-transform: uppercase;
+    border: 1px solid black;
+    cursor:pointer;
+}
+
+/****** Selectores hijo ******/
+#menu > li > a{
+    font-size: 18px;
+    color:red;
+    text-decoration: none;
+}
+
+/****** Prioridades en CSS ******/
+#saludo h1{ /* Este selector tiene más preferencia por ser más específico */
+    background: lightseagreen;
+}
+
+/* !important hace que predomine la regla */
+h1{
+    background: lime !important;
+}
+
+h1 {
+    background: hotpink;
+}
+

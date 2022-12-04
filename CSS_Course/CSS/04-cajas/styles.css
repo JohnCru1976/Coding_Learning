@@ -1,0 +1,58 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    padding: 30px;
+}
+
+.titulo{
+    text-align:unset;
+}
+
+.caja{
+    display: block; /* Permite que actúe como un bloque */
+    width: 200px;
+    height: 200px;
+    
+    /* 
+    min-width: ;
+    max-width: ;
+    */
+    background-color: lightblue;
+    border: 10px solid red;
+    margin: 15px;
+    padding: 20px;
+    /* Posicionamiento de cajas con FLOAT */
+    float: none;
+    float: rigth;
+    float: left;
+    
+}
+
+.parrafo{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 190px;
+}
+
+.caja p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 190px;
+}
+
+.clearfix{
+    float: none;
+    clear: both;
+}
+
+#cajas{
+    max-width: 880px;
+    border: 1px solid black;
+}

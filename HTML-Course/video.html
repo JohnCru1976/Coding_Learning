@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es-es">
+    <head>
+        <title>Videos en HTML5</title>
+        <meta name="description" content="Web designed to learn how attach videos in an HTML document" />
+        <meta charset="utf-8" />
+    </head>
+    <body>
+        <h1>Videos en HTML5</h1>
+        <!--Método 1-->
+        <video src="videos/prueba.mp4" controls autoplay muted width="400px">
+            Tu navegador no soporta la etiqueta video
+        </video>
+        <!--Método 2-->
+        <video controls width="400px" poster="imagen/leon.jpg">
+            <source src="videos/prueba.mp4" type="video/mp4" />
+            <source src="videos/prueba.ogg" type="video/ogg" /> 
+            Tu navegador no soporta la etiqueta video
+        </video>
+
+    </body>
+</html>

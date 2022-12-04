@@ -1,0 +1,29 @@
+body{
+    background-color: #cccccc;
+    /* background-image: url("images/pattern2.png"); */
+    /* background-repeat: repeat;   - es lo que viene por defecto */
+    /* background-size: 100%;    - pensado para fondos grandes */
+    /* background-attachment: fixed;    - deja el fondo fijo */
+    color: black;
+    text-indent: 15px;
+    word-spacing: 6px;
+    letter-spacing: 3px;
+}
+
+#caja{
+    border: 5px solid black;
+    padding: 10px;
+    background-color: #c91212d2;
+    color: black;
+    background-image: url("images/pattern1.jpg");
+    /* MODIFICANDO TEXTO */
+    font-family: 'Open Sans';
+    text-align: center;
+    line-height: 59px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+p{
+    text-align: justify;
+}

@@ -1,0 +1,124 @@
+/* Desde el pixel 0 al pixel 1250 (tamaño del wrap principal) */
+@media (max-width: 1249px){
+    .wrap{
+        width: 90%;
+        margin: 0px auto;
+    }
+
+    #banner h1{
+        width: 100%;
+        font-size: 35px;
+        text-align: center;
+        margin: 33px auto;
+    }
+
+    .card{
+        width: 17.4%; 
+        margin: 1.2%; 
+    }
+
+    .card p{
+        display: block;
+        width: 90%;
+        margin: 0px auto;
+        text-align: center;
+    }
+
+    #articles{
+        width: 64%;
+    }
+
+    #footer .wrap > div{
+        width: 25%;
+        margin: 4%;
+    }
+
+    #footer #browsers img {
+        width: 13%;
+    }
+
+    #footer h5{
+        font-size: 30px;
+    }
+}
+
+
+/* Desde el pixel 0 al pixel 1080 (tamaño del wrap principal) */
+@media (max-width: 1080px){
+    .card .category{
+        font-size: 17px;
+    }
+    .card .description{
+        font-size: 14px;
+    }
+    #articles{
+        width: 59%;
+    }
+}
+
+/* Desde el pixel 0 al pixel 970 (tamaño del wrap principal) */
+@media (max-width: 970px){
+    #articles{
+        width: 57%;
+    }
+
+    #footer h5{
+        font-size: 22px;
+    }
+}
+
+/* Desde el pixel 0 al pixel 925 (tamaño del wrap principal) */
+@media (max-width: 925px){
+    #articles{
+        width: 65%;
+    }
+
+    #lateral{
+        width:25%;
+    }
+
+    #lateral input[type="text"] {
+        width: 78%;
+    }
+
+    .aside-box {
+        width: 95%;
+        min-height: 140px;
+        height: auto;
+        padding-bottom: 10px;
+    }
+
+    #login a {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    #login input[type="email"], 
+    #login input[type="password"] {
+        width: 65%;
+    }
+
+    #login #user{
+        margin-left: 20px;
+    }
+    
+    #login #password{
+        margin-left: 23px;
+    }
+
+    #login input[type="submit"], 
+    #login input[type="button"], 
+    #login input[type="reset"], 
+    #login button {
+        margin-bottom: 0px;
+    }
+    #login input[type="submit"]{
+        margin-left: 25%;
+    }
+
+    #login input[type="reset"]{
+        display: none;
+    }
+}
+
+

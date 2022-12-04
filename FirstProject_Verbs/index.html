@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irregular Verbs Testing</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <h1 id="main_title">IRREGULAR VERBS TESTING</h1>
+    <section id="start_section">
+        <h2 class="secondary_titles">Number of verbs to practice</h2>
+        <div class="fields">
+            <fieldset class="inner_fields">
+                <legend class="legends">Select the number of verbs you want to practice: </legend>
+                <input type="number" id="num_verbs" class="input_field" name="num_verbos" value="1" min="1" max="99" step="1"  required="required">            
+            </fieldset>
+        </div>        
+        <div id="start_button" class="buttons" onClick="showSection(2)">Start</div>
+    </section>
+    <section id="verbs_section">
+        <h2 id="verb_number" class="secondary_titles">Verb 1/1</h2>
+        <p id="traslation" onClick="clickTraslation()">Click here for traslation</p>
+        <div class="fields">
+            <fieldset  class="inner_fields">
+                <legend class="legends">Write the correct form of the verb in each field: </legend>            
+                <div class="box_field">
+                    <label for="infinite" class="input_label">Infinitive</label>
+                    <input type="text" class="input_field" id="infinitive" autocomplete="off">
+                </div>
+                <div class="box_field">
+                    <label for="past" class="input_label">Past</label>
+                    <input type="text" class="input_field" id="past" autocomplete="off">
+                </div>
+                <div class="box_field">
+                    <label for="participle" class="input_label">Participle</label>
+                    <input type="text"  class="input_field" id="participle" autocomplete="off"> 
+                </div>                           
+            </fieldset>
+        </div>
+        <div id="next_button" class="buttons" onClick="clickNextButton(verbManaging)">Next</div>
+    </section>
+    <section id="final_result" class="secondary_titles">
+        <h2 class="secondary_titles">These are your results</h2>
+        <div id="restart_button" class="buttons" onClick="clickRestart()">Restart</div>
+        <p id="results"></p>        
+    </section>
+</body>
+<footer id="footer">
+    Designed by Juan Bautista Cru - 2022
+</footer>
+</html>

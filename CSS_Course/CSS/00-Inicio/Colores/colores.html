@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .cuadrado{
+            width: 100px;
+            height: 100px;
+            float:left;
+        }
+        .red{
+            background-color: red;;
+        }
+        .green{
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;            
+        }
+        .yellow{
+            background-color: #ffff00;                    
+        }
+        .magenta{
+            background-color: #ff00ff;
+        }
+        .cyan{
+            background-color: #00ffff;
+        }
+        
+        .mixcolor{
+            mix-blend-mode:luminosity;
+        }
+        .clearfix{
+            float: none;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <h1>Combinación colores RGB</h1>
+    <h2>Colores Primarios</h2>
+    <div class="red cuadrado"><b>R</b></div>
+    <div class="green cuadrado"><b>G</b></div>
+    <div class="blue cuadrado"><b>B</b></div>
+    <div class="clearfix"></div>
+    
+    <h2>Colores Secundarios</h2>
+    <div class="yellow cuadrado"><b>R+G=Y</b></div>
+    <div class="magenta cuadrado"><b>R+B=M</b></div>
+    <div class="cyan cuadrado"><b>G+B=C</b></div>
+    <div class="clearfix"></div>
+
+    <h2>Colores terciarios</h2>
+    <p>Los conforman cada uno de los primarios junto a sus secundarios "vecinos"</p>
+    <h3></h3>
+    <div class="red cuadrado mixcolor"><div class="yellow cuadrado mixcolor"><b>R+Y</b></div></div>
+    <div class="red cuadrado mixcolor"><div class="magenta cuadrado mixcolor"><b>R+M</b></div></div>
+    <div class="green cuadrado mixcolor"><div class="yellow cuadrado mixcolor"><b>G+Y</b></div></div>
+    <div class="green cuadrado mixcolor"><div class="cyan cuadrado mixcolor"><b>G+C</b></div></div>
+    <div class="yellow cuadrado mixcolor"><div class="magenta cuadrado mixcolor"><b>Y+M</b></div></div>
+    <div class="yellow cuadrado mixcolor"><div class="cyan cuadrado mixcolor"><b>Y+C</b></div></div>
+</body>
+</html>
