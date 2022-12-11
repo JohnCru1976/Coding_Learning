@@ -24,7 +24,7 @@ do
         #https://linuxize.com/post/bash-increment-decrement-variable/
         ((vowelsCount++))
     else
-        ((consCount++))
+        let consCount++
     fi
 done
 
