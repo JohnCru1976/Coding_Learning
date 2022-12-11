@@ -1,5 +1,5 @@
 #! /bin/bash
-# This an exercise from https://fun.codelearn.es/ (Sheell 5)
+# This an exercise from https://fun.codelearn.es/ (Shell 5)
 
 # First: I need control the input
 # https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php
