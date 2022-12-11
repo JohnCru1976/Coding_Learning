@@ -28,7 +28,7 @@ do
     fi
 done
 
-# 5: I need to compared variables
+# 5: I need to compare variables
 # https://tldp.org/LDP/abs/html/comparison-ops.html
 if [[ $vowelsCount -eq $consCount ]]; then
     echo "The word $word has the same number of vowels than consonants"
