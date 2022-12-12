@@ -1,4 +1,5 @@
 #! /bin/bash
+# This an exercise from https://fun.codelearn.es/
 # Test with files  -e (exist) -d (directory) -f (file)
 # -r (is readable?) -w (writeable?) -x (exeecutable?)
 if [ -e $1 ]; then
