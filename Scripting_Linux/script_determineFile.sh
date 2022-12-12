@@ -1,7 +1,7 @@
 #! /bin/bash
 # This an exercise from https://fun.codelearn.es/
 # Test with files  -e (exist) -d (directory) -f (file)
-# -r (is readable?) -w (writeable?) -x (exeecutable?)
+# -r (is readable?) -w (writeable?) -x (executable?)
 if [ -e $1 ]; then
   if [ -d $1 ]; then
     echo $1 is a directory
