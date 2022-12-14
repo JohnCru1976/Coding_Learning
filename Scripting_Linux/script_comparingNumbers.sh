@@ -4,7 +4,7 @@
 num1=$1
 num2=$2
                                                       
-if [ -z $num1 -on-z $num2 ];gthen                                                           
+if [ -z $num1 -o -z $num2 ];gthen                                                           
   echo "Error: void parameters"                                                           
 elif [ $num1 -eq $num2 ]; then                                                         
   echo "$num1 = $num2"                                                           
