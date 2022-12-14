@@ -1,4 +1,4 @@
-#!/bin/bash
+#! /bin/bash
 # This is an example from https://ryanstutorials.net/linuxtutorial/scripting.php
 # Backs up a single project directory
 # Ryan 14/12/2022
