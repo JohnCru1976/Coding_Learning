@@ -1,5 +1,6 @@
 #! /bin/bash
 # Script thar calcutates the number of iterations to get the parameter number
+# 2022-12-17 Juan Cru
 
 maxRandom=101
 let "div=32767/$maxRandom"
