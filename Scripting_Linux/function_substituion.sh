@@ -12,10 +12,10 @@ echo The file $1 has $num_lines lines in it.
 #! /bin/bash
 
 function test {
- echo "Parameter inside the function: $1" | grep 'Parameter'
+  echo $1 | grep $1
 }
 
 var=$( test $2 )
 
 echo "Parameter outside the function: $1"
-echo $var
+echo "Parameter inside the function: $var"
