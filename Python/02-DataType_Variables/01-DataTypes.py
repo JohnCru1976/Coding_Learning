@@ -1,5 +1,7 @@
 print('\n**************** PYTHON DATA TYPES ****************')
-print('       **********************************          ')
+print('All the data types are objects, with a pointer (id) to the physical memory store\n'+
+'and "the box" with metainformation')
+
 print('**************** NUMERICAL ****************')
 
 intNum = 1_999
