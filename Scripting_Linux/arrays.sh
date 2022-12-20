@@ -4,7 +4,7 @@ NUMBERS=(1 2 3)
 STRINGS=(hello world)
 NumberOfNames=${#NAMES[@]}
 second_name=${NAMES[1]}
-# Comment
+# Comments
 echo "${NUMBERS[0]} ${NUMBERS[1]} ${NUMBERS[2]}"
 echo "${STRINGS[0]} ${STRINGS[1]}"
 echo "The number of names listed in the NAMES array: $NumberOfNames"
