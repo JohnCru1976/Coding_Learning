@@ -19,6 +19,7 @@ specialBirthday age =
                         else "Nothing special"
 
 -- If expression with guards
+specialBirthday_Guards :: Int -> [Char]
 specialBirthday_Guards age
     | age == 1 = "First birthday!"
     | age == 18 = "You're an adult!"
