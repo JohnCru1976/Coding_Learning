@@ -3,7 +3,9 @@ main = do
     print (prodBy3 6)
     print (circleArea 5)
     print (cylinderVolume 2.8 2.4)
-    print (cylinderVolGt42 2.4 2.6)
+    print (if (2.4 * circleArea 2.6) >= 42.0
+    then "The volume of the cylinder is equal to or greater than 42"
+    else "The volume of the cylinder is lesser than 42")
 -- Question 1
 -- Write a multiline comment below.
 {-
@@ -32,4 +34,3 @@ cylinderVolGt42 :: (Ord a, Floating a) => a -> a -> String
 cylinderVolGt42 h r = if (h * circleArea r) >= 42.0 
     then "The volume of the cylinder is equal to or greater than 42" 
     else "The volume of the cylinder is lesser than 42"
-    
