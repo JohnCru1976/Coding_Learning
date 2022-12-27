@@ -13,7 +13,7 @@ comment
 
 -- Question 2
 -- Define a function that takes a value and multiplies it by 3.
-prodBy3 :: Num a => a -> a
+prodBy3 :: Int -> Int
 prodBy3 x = x * 3
 
 -- Question 3
