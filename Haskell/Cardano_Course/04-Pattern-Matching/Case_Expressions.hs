@@ -1,8 +1,8 @@
 main :: IO()
 main = do
-    print(checkForZeroes (0,2,3))
-    print(checkForZeroes' (3,0,2))
-    print(checkForZeroes'' (1,3,0))
+    print (checkForZeroes (0,2,3))
+    print (checkForZeroes' (3,0,2))
+    print (checkForZeroes'' (1,3,0))
 
 -- Example with case
 checkForZeroes :: (Int,Int,Int) -> String
@@ -28,5 +28,6 @@ checkForZeroes'' tuple3 = "The " ++ show tuple3 ++ " has " ++
         (_, 0, _) -> "a zero as its second element"
         (_, _, 0) -> "a zero as its third element"
         _         -> "no zeroes!"
-        
+
     ++ " ... and so on"
+
