@@ -1,3 +1,4 @@
+
 import Distribution.Simple.Utils (xargs)
 main :: IO()
 main = do
@@ -20,6 +21,9 @@ main = do
     print (tail' [1,2,3,4,5])
     print (tail' [2,5,3])
     print (tail' [1])
+
+    print (addOneIfEven 4)
+    print (addOneIfEven 3)
 
 -- Question 1
 -- Lets say you have the nested values defined bellow. How would you get the value of
@@ -76,4 +80,14 @@ tail' [] = []
 -- Question 6
 -- write a case expression wrapped in a function that takes an Int and adds one if it's even. Otherwise does nothing. 
 -- (Use the `even` function to check if the number is even.)
+    {- My solution
+        addEvenOne x = case mod x 2 /= 0 of
+        True -> x + 1
+        False -> x
+    -}
 
+
+addOneIfEven :: Int -> Int
+addOneIfEven n = case even n of
+    True  -> n + 1
+    False -> n
