@@ -41,7 +41,7 @@ checkUppercase = any (`elem` ['A'..'Z'])
 votes :: [String]
 votes = ["Red", "Blue", "Green", "Blue", "Blue", "Red"]
 --countVotes team = length (filter (== team) votes)
-countVotes team = length . filter (== team) $ votes
+countVotes team = length . filter (== team) $ votes 
 
 -- Create a one-line function that filters `cars` by brand and then checks if there are any left.
 
@@ -55,3 +55,5 @@ checkBrand brand = any (\(_,x) -> x > 0) (filter (\(x,_) -> x == brand) cars)
 checkBrand' brand = any (\(_,x) -> x > 0) $ filter (\(x,_) -> x == brand) cars
  -- Another solution
 checkBrand'' brand = any (\(_,x) -> x > 0) . filter (\(x,_) -> x == brand) $ cars
+
+
