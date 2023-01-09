@@ -1,6 +1,7 @@
 # Library ctypes to access to the identificator content
 import ctypes
 
+## ACCES TO A LITERAL IDENTIFICATOR ##
 print('\nIdentificator of the object: number 42 <id(42)>')
 # Function id() returns the object identificator
 print(id(42))
@@ -10,6 +11,8 @@ print(id(42))
 var = ctypes.cast(id(42), ctypes.py_object).value
 print(var)
 print(id(42))
+
+## VARIABLES AND IDENTIFICATORS ##
 
 
 
