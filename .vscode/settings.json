@@ -1,6 +1,7 @@
 {
     "code-runner.executorMap": {
 
+
         "javascript": "node",
         "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
         "c": "cd $dir && gcc $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
@@ -39,7 +40,7 @@
         "dart": "dart",
         "pascal": "cd $dir && fpc $fileName && $dir$fileNameWithoutExt",
         "d": "cd $dir && dmd $fileName && $dir$fileNameWithoutExt",
-        "haskell": "runghc",
+        "haskell": "runhaskell",
         "nim": "nim compile --verbosity:0 --hints:off --run",
         "lisp": "sbcl --script",
         "kit": "kitc --run",
