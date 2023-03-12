@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="viewport">
+        <div id="content">
+          <h1 id="title">Formulario de contacto</h1>
+          <p id="description">Gracias por tu feedback</p>
+          <form id="survey-form">
+            <div id="inner-form">
+              <div class="boxes">
+                <label id="name-label" for="name" class="labels">Nombre</label>
+                <input class="fields" type="text" id="name" placeholder="P.ej.: José Pérez Pérez" required>
+              </div>
+              <div class="boxes">
+                <label id="email-label" for="email" class="labels">Correo electrónico</label>
+                <input class="fields" type="email" id="email" placeholder="P.ej.: joseperez@dominio.com" required>
+              </div>
+              <div class="boxes">
+                <label id="number-label" for="number" class="labels">Edad</label>
+                <input class="fields" type="number" id="number" min="1" max="120" placeholder="P.ej.: 45">
+              </div>
+              <div class="boxes">
+                <label id="label-dropdown" for="dropdown" class="labels">Idioma</label>
+                <select id="dropdown">
+                  <option value="spanish">Español</option>
+                  <option value="english">Inglés</option>
+                  <option value="french">Francés</option>
+                  <option value="german">Alemán</option>
+                  <option value="other">Otro</option>
+                </select>
+              </div>
+              <div class="boxes">
+                <label id="gender-label" class="labels">Género </label>
+                <input type="radio" name="gender" id="woman" value="woman">
+                <label for="woman">Mujer</label>
+                <input type="radio" name="gender" id="man" value="man">
+                <label for="man">Hombre</label>
+                <input type="radio" name="gender" id="other" value="other">
+                <label for="other">Otro</label>
+              </div>
+              <div class="boxes">
+                <label id="interests" class="labels">Intereses</label>
+                <div class="check">
+                <input type="checkbox" name="interests" id="art" value="art">
+                <label for="art" class="labels-check">Arte</label>
+                </div>
+                <div class="check">
+                <input type="checkbox" name="interests" id="literature" value="literature">
+                <label for="literature" class="labels-check">Literatura</label>
+                </div>
+                <div class="check">
+                <input type="checkbox" name="interests" id="math" value="math">
+                <label for="math" class="labels-check">Matemáticas</label>
+                </div>
+                <div class="check">
+                <input type="checkbox" name="interests" id="videogames" value="videogames">
+                <label for="videogames" class="labels-check">Videojuegos</label>
+                  </div>
+                  <div class="check">
+                <input type="checkbox" name="interests" id="politics" value="politics">
+                <label for="politics" class="labels-check">Política</label>
+                 </div>
+              </div>
+              <div class="boxes">
+                <label id="comments-label" class="labels">Introduce algún comentario</label>
+                <textarea class="fields" id="comments" placeholder="Comentarios ..."></textarea>
+              </div>
+              <input class="fields" id="submit" type="submit" value="Enviar">
+            </div>
+          </form>
+        </div>
+      </div>
+  </body>
+</html>

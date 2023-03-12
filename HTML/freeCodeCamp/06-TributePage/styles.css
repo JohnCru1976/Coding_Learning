@@ -1,0 +1,84 @@
+/* GENERAL STYLES */
+#main {
+    margin-right: 20px;
+    margin-left: 40px;
+    border-radius: 20px;
+    border: 4px solid gray;
+    font-family: arial, sans-serif, Helvetica;
+    background-color: #eee;
+  }
+  
+  #header {
+    font-family: Helvetica;
+    text-align: center;
+    color: #444555;
+    text-shadow: 1px 1px 2px gray;
+  }
+  
+  #header #title {
+    font-size: 4em;
+  }
+  
+  #header #subtitle {
+    font-size: 1.5em;
+  }
+  
+  #img-div {
+    background-color: white;
+    border: 3px solid gray;
+    border-radius: 15px;
+    max-width: 80%;
+    margin: 0px auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  #image,
+  #img-caption {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 0px auto;
+    padding-top: 15px;
+    text-shadow: none;
+  }
+  
+  #content {
+    max-width: 600px;
+    margin: 0px auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: justify;
+  }
+  
+  #title-tribute-info {
+    text-align: center;
+  }
+  
+  #frase {
+    border: 3px solid gray;
+    border-radius: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #ccc;
+    font-style: italic;
+  }
+  
+  #footer {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  
+  #tribute-link {
+    text-decoration: none;
+    color: rgba(168, 66, 119, 0.8);
+  }
+  
+  #tribute-link:hover {
+    text-decoration: none;
+    color: rgba(198, 22, 122, 0.8);
+    text-shadow: 2px 2px 3px #ccc;
+  }
+  

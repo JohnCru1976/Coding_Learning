@@ -1,0 +1,97 @@
+body {
+    background: linear-gradient(#440980, #41057d, #2d0952);
+    color: #f5f6f7; 
+}
+
+.boxes{  
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 15%;
+}
+  
+  .check{
+    margin-left: 30px;
+  }
+  
+  #inner-form{
+    margin: 0px auto;
+  }
+
+  #viewport{
+    width: 70%;
+    margin: 0px auto;
+  }
+  
+  .fields{
+    display: block;  
+    border-radius: 5px;
+    border: 2px solid green;
+    width: 70%;
+    padding: 15px;
+  }
+  .fields:focus{
+    border-radius: 5px;
+    border: 2px solid red;  
+  }
+  #survey-form{
+    background-color:rgba(71, 162, 168, 0.36);
+    border-radius: 20px;
+    padding: 20px;
+    width: 60%;
+    margin: 0px auto;  
+  }
+  
+  .labels{
+    font-style: italic;
+  }
+  
+  #submit{
+    margin: 0px auto;
+    width: 200px;
+    border: none;
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    background: #036e29;
+    transition: transform
+      600ms;
+    padding: 0px;
+    text-transform: uppercase;
+  }
+  
+  #submit:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    background-color: #0e7d31;
+  }
+  
+  
+  #title, #description{
+    text-align: center;   
+  }
+  #title{
+    font-weight: bold; 
+    font-size: 40px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+  }
+  #description{
+    font-style: italic;
+    font-weight: normal;
+    font-family: helvetica;
+  }
+  
+  #content{
+    width: 100%;
+    margin: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+    border: 1px solid gray;
+    box-shadow: inset 1px 1px 6px gray;
+    border-radius: 30px;
+    font-family: arial, helvetica, sans-serif;
+    color: #ccc;
+  }
+  
