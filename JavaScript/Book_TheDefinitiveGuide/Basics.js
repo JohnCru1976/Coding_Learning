@@ -88,3 +88,43 @@ false === (x > y)   // => true: false is equal to false
 (x === 2) && (y === 3)  // => true: both comparisons are true. && is AND
 (x > 3) || (y < 3)  // => false: neither comparison is true. || is or
 !(x === y)   // => true: ! inverts a boolean value
+
+// Functions are parameterized blocks of JavaScript code that we can invoke
+function plus1(x) {  // Define a function named "plus1" with parameter "x"
+   return x + 1;  // Return a value one larger than the value passed in
+}     // Functions are enclosed in curly braces
+
+plus1(y)  // => 4: y is 3, so this invocation returns 3+1
+
+let square = function(x) { // Functions are values and can be assigned to vars
+    return x * x;   // Compute the function's value
+};    // Semicolon marks the end of the assigment
+
+square(plus1(y))   // => 16: invoke two functions in one expression
+
+// With arrows functions
+const plus1x = x => x + 1; // The input x maps to the output x + 1
+const squarex = x => x * x; // The input x maps to the output x * x
+plus1x(y)  // => 4: function invocation is the same
+squarex(plus1x(y))   // => 16
+
+// When functions are assigned to the properties of an object, we call
+// them "methods" All JavaScript objects (including arrays) have methods:
+let a = [];   // Create an empty array
+a.push(1,2,3);  // The push() method adds elements to an array
+a.reverse();   // Another method: reverse the order of elements
+
+// We can define our own methods, too.
+// The "this" keyword refers to the object
+// on which the method is defined: in this case, the points array from earlier
+points.dist = function() { // Define a method to compute distance between points
+   let p1 = this[0];   // First element of array we're invoked on
+   let p2 = this[1]; // Second element of the "this" object
+   let a = p2.x-p1.x // Difference in x coordinates
+   let b = p2.y-p1.y; // Difference in y coordinates
+   return Math.sqrt(a*a + // The Pythagorean theorem)
+    b*b);  // Math.sqrt() computes the square root
+};
+points.dist()   // => Math.sqrt(2): distance between our 2 points
+
+
