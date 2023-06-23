@@ -73,7 +73,7 @@ count  // => 6: variable names are expressions, too
 
 // Equality and relational operators test whether two values are equal,
 // unequal, less than, greater than, and so on. They evaluate to true or false.
-let x = 2, y = 3;   // These = signs are assignment, not equality tests
+let xx = 2, y = 3;   // These = signs are assignment, not equality tests
 x === y   // => false: equality
 x !== y   // => true: inequality
 x < y   // => true: less-than
