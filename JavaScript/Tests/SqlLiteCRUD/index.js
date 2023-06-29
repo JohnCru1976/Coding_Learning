@@ -4,7 +4,7 @@ import { saveTask,
          deleteTask,
          getTask,
          updateTask
-        } from "./firebase.js";
+        } from "./sqlite.js";
 
 const tasksContainer = document.getElementById("tasks-container");
 const taskForm = document.getElementById("task-form");
