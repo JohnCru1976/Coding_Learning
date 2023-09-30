@@ -1,5 +1,5 @@
 
-mi_archivo = open('../Prueba.txt',encoding='cp1252', errors='surrogateescape')
+mi_archivo = open('Prueba.txt')
 
 print(mi_archivo) #-> <_io.TextIOWrapper name='../Prueba.txt' mode='r' encoding='cp1252'>
 
