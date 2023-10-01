@@ -1,7 +1,8 @@
 from functions import *
 
-while fin_aplicacion == False:
+while fin_aplicacion is False:
     opcion_elegida = menu_inicial()
+    # SALIR DE LA APLICACIÓN
     if opcion_elegida == "q":
         os.system("cls")
         print("***************************************")
