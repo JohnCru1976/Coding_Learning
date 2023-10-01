@@ -42,17 +42,24 @@ def menu_inicial():
     
     return caracter_introducido
 
-def menu_categorias(diccionario):
+def menu_categorias(diccionario, texto):
     '''Muestra las categorías y devuelve el path de la categoría seleccionada'''
     caracter_introducido = "-"
     caracteres_posibles = "q"
     categorias_diccionario = diccionario.keys()
 
+    if not categorias_diccionario:
+        os.system("cls")
+        print("GESTIÓN DE RECETAS\n")
+        print("NO SE HA CREADO NINGUNA CATEGORÍA\n")
+        input("Pulsa Enter para volver al menú principal")
+        return "q"
+
     while not caracter_introducido in caracteres_posibles:
         contador = 1
         os.system("cls")
         print("GESTIÓN DE RECETAS\n")
-        print("CATEGORÍAS:")
+        print(f"{texto}:")
 
         for categoria in categorias_diccionario:
             print(f"[{contador}] {categoria.name}")
@@ -69,21 +76,29 @@ def menu_categorias(diccionario):
     else:
         return Path(list(categorias_diccionario)[int(caracter_introducido) - 1])
 
-def menu_recetas(path_categoria):
+def menu_recetas(path_categoria, diccionario, texto):
     '''Muestra recetas y devuelve del path de la receta seleccionada'''
-    diccionario_recetario = actualiza_recetario(PATH_RECETAS)
 
     caracter_introducido = "-"
     caracteres_posibles = "q"
-    recetas_categoria = diccionario_recetario[path_categoria]
+    recetas_categoria = diccionario[path_categoria]
 
-    while not caracter_introducido in caracteres_posibles:
+    if not recetas_categoria:
+        os.system("cls")
+        print("GESTIÓN DE RECETAS\n")
+        print(f"NO HAY RECETAS EN LA CATEGORÍA {path_categoria.name.upper()}\n")
+        input("Pulsa Enter para volver al menú principal")
+        return "q"
+
+
+    while caracter_introducido not in caracteres_posibles:
         contador = 1
         os.system("cls")
         print("GESTIÓN DE RECETAS\n")
         print(f"RECETAS EN LA CATEGORÍA {path_categoria.name.upper()}:")
+        print(f"{texto.upper()}:")
 
-        for receta in recetas_categoria:
+        for receta in recetas_categoria:            
             print(f"[{contador}] {receta.name}")
             caracteres_posibles += str(contador)
             contador += 1
@@ -110,27 +125,118 @@ def leer_receta(path_receta):
 
 def crear_receta(path_categoria):
     '''Crea una receta en la carpeta de la categoría seleccionada'''
-        
+    nombre_receta = ""
+    texto_receta = ""
+    continuar = False
+    ruta = ""
 
+    os.system("cls")
+    print("GESTIÓN DE RECETAS\n")
+    print(f"CREACIÓN DE RECETA EN LA CATEGORÍA {path_categoria.name.upper()}:\n")
+
+    while not continuar or not nombre_receta:
+        nombre_receta = input("Introduce el nombre de la nueva receta: ")
+        if not nombre_receta:
+            continue
+        if existe_receta(path_categoria, nombre_receta):
+            print("La receta ya existe, debes introducir un nuevo nombre")
+            continue
+        
+        try:
+            ruta = Path(path_categoria) / (nombre_receta + ".txt")
+            ruta.write_text("")
+        except IOError as error:
+            print("Error: Ha sido imposible crear el archivo con ese nombre")
+            continue
+        else:
+            continuar = True
+    
     # Introduccion de texto
-    entrada_multilinea = ""
-    print("Ingresa texto. Para finalizar presiona Enter tras la última linea:")
-    while True:        
+    texto_receta = ""
+    print("\nIngresa el texto de la receta. Pulsa Enter tras cada línea, hasta finalizar:\n")
+    while True:
         linea = input()
         if not linea:
             break  # Salir del bucle si se presiona Enter (cadena vacía)
-        entrada_multilinea += linea + "\n"
+        texto_receta += linea + "\n"
+    ruta.write_text(texto_receta)
     print("Texto guardado con éxito, pulsa Enter para continuar...")
     input()
 
 def crear_categoria():
     '''Crea una carpeta para la nueva categoría '''
-    pass
+    nombre_categoria = ""
+    continuar = False
+    ruta = ""
+
+    os.system("cls")
+    print("GESTIÓN DE RECETAS\n")
+    print("CREACIÓN DE UNA NUEVA CATEGORÍA\n")
+
+    while not continuar or not nombre_categoria:
+        nombre_categoria = input("Introduce el nombre de la nueva categoria: ")
+        if not nombre_categoria:
+            continue
+        if existe_categoria(nombre_categoria):
+            print("La categoría ya existe, debes introducir un nuevo nombre")
+            continue
+        
+        try:
+            ruta = Path(PATH_RECETAS) / nombre_categoria
+            ruta.mkdir()
+        except IOError as error:
+            print("Error: Ha sido imposible crear la categoría con ese nombre")
+            continue
+        else:
+            continuar = True
+
+    print("\nCategoría guardada con éxito, pulsa Enter para continuar...")
+    input()
 
 def eliminar_receta(path_receta):
-    '''Elimina una receta dado su path'''
-    pass
+    '''Elimina una receta dado su path'''          
+    try:
+        ruta = Path(path_receta)
+        ruta.unlink()
+    except IOError as error:
+        print("Error: Ha sido imposible eliminar el archivo")
+        print(error)
+    else:
+        print("Receta eliminada con éxito, pulsa Enter para continuar...")
+        input()
 
-def eliminar_categoria(path_receta):
+def eliminar_categoria(path_categoria):
     '''Elimina una categoria dado su path'''
-    pass
+    if path_categoria.exists() and path_categoria.is_dir():     
+        # Comprobar si el directorio está vacío
+        archivos = len(list(Path(path_categoria).glob("*")))
+        #print(archivos)
+        if archivos > 0:
+            print(f"Hay {archivos} recetas dentro de la categoría, debes eleminarlas antes de eliminar la categoría")
+            print("Pulsa Enter para continuar...")
+            input()
+            return ""
+               
+        try:
+            ruta = Path(path_categoria)
+            ruta.rmdir()
+        except IOError as error:
+            print("Error: Ha sido imposible eliminar la categoría")
+            print(error)
+        else:
+            print("Categoría eliminada con éxito, pulsa Enter para continuar...")
+            input()
+    else:
+        print("Algo no ha ido bien, pulsa Enter para continuar...")
+        input()
+
+def existe_receta(path_categoria,nombre_receta):
+    '''Devuelve True si la receta ya existe en el path_categoria'''
+    nombre_archivo = nombre_receta + ".txt"
+    ruta_total = Path(path_categoria) / nombre_archivo
+    return Path(ruta_total).exists()
+
+def existe_categoria(nombre_categoria):
+    '''Devuelve True si la receta ya existe en el path_categoria'''
+    ruta_total = PATH_RECETAS / nombre_categoria
+    return Path(ruta_total).exists()
