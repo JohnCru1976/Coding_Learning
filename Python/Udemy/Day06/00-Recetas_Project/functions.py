@@ -106,11 +106,11 @@ def leer_receta(path_receta):
 
     print(Path(path_receta).read_text())
 
-    input("\nPulsa una tecla para continuar...")
+    input("\nPulsa Enter para continuar...")
 
 def crear_receta(path_categoria):
     '''Crea una receta en la carpeta de la categoría seleccionada'''
-
+    
 
     # Introduccion de texto
     entrada_multilinea = ""
@@ -120,7 +120,7 @@ def crear_receta(path_categoria):
         if not linea:
             break  # Salir del bucle si se presiona Enter (cadena vacía)
         entrada_multilinea += linea + "\n"
-    print("Texto guardado con éxito, pulsa una tecla...")
+    print("Texto guardado con éxito, pulsa Enter para continuar...")
     input()
 
 def crear_categoria():

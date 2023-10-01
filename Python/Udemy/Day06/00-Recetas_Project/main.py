@@ -21,8 +21,10 @@ while fin_aplicacion == False:
                 leer_receta(opcion_receta)
     # CREAR RECETA
     elif opcion_elegida == "2":
-        crear_receta("")
-        pass
+        diccionario_recetario = actualiza_recetario(PATH_RECETAS)
+        opcion_categoria = menu_categorias(diccionario_recetario)
+        if opcion_categoria != "q":
+            crear_receta(opcion_categoria)
     # CREAR CATEGORÍA
     elif opcion_elegida == "3":
         pass
