@@ -13,6 +13,7 @@ while fin_aplicacion == False:
         fin_aplicacion = True
     # LEER RECETA
     elif opcion_elegida == "1":
+        diccionario_recetario = actualiza_recetario(PATH_RECETAS)
         opcion_categoria = menu_categorias(diccionario_recetario)
         if opcion_categoria != "q":
             opcion_receta = menu_recetas(opcion_categoria)
