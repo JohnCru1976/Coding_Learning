@@ -99,7 +99,7 @@ def menu_recetas(path_categoria, diccionario, texto):
         print(f"{texto.upper()}:")
 
         for receta in recetas_categoria:            
-            print(f"[{contador}] {receta.name}")
+            print(f"[{contador}] {Path(receta).stem}")
             caracteres_posibles += str(contador)
             contador += 1
         print("[Q] Volver al menú principal")
@@ -117,7 +117,7 @@ def leer_receta(path_receta):
     '''Muestra el contenido de una receta a partir de su path'''
     os.system("cls")
     print("GESTIÓN DE RECETAS\n")
-    print(f"LECTURA RECETA {path_receta.name.upper()}:\n")
+    print(f"LECTURA RECETA {path_receta.stem.upper()}:\n")
 
     print(Path(path_receta).read_text())
 
