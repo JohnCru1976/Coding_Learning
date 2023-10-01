@@ -37,7 +37,7 @@ def menu_inicial():
         print("[5] Eliminar una categoría")
         print("[Q] Salir de la aplicación")
         caracter_introducido = input("\nSelecciona una opción: ").lower()
-        if caracter_introducido == "":
+        if not caracter_introducido:
             caracter_introducido ="-"
     
     return caracter_introducido
@@ -63,7 +63,7 @@ def menu_categorias(diccionario):
         print("[Q] Volver al menú principal")
 
         caracter_introducido = input("\nSelecciona una categoría: ").lower()
-        if caracter_introducido == "":
+        if not caracter_introducido:
             caracter_introducido ="-"
     
     if caracter_introducido == "q":
@@ -92,7 +92,7 @@ def menu_recetas(path_categoria):
         print("[Q] Volver al menú principal")
 
         caracter_introducido = input("\nSelecciona una receta: ").lower()
-        if caracter_introducido == "":
+        if not caracter_introducido:
             caracter_introducido ="-"
     
     if caracter_introducido == "q":
@@ -112,7 +112,19 @@ def leer_receta(path_receta):
 
 def crear_receta(path_categoria):
     '''Crea una receta en la carpeta de la categoría seleccionada'''
-    pass
+    
+
+    # Introduccion de texto
+    entrada_multilinea = ""
+    print("Ingresa texto. Para finalizar presiona Enter tras la última linea:")
+    while True:        
+        linea = input()
+        if not linea:
+            break  # Salir del bucle si se presiona Enter (cadena vacía)
+        entrada_multilinea += linea + "\n"
+    print("Has ingresado:")
+    print(entrada_multilinea, end="")
+    input()
 
 def crear_categoria():
     '''Crea una carpeta para la nueva categoría '''
