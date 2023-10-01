@@ -20,6 +20,7 @@ while fin_aplicacion == False:
                 leer_receta(opcion_receta)
     # CREAR RECETA
     elif opcion_elegida == "2":
+        crear_receta("")
         pass
     # CREAR CATEGORÍA
     elif opcion_elegida == "3":
