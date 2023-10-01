@@ -30,8 +30,8 @@ for ruta_archivo in lista_archivos:
     print(ruta_archivo)
 print("*" * 20)
 # Imprimir solo el nombre de los archivos txt
-lista_archivos = Path(ruta_working_directory).glob("*.txt")
-for ruta_archivo in lista_archivos:
+lista_archivos = Path(ruta_working_directory).glob("**/*.txt")
+for ruta_archivo in list(lista_archivos):
     print(ruta_archivo.name)
 print("*" * 20)
 # Incluir carpetas y subcarpetas que se encuentren dentro
@@ -39,4 +39,9 @@ lista_archivos = Path(ruta_working_directory.parent).glob("**/*.py")
 for ruta_archivo in lista_archivos:
     print(ruta_archivo.name)
 print("*" * 20)
-
+# Saber que devuelve cuando no hay elementos que devolver
+lista_archivos = Path(ruta_working_directory).glob("*.dasdasdasdasd")
+print(list(lista_archivos))
+for ruta_archivo in list(lista_archivos):
+    print(ruta_archivo.name)
+print("*" * 20)
