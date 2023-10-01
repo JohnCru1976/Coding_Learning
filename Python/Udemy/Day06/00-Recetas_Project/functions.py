@@ -110,7 +110,7 @@ def leer_receta(path_receta):
 
 def crear_receta(path_categoria):
     '''Crea una receta en la carpeta de la categoría seleccionada'''
-    
+        
 
     # Introduccion de texto
     entrada_multilinea = ""
