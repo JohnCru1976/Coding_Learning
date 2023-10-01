@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 
 PATH_RECETAS = Path(__file__).parent / "Recetas"
+# pylint: disable=invalid-name
 fin_aplicacion = False
 diccionario_recetario = {}
 
@@ -29,7 +30,9 @@ def menu_inicial():
 
     while not caracter_introducido in caracteres_posibles:
         os.system("cls")
-        print("BIENVENIDO A GESTIÓN DE RECETAS\n")
+        print("BIENVENIDO A GESTIÓN DE RECETAS")
+        print(f"Las recetas se encuentran en {PATH_RECETAS}")
+        print(f"Recetas totales: {contar_recetas(PATH_RECETAS)}\n")
         print("[1] Leer una receta")
         print("[2] Crear una nueva receta")
         print("[3] Crear una nueva categoría")
@@ -240,3 +243,10 @@ def existe_categoria(nombre_categoria):
     '''Devuelve True si la receta ya existe en el path_categoria'''
     ruta_total = PATH_RECETAS / nombre_categoria
     return Path(ruta_total).exists()
+
+def contar_recetas(ruta):
+    contador = 0
+    for txt in Path(ruta).glob("**/*.txt"):
+        contador += 1
+
+    return contador
