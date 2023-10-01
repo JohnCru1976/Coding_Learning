@@ -44,11 +44,9 @@ def menu_inicial():
 
 def menu_categorias(diccionario):
     '''Muestra las categorías y devuelve el path de la categoría seleccionada'''
-    diccionario_recetario = actualiza_recetario(PATH_RECETAS)
-
     caracter_introducido = "-"
     caracteres_posibles = "q"
-    categorias_diccionario = diccionario_recetario.keys()
+    categorias_diccionario = diccionario.keys()
 
     while not caracter_introducido in caracteres_posibles:
         contador = 1
@@ -99,7 +97,7 @@ def menu_recetas(path_categoria):
         return "q"
     else:
         return Path(list(recetas_categoria)[int(caracter_introducido) - 1])
-    
+
 def leer_receta(path_receta):
     '''Muestra el contenido de una receta a partir de su path'''
     os.system("cls")
@@ -112,7 +110,7 @@ def leer_receta(path_receta):
 
 def crear_receta(path_categoria):
     '''Crea una receta en la carpeta de la categoría seleccionada'''
-    
+
 
     # Introduccion de texto
     entrada_multilinea = ""
@@ -122,8 +120,7 @@ def crear_receta(path_categoria):
         if not linea:
             break  # Salir del bucle si se presiona Enter (cadena vacía)
         entrada_multilinea += linea + "\n"
-    print("Has ingresado:")
-    print(entrada_multilinea, end="")
+    print("Texto guardado con éxito, pulsa una tecla...")
     input()
 
 def crear_categoria():
