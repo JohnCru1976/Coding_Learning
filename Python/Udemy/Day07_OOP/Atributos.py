@@ -1,16 +1,10 @@
-<<<<<<< HEAD
-# TIPOS ATRIBUTO: DE CLASE Y DE INSTANCIA
-=======
 ## TIPOS ATRIBUTO: DE CLASE Y DE INSTANCIA
->>>>>>> 5fb1bcd4c4d2bce78ff5610a6b7788a250604d47
 class Pajaro:
     # ATRIBUTO DE CLASE (ACCESIBLE SIN DECLARAR OBJETO)
     plumas = True
     # ATRIBUTOS DEL OBJETO
     # Método constructor, el atributo self es obligatorio
     # Self es la propia instancia
-<<<<<<< HEAD
-
     def __init__(self, color, especie):
         self.color = color  # ATRIBUTO DE OBJETO
         self.especie = especie    # ATRIBUTO DE OBJETO
@@ -46,16 +40,3 @@ en lugar de "pedir permiso" (LBYL: "Look Before You Leap"), lo que significa que
 espera que los programadores sean responsables y respeten las convenciones 
 de nomenclatura y las reglas establecidas.
 '''
-=======
-    def __init__(self, color, especie):
-        self.color = color  # ATRIBUTO DE OBJETO
-        self.especie = especie    # ATRIBUTO DE OBJETO
-
-## DECLARANDO OBJETI
-mi_pajaro = Pajaro("rojo", "gorrion")
-
-print(mi_pajaro.color, mi_pajaro.especie, sep=" - ")  #-> rojo - gorrion
-print(Pajaro.plumas)
-
-Pajaro.alas
->>>>>>> 5fb1bcd4c4d2bce78ff5610a6b7788a250604d47
