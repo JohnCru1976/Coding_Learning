@@ -1,4 +1,4 @@
-# MEJORES EXPLICACIÓN ENCONTRADA PARA LOS DUNDERS (MÉTODOS MÁGICOS)
+# MEJORES EXPLICACIONES ENCONTRADAS PARA LOS DUNDERS (MÉTODOS MÁGICOS)
 class Persona:
     def __init__(self, nombre, edad):
         self.nombre = nombre
