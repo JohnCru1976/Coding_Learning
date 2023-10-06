@@ -54,4 +54,4 @@ my_deque.popleft()
 print(my_deque)  #-> deque([1, 3, 4, 1, 2])
 
 my_deque.extend(lista)
-print(my_deque)  #-> deque([1, 3, 4, 1, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 2, 2, 2, 2, 5, 5, 5, 5, 5, 7, 7, 7, 7])
+print(my_deque)  #-> deque([1, 3, 4, 1, 2, 3, 3, 3, 3, 4, 4, 4, 4, 4, 2, 2, 2, 5, 5, 5, 5, 5, 7, 7, 7, 7])
