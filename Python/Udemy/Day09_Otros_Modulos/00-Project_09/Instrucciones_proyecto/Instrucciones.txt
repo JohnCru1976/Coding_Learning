@@ -17,7 +17,7 @@ Para lograrlo vas a usar el módulo os para abrir e iterear por el directorio,
 y las expresiones regulares para encontrar el formato de número de serie correcto.
 
 A los fines de este ejercicio, estas son las condiciones de formato que deben cumplir los hallazgos:
-- [N] + [tres carateres de texto] + [-] + [5 números]
+- [N] + [tres carateres de texto] + [-] + [5 números]   --- Nryu-12365
 
 Por ejemplo: Nryu-12365
 
