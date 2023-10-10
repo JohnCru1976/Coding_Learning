@@ -1,3 +1,4 @@
 {
-    "liveServer.settings.multiRootWorkspaceName": "Coding_Learning"
+    "liveServer.settings.multiRootWorkspaceName": "Coding_Learning",
+    "python.analysis.typeCheckingMode": "basic"
 }
