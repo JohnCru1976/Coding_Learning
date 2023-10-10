@@ -36,12 +36,15 @@ def jugador():
 # Bucle principal mientras se ejecuta el juego
 se_ejecuta = True
 while se_ejecuta:
+    # Color del fondo de pantalla
+    pantalla.fill((205,144,228))
     # Identifica los eventos que sucedan en cada bucle
     for evento in pygame.event.get():
         # Se detecta el evento QUIT (al cerrar la ventana)
         if evento.type == pygame.QUIT:
             se_ejecuta = False
-        # El jugador se mueve por el eje x junto con el movimiento del mouse
+        
+        '''# El jugador se mueve por el eje x junto con el movimiento del mouse
         if evento.type == pygame.MOUSEMOTION:
             mouse_x_pos = evento.dict["pos"][0]
             mouse_y_pos = evento.dict["pos"][1]
@@ -50,10 +53,8 @@ while se_ejecuta:
         # Cuando el rato sale de la pantalla el jugador se sitúa en el borde derecho
         if evento.type == pygame.WINDOWLEAVE:
             if jugador_pos_x > 500:
-                jugador_pos_x = 736
+                jugador_pos_x = 736'''
 
-    # Color del fondo de pantalla
-    pantalla.fill((205,144,228))
     # Posicion del jugador
     jugador()
     pygame.display.update()  # Actualiza lo que se muestra en la pantalla
