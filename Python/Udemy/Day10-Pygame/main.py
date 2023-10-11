@@ -28,37 +28,43 @@ jugador_img = pygame.image.load(Path(".") / "files" / "cohete.png") # Instancia 
 jugador_pos_x = 368
 jugador_pos_y = 530
 jugador_pos_cambio = 0
-cantidad_movimiento = 0.6
+velocidad = 0.8
+tecla_left = False
+tecla_right = False
+ultima_tecla = None
 
 def jugador(x, y):
     '''Actualiza parametros del jugador'''
     pantalla.blit(jugador_img,(x, y))  # Posicionamiento en pantalla
-
 
 # Bucle principal mientras se ejecuta el juego
 se_ejecuta = True
 while se_ejecuta:
     # Color del fondo de pantalla
     pantalla.fill((205,144,228))
-    tecla_left = False
-    tecla_right = False
+    
     # Identifica los eventos que sucedan en cada bucle
     for evento in pygame.event.get():
-        print(evento)
         # Se detecta el evento QUIT (al cerrar la ventana)
         if evento.type == pygame.QUIT:
             se_ejecuta = False
         if evento.type == pygame.KEYDOWN:
-            if evento.key == pygame.K_LEFT and (tecla_presionada == pygame.K_RIGHT or tecla_presionada == None):
-                    tecla_left = True
-                    jugador_pos_cambio -= cantidad_movimiento
-            if evento.key == pygame.K_RIGHT and (tecla_presionada == pygame.K_LEFT or tecla_presionada == None):
-                    tecla_presionada = pygame.K_RIGHT
-                    jugador_pos_cambio += cantidad_movimiento
+            if evento.key == pygame.K_LEFT:
+                tecla_left = True
+                ultima_tecla = pygame.K_LEFT
+            if evento.key == pygame.K_RIGHT:
+                tecla_right = True
+                ultima_tecla = pygame.K_RIGHT
         if evento.type == pygame.KEYUP:
-            if evento.key == pygame.K_LEFT or evento.key == pygame.K_RIGHT:
-                tecla_presionada = None
-                jugador_pos_cambio = 0
+            if evento.key == pygame.K_LEFT:
+                tecla_left = False
+                if tecla_right:
+                    ultima_tecla = pygame.K_RIGHT
+            if evento.key == pygame.K_RIGHT:
+                tecla_right = False
+                if tecla_left:
+                    ultima_tecla = pygame.K_LEFT
+        
         '''# El jugador se mueve por el eje x junto con el movimiento del mouse
         if evento.type == pygame.MOUSEMOTION:
             mouse_x_pos = evento.dict["pos"][0]
@@ -70,7 +76,16 @@ while se_ejecuta:
             if jugador_pos_x > 500:
                 jugador_pos_x = 736'''
 
-    # Posicion del jugador
+    # Movimiento jugador
+    if ultima_tecla == pygame.K_RIGHT:
+        jugador_pos_cambio += velocidad
+    if ultima_tecla == pygame.K_LEFT:
+        jugador_pos_cambio -= velocidad
+    if not tecla_right and not tecla_left:
+        jugador_pos_cambio = 0
+    ultima_tecla = None 
+    
+    # Posicion del jugador:
     jugador_pos_x += jugador_pos_cambio
     jugador(jugador_pos_x, jugador_pos_y)
     pygame.display.update()  # Actualiza lo que se muestra en la pantalla
