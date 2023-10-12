@@ -1,6 +1,7 @@
 '''Juego creado con fines educativos siguiendo curso Udemy de Federico Garay'''
 from pathlib import Path
 import os
+import io
 import random
 # pylint: disable=E1101
 import pygame
@@ -33,9 +34,7 @@ icono = pygame.image.load(Path(".") / "files" / "ovni.png")  # Instancia del ico
 pygame.display.set_icon(icono)  # Asignando instancia del icono a la pantalla
 # Fondo
 fondo = pygame.image.load(Path(".") / "files" / "Fondo.jpg")
-# Contadores y texto
-fuente = pygame.font.Font('freesansbold.ttf', 32)
-fuente_final = pygame.font.Font('freesansbold.ttf', 40)
+# Contadores
 texto_x = 10
 texto_y = 10
 # Música
@@ -101,6 +100,19 @@ def detectar_colision(coord_obj1, coord_obj2):
         return True
     return False
 
+def fuente_bytes(fuente):
+    '''Abre el archivo TTF en modo lectura binaria'''
+    with open(fuente, 'r+b',) as f:
+        # Lee todos los bytes del archivo y los almacena en una variable
+        ttf_bytes = f.read()
+        # Crea un objeto BytesIO a partir de los bytes del archivo TTF
+        return io.BytesIO(ttf_bytes)
+
+# Declaración de variables para las fuentes en bytes
+#fuente_en_bytes = fuente_bytes("freesansbold.ttf")
+fuente = pygame.font.Font("freesansbold.ttf", 32)
+fuente_final = pygame.font.Font("freesansbold.ttf", 40)
+
 def mostrar_puntuacion (x, y):
     '''Muestra la puntuación en la pantalla'''
     texto = fuente.render(f"Puntos: {puntos}", True,(255,255,255))
@@ -110,6 +122,7 @@ def texto_final():
     '''Muestra texto final juego'''
     texto = fuente_final.render("¿Otra partida? (S / N)", True,(255,255,255))
     pantalla.blit(texto,(60,200))
+
 
 # ****************************************************************************
 # Bucle principal mientras se ejecuta el juego
