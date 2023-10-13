@@ -4,6 +4,7 @@ import os
 from firebase_admin import credentials
 from firebase_admin import firestore
 import firebase_admin
+from random import randint
 
 # Set the working directory on the file directory
 file_directory = os.path.dirname(__file__)
@@ -57,26 +58,28 @@ def query_all_documents(coleccion_obj):
     documents = coleccion_obj.stream()
 
     for document in documents:
-        print(f"ID del documento: {document.id}")
-        print(f"Datos del documento: {document.to_dict()}")
+        print(f"ID: {document.id}")
+        print(f"Datos: {document.to_dict()}")
 
 
 def query_with_condition(coleccion_obj):
     '''Consulta con una condición (por ejemplo, obtener usuarios mayores de 30 años)'''
-    query = coleccion_obj.where("edad", ">", 30).stream()
+    query = coleccion_obj.stream()
 
-    for document in query:
-        print(f"ID del documento: {document.id}")
-        print(f"Datos del documento: {document.to_dict()}")
+    filtered_docs = filter(lambda doc: doc.to_dict().get("age") > 30, query)
+
+    for document in filtered_docs:
+        print(f"ID: {document.id}")
+        print(f"Datos: {document.to_dict()}")
 
 
 def query_with_order(coleccion_obj):
     '''Consulta con ordenamiento (por ejemplo, ordenar por nombre de usuario)'''
-    query = coleccion_obj.order_by("nombre").stream()
+    query = coleccion_obj.order_by("age").stream()
 
     for document in query:
-        print(f"ID del documento: {document.id}")
-        print(f"Datos del documento: {document.to_dict()}")
+        print(f"ID: {document.id}")
+        print(f"Datos: {document.to_dict()}")
 
 
 #############################################
@@ -92,6 +95,15 @@ user_data = {
 
 # Create a new document
 create_document(coleccion, "user1", user_data)
+
+for n in range(2, 20):
+    user_data = {
+        "name": f"Usuario {n}",
+        "email": f"usuario{n}@example.com",
+        "age": randint(15,60)
+        }
+    # Create a new document
+    create_document(coleccion, f"user{n}", user_data)
 
 # Read the document
 result = read_document(coleccion, "user1")
@@ -122,3 +134,13 @@ create_document(coleccion, "user1", user_data)
 
 # Create a new document
 create_document(coleccion, "user1", user_data)
+
+query_all_documents(coleccion)
+print("*" * 20)
+print("*" * 20)
+print("*" * 20)
+query_with_condition(coleccion)
+print("*" * 20)
+print("*" * 20)
+print("*" * 20)
+query_with_order(coleccion)
