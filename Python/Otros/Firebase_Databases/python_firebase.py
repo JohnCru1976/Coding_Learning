@@ -6,7 +6,6 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 import firebase_admin
 
-
 # Set the working directory on the file directory
 file_directory = os.path.dirname(__file__)
 os.chdir(file_directory)
@@ -62,7 +61,6 @@ def query_all_documents(coleccion_obj):
         print(f"ID: {document.id}")
         print(f"Datos: {document.to_dict()}")
 
-
 def query_with_condition(coleccion_obj):
     '''Consulta con una condición (por ejemplo, obtener usuarios mayores de 30 años)'''
     query = coleccion_obj.stream()
@@ -73,7 +71,6 @@ def query_with_condition(coleccion_obj):
         print(f"ID: {document.id}")
         print(f"Datos: {document.to_dict()}")
 
-
 def query_with_order(coleccion_obj):
     '''Consulta con ordenamiento (por ejemplo, ordenar por nombre de usuario)'''
     query = coleccion_obj.order_by("age").stream()
@@ -81,7 +78,6 @@ def query_with_order(coleccion_obj):
     for document in query:
         print(f"ID: {document.id}")
         print(f"Datos: {document.to_dict()}")
-
 
 #############################################
 ###############  PRUEBAS ####################
@@ -128,7 +124,6 @@ print("Document deleted.")
 result = read_document(coleccion, "user1")
 print("Read Deleted Document:")
 print(result)
-
 
 # Create a new document
 create_document(coleccion, "user1", user_data)
