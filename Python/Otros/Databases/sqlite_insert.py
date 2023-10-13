@@ -53,9 +53,4 @@ if __name__ == "__main__":
     # create tasks
     task_1_id = create_task(sc.db_connection, task_1)
     task_2_id = create_task(sc.db_connection, task_2)
-
-    # Test
-    print(f"The project id is {project_id}")
-    print(f"The task 1 id is {task_1_id}")
-    print(f"The task 2 id is {task_2_id}")
     
