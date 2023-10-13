@@ -1,10 +1,11 @@
 ''' This is an exercise to learn the basics of firebase with Python
 Part of the code in this file has been obtained using CHAT-GPT'''
 import os
+from random import randint
 from firebase_admin import credentials
 from firebase_admin import firestore
 import firebase_admin
-from random import randint
+
 
 # Set the working directory on the file directory
 file_directory = os.path.dirname(__file__)
