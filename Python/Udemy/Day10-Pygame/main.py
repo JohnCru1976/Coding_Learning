@@ -6,6 +6,9 @@ import random
 # pylint: disable=E1101
 import pygame
 from pygame import mixer
+from firebase_admin import credentials
+from firebase_admin import firestore
+import firebase_admin
 
 # ****************************************************************************
 # DECLARACIÓN DE VARIABLES
@@ -13,6 +16,30 @@ from pygame import mixer
 # Establecer el directorio de trabajo en el directorio del archivo
 file_diretory = os.path.dirname(__file__)
 os.chdir(file_diretory)
+
+def fuente_bytes(fuente):
+    '''Abre el archivo TTF en modo lectura binaria'''
+    with open(fuente, 'r+b',) as f:
+        # Lee todos los bytes del archivo y los almacena en una variable
+        ttf_bytes = f.read()
+        # Crea un objeto BytesIO a partir de los bytes del archivo TTF
+        return io.BytesIO(ttf_bytes)
+
+coleccion = None
+db = None
+try:
+    # Prepare the credentials obtained from web
+    credent = credentials.Certificate("key.json")
+    # Se conecta la base de datos
+    firebase_admin.initialize_app(credent)
+    # Se crea un interfaz para conectar con la base de datos
+    db = firestore.client()
+    # Crear una COLLECTION - (Una base de datos relacional)
+    coleccion = db.collection("space_invaders")
+except:
+    pass
+
+
 
 # Se inicia el módulo pygame para hacerlo accesible
 pygame.init()
@@ -77,6 +104,29 @@ puntos = 0
 # ****************************************************************************
 # DECLARACIÓN DE FUNCIONES
 # ****************************************************************************
+# MANEJO BASE DATOS
+def create_document(coleccion_obj, document_id, data):
+    '''Create a new document with a specific ID'''
+    doc_ref = coleccion_obj.document(document_id)
+    doc_ref.set(data)
+
+def read_document(coleccion_obj, document_id):
+    '''Read a document by its ID'''
+    doc_ref = coleccion_obj.document(document_id)
+    document = doc_ref.get()
+    if document.exists:
+        return (document.id, document.to_dict())
+    else:
+        return None
+
+# Se crea una variable con los datos del record actual
+record = None
+user_name = os.environ['USERNAME']
+try:  
+    record = read_document(coleccion, user_name)
+except:
+    pass
+
 def jugador(x, y):
     '''Actualiza parametros del jugador'''
     pantalla.blit(jugador_img,(x, y))  # Posicionamiento en pantalla
@@ -100,28 +150,30 @@ def detectar_colision(coord_obj1, coord_obj2):
         return True
     return False
 
-def fuente_bytes(fuente):
-    '''Abre el archivo TTF en modo lectura binaria'''
-    with open(fuente, 'r+b',) as f:
-        # Lee todos los bytes del archivo y los almacena en una variable
-        ttf_bytes = f.read()
-        # Crea un objeto BytesIO a partir de los bytes del archivo TTF
-        return io.BytesIO(ttf_bytes)
+
 
 # Declaración de variables para las fuentes en bytes
 #fuente_en_bytes = fuente_bytes("freesansbold.ttf")
 fuente = pygame.font.Font("freesansbold.ttf", 32)
 fuente_final = pygame.font.Font("freesansbold.ttf", 40)
 
-def mostrar_puntuacion (x, y):
-    '''Muestra la puntuación en la pantalla'''
-    texto = fuente.render(f"Puntos: {puntos}", True,(255,255,255))
-    pantalla.blit(texto,(x,y))
+def mostrar_puntuacion (x, y): 
+    if record:
+        puntaje = record[1]
+        '''Muestra la puntuación en la pantalla'''
+        texto = fuente.render(f"Puntos: {puntos}       RECORD: {record[0]} {puntaje['puntos']} puntos", True,(255,255,255))
+        pantalla.blit(texto,(x,y))
+    else:
+        '''Muestra la puntuación en la pantalla'''
+        texto = fuente.render(f"Puntos: {puntos}", True,(255,255,255))
+        pantalla.blit(texto,(x,y))
 
 def texto_final():
     '''Muestra texto final juego'''
     texto = fuente_final.render("¿Otra partida? (S / N)", True,(255,255,255))
     pantalla.blit(texto,(60,200))
+
+
 
 
 # ****************************************************************************
@@ -250,6 +302,12 @@ while se_ejecuta:
         # Colisión entre jugador y enemigo
         colision = detectar_colision((jugador_pos_x, jugador_pos_y), (enemigo_pos_x, enemigo_pos_y))
         if colision:
+            try:
+                if not record or record[1]['puntos'] < puntos:
+                    create_document(coleccion, os.environ['USERNAME'],{'puntos': puntos})
+                    record = read_document(coleccion, str(os.environ['USERNAME']))
+            except:
+                print("Error")
             sonido_explosion.play()
             texto_final()
             juego_pausado = True

@@ -18,7 +18,7 @@ firebase_admin.initialize_app(credent)
 db = firestore.client()
 
 # Crear una COLLECTION - (Una base de datos relacional)
-coleccion = db.collection("test_collection")
+coleccion = db.collection("space_invaders")
 
 #######################################
 # CRUD OPERATIONS
