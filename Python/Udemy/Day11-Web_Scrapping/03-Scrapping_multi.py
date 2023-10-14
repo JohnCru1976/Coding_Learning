@@ -52,7 +52,7 @@ def lista_final(num_pags):
     return lista_return
 
 if __name__ == "__main__":
-    listado = lista_final(50)
+    listado = lista_final(3)
     system('cls')
     print(f"LIBROS ENCONTRADOS: {len(listado)}\n")
     n = 0
