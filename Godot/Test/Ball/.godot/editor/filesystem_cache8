@@ -1,0 +1,11 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1697522264
+Ball.tscn::PackedScene::8064037037699315273::1697484518::0::1::::<><>::uid://dv6rx85s1gy3i
+icon.svg::CompressedTexture2D::7951457360396824501::1697484518::1697484548::1::::<><>::
+Main.gd::GDScript::-1::1697484518::0::1::::<>Node<>::
+Main.tscn::PackedScene::2580185021150866616::1697484791::0::1::::<><>::res://Main.gd<>uid://dm5jrnxmxnuof::::res://Ball.tscn<>uid://dkq1swbmmxmbq::::res://assets/Bouncy Platform Long.png
+README.md::TextFile::-1::1697484518::0::1::::<><>::
+::res://assets/::1697521435
+ballBlue_10.png::CompressedTexture2D::8698298520458212912::1697484518::1697484547::1::::<><>::
+Bouncy Platform Long.png::CompressedTexture2D::7895792475247486234::1697484518::1697484547::1::::<><>::
+Bouncy Platform Medium.png::CompressedTexture2D::3192301516354317244::1697484518::1697484547::1::::<><>::
