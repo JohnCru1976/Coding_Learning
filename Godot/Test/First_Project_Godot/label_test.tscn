@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bntvpppnjjrri"]
+
+[node name="Label" type="Label"]
+offset_left = 550.0
+offset_top = 292.0
+offset_right = 657.0
+offset_bottom = 323.0
+rotation = -0.00101744
+scale = Vector2(1.03123, 1.28146)
+text = "Hello world!"
