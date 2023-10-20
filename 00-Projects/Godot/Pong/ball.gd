@@ -10,15 +10,19 @@ var screen_height
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print(screen_width, " - ", screen_height)
 	start_ball()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(direction)
 	# Move the object on the actual direction
 	position = position + direction.normalized() * speed * delta
 	# Screen top-bottom limits
 	if position.y <= 0 or position.y >= screen_height - 17 :
+		if position.y <= 0:
+			$AudioUp.play()
+		if position.y >= screen_height - 17:
+			$AudioDown.play()
 		direction.y = - direction.y
 	if position.y <= 0:
 		position.y = 3
@@ -34,10 +38,11 @@ func _process(delta):
 
 # The ball collisions with stick
 func stick_collision(num_player, zone_touch, stick_direction):
-	print("Soy la bola")
-	print("\tHe tocado al jugador " + str(num_player) + " en la zona " +
-		 str(zone_touch) + " con stick en dirección " + str(stick_direction))
-	# Responding for collisions
+	if num_player == 1:
+		$AudioPlayer1.play()
+	if num_player == 2:
+		$AudioPlayer2.play()
+		# Responding for collisions
 	# Always the x-axis are going to be the opposite
 	direction.x = - direction.x
 	# Up stick zone
@@ -106,15 +111,11 @@ func stick_collision(num_player, zone_touch, stick_direction):
 func start_ball():
 	# Scale
 	scale = Vector2(ball_scale, ball_scale)
-	# Geeting the window dimensions
-	screen_width = get_viewport().size.x
-	screen_height = get_viewport().size.y
 	# Inicializa la posición
 	position = Vector2(screen_width / 2 - offset, screen_height / 2 - offset)
 	# Inicializa la dirección
 	direction = Vector2(random_direction(), random_number(-0.2, 0.2))
 	
-
 # Returns 1: Rigth or -1: Left
 func random_direction():
 	var direction_random = [1,-1]

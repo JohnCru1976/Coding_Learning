@@ -1,11 +1,14 @@
 extends Node
 
 @export var ball_scene: PackedScene
-
+var screen_width
+var screen_height
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$HUD.scores = [0,0]
+	screen_width = get_viewport().size.x
+	screen_height = get_viewport().size.y
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -18,6 +21,8 @@ func _on_start_timer_timeout():
 
 func start_ball():
 	var ball = ball_scene.instantiate()
+	ball.screen_width = screen_width
+	ball.screen_height = screen_height
 	# Spawn the ball by adding it to the Main scene.
 	add_child(ball)
 

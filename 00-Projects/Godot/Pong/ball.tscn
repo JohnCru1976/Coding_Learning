@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy1n0dpimevb7"]
+[gd_scene load_steps=9 format=3 uid="uid://cy1n0dpimevb7"]
 
 [ext_resource type="Script" path="res://ball.gd" id="1_7447p"]
 [ext_resource type="Texture2D" uid="uid://dbh4i44otnwjn" path="res://art/ball.png" id="1_qmj6t"]
+[ext_resource type="AudioStream" uid="uid://babml386k2mdh" path="res://sounds/up.wav" id="3_qxdxb"]
+[ext_resource type="AudioStream" uid="uid://bbhs6xycttgxs" path="res://sounds/bottom.wav" id="4_qn6ig"]
+[ext_resource type="AudioStream" uid="uid://dyg5loeejgxx2" path="res://sounds/player1.wav" id="5_fsi5l"]
+[ext_resource type="AudioStream" uid="uid://bqtmtyjax2idg" path="res://sounds/player2.wav" id="6_p6csw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nvfr8"]
 animations = [{
@@ -27,3 +31,15 @@ sprite_frames = SubResource("SpriteFrames_nvfr8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(40.5, 40.5)
 shape = SubResource("CircleShape2D_y4ns4")
+
+[node name="AudioUp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qxdxb")
+
+[node name="AudioDown" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qn6ig")
+
+[node name="AudioPlayer1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_fsi5l")
+
+[node name="AudioPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_p6csw")

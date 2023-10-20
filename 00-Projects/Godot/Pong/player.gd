@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var player_num: int # The player number of the instance
-var speed = 500				# Initial speed
+var speed = 600				# Initial speed
 var stick_direction = 0		# Direcction -1 = Up  1 = Down
 var player_scale = 0.5
 var ball_collision = false
@@ -39,7 +39,6 @@ func _process(delta):
 	limits_screen_player()
 	
 func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	print("AREA_PLAYER")
 	# Avoid double area touched
 	if active_shape >= 0:
 		return
@@ -49,17 +48,10 @@ func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index)
 	if area:
 		if area.has_method("get_name") and area.get_name() == "Ball":
 			# The collisioned object is the ball
-			# Initialize actions in Ball
-			print("Soy el jugador " + str(player_num))
-			print("\tLa bola me ha tocado")
+			# Initialize actions in Ball			
 			area.stick_collision(player_num, local_shape_index, stick_direction)
 			$Timer.start()
 			
-func _on_ball_end_collision():
-	print("END COLLISION")
-	# All the shapes are activated
-	# active_shape = -1  
-
 func start_position_player():
 	#Initial Position
 	if player_num == 1:
