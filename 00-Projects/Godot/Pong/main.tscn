@@ -18,9 +18,11 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Player1" parent="." instance=ExtResource("2_68jwf")]
+position = Vector2(31, 26)
 player_num = 1
 
 [node name="Player2" parent="." instance=ExtResource("2_68jwf")]
+position = Vector2(155, 29)
 player_num = 2
 
 [node name="StartTimer" type="Timer" parent="."]

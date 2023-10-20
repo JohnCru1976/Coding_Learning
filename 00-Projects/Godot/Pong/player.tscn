@@ -15,19 +15,19 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6mi40"]
-size = Vector2(66, 27)
+size = Vector2(66, 80)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hh1cq"]
-size = Vector2(66, 50)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hovhh"]
-size = Vector2(66, 125)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd24p"]
 size = Vector2(66, 48)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hovhh"]
+size = Vector2(66, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd24p"]
+size = Vector2(66, 46)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_faewc"]
-size = Vector2(66, 26)
+size = Vector2(66, 72)
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_k1wqs")
@@ -38,23 +38,25 @@ sprite_frames = SubResource("SpriteFrames_g40kh")
 animation = &"Player"
 
 [node name="Shape_Up" type="CollisionShape2D" parent="."]
-position = Vector2(33, 14.5)
+position = Vector2(33, 41)
 shape = SubResource("RectangleShape2D_6mi40")
 
 [node name="Shape_Up_Mid" type="CollisionShape2D" parent="."]
-position = Vector2(33, 52)
+position = Vector2(33, 72)
 shape = SubResource("RectangleShape2D_hh1cq")
+disabled = true
 
 [node name="Shape_Middle" type="CollisionShape2D" parent="."]
-position = Vector2(33, 138.5)
+position = Vector2(33, 141)
 shape = SubResource("RectangleShape2D_hovhh")
 
 [node name="Shape_Down_Mid" type="CollisionShape2D" parent="."]
-position = Vector2(33, 224)
+position = Vector2(33, 206)
 shape = SubResource("RectangleShape2D_qd24p")
+disabled = true
 
 [node name="Shape_Down" type="CollisionShape2D" parent="."]
-position = Vector2(33, 260)
+position = Vector2(33, 238)
 shape = SubResource("RectangleShape2D_faewc")
 
 [node name="Timer" type="Timer" parent="."]

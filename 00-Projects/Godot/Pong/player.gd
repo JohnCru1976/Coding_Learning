@@ -42,7 +42,6 @@ func _on_area_shape_entered(area_rid, area, area_shape_index, local_shape_index)
 	print("AREA_PLAYER")
 	# Avoid double area touched
 	if active_shape >= 0:
-		print("Doble area")
 		return
 	# Actual area active
 	active_shape = local_shape_index
