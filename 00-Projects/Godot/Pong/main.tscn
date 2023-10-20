@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjjifkqktleje"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_blwss"]
+[ext_resource type="PackedScene" uid="uid://q8c2hum50ww" path="res://player.tscn" id="2_68jwf"]
+[ext_resource type="PackedScene" uid="uid://cy1n0dpimevb7" path="res://ball.tscn" id="2_lqdjc"]
+[ext_resource type="Script" path="res://middleline.gd" id="4_rpt18"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_blwss")
+ball_scene = ExtResource("2_lqdjc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Player1" parent="." instance=ExtResource("2_68jwf")]
+player_num = 1
+
+[node name="Player2" parent="." instance=ExtResource("2_68jwf")]
+player_num = 2
+
+[node name="StartTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MiddleLine" type="Line2D" parent="."]
+width = 1.0
+script = ExtResource("4_rpt18")
+
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]

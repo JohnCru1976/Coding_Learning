@@ -1,0 +1,65 @@
+[gd_scene load_steps=9 format=3 uid="uid://q8c2hum50ww"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_k1wqs"]
+[ext_resource type="Texture2D" uid="uid://rttds7ktkmis" path="res://art/player.png" id="2_msllo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g40kh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_msllo")
+}],
+"loop": true,
+"name": &"Player",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mi40"]
+size = Vector2(66, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hh1cq"]
+size = Vector2(66, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hovhh"]
+size = Vector2(66, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qd24p"]
+size = Vector2(66, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_faewc"]
+size = Vector2(66, 26)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_k1wqs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(33, 137)
+sprite_frames = SubResource("SpriteFrames_g40kh")
+animation = &"Player"
+
+[node name="Shape_Up" type="CollisionShape2D" parent="."]
+position = Vector2(33, 14.5)
+shape = SubResource("RectangleShape2D_6mi40")
+
+[node name="Shape_Up_Mid" type="CollisionShape2D" parent="."]
+position = Vector2(33, 52)
+shape = SubResource("RectangleShape2D_hh1cq")
+
+[node name="Shape_Middle" type="CollisionShape2D" parent="."]
+position = Vector2(33, 138.5)
+shape = SubResource("RectangleShape2D_hovhh")
+
+[node name="Shape_Down_Mid" type="CollisionShape2D" parent="."]
+position = Vector2(33, 224)
+shape = SubResource("RectangleShape2D_qd24p")
+
+[node name="Shape_Down" type="CollisionShape2D" parent="."]
+position = Vector2(33, 260)
+shape = SubResource("RectangleShape2D_faewc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
