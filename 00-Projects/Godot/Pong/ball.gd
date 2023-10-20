@@ -1,7 +1,7 @@
 extends Area2D
 
 var direction		# Is a normalized 2D vector
-var speed = 400		# Initial speed
+var speed = 550		# Initial speed
 var offset = 12
 var ball_scale = 0.25
 # Screen parameters
@@ -24,7 +24,15 @@ func _process(delta):
 		position.y = 3
 	if position.y >= screen_height - 17:
 		position.y = screen_height - 20
+	# Screen lef-rigth limits
+	if position.x <= 0: # Left
+		get_parent().sum_point(2)
+		self.queue_free()
+	if position.x >= screen_width: # Right
+		get_parent().sum_point(1)
+		self.queue_free()
 
+# The ball collisions with stick
 func stick_collision(num_player, zone_touch, stick_direction):
 	print("Soy la bola")
 	print("\tHe tocado al jugador " + str(num_player) + " en la zona " +
