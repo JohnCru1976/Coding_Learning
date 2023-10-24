@@ -4,6 +4,8 @@
 [ext_resource type="Script" path="res://player.gd" id="1_wlqhr"]
 [ext_resource type="Script" path="res://player_sprite.gd" id="2_g0gg1"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tmugx"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_l5ea1"]
 animations = [{
 "frames": [{
@@ -15,14 +17,15 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_12jra"]
-radius = 11.1947
-height = 26.6598
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aukbv"]
+size = Vector2(80, 11)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed500"]
-size = Vector2(43, 22)
-
-[node name="Player" type="Area2D"]
+[node name="Player" type="RigidBody2D"]
+collision_mask = 6
+mass = 0.1
+inertia = 1.0
+physics_material_override = SubResource("PhysicsMaterial_tmugx")
+gravity_scale = 0.0
 script = ExtResource("1_wlqhr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -34,20 +37,8 @@ script = ExtResource("2_g0gg1")
 wait_time = 2.0
 one_shot = true
 
-[node name="LeftCollision" type="CollisionShape2D" parent="."]
-position = Vector2(-26, 6.51926e-09)
-rotation = 1.57683
-scale = Vector2(0.982589, 1.57583)
-shape = SubResource("CapsuleShape2D_12jra")
-
-[node name="CenterCollision" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_ed500")
-
-[node name="RightCollision" type="CollisionShape2D" parent="."]
-position = Vector2(26, 5.58793e-09)
-rotation = 1.57683
-scale = Vector2(0.982589, 1.57583)
-shape = SubResource("CapsuleShape2D_12jra")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_aukbv")
 
 [connection signal="timeout" from="AnimatedSprite2D/Timer" to="AnimatedSprite2D" method="_on_timer_timeout"]

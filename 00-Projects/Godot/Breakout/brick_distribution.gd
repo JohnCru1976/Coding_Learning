@@ -52,7 +52,6 @@ func new_brick(pos_x, pos_y, color):
 	if position.x >= 0 and position.x <= 6 and position.y >=0 and position.y <= 9:
 		brick.position.x = left_gap + pos_x * width
 		brick.position.y = top_gap + pos_y * height
-		print(brick.position)
 		# Da el color si se ha dado el índice correcto
 		if color >= 0 and color <= num_colors - 1:
 			brick_sprite.play(color_animation[color])

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://jst7qlynk2aq"]
+[gd_scene load_steps=12 format=3 uid="uid://jst7qlynk2aq"]
 
 [ext_resource type="Script" path="res://brick.gd" id="1_5ftdy"]
 [ext_resource type="Texture2D" uid="uid://bi80r73btpqdl" path="res://art/blue_tile.svg" id="1_rxo11"]
@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://dsgc7ksm5n35y" path="res://art/red_tile.svg" id="5_mbw5r"]
 [ext_resource type="Texture2D" uid="uid://b34y0momicnv1" path="res://art/yellow_tile.svg" id="6_bxekf"]
 [ext_resource type="Script" path="res://brick_sprite.gd" id="7_35e27"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gih3u"]
+friction = 0.0
+bounce = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x1ui6"]
 animations = [{
@@ -63,7 +67,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i5xji"]
 size = Vector2(64, 31)
 
-[node name="Brick" type="Area2D"]
+[node name="Brick" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_gih3u")
 script = ExtResource("1_5ftdy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -78,6 +83,3 @@ shape = SubResource("RectangleShape2D_i5xji")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
-
-[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

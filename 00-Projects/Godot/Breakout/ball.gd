@@ -1,7 +1,7 @@
-extends Area2D
+extends CharacterBody2D
 
 var direction		# Is a normalized 2D vector
-var speed = 300		# Initial speed
+var speed = 450		# Initial speed
 var offset = 5
 # Screen parameters
 var screen_width = 480
@@ -10,19 +10,27 @@ var screen_height = 720
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	start_ball()
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 func _physics_process(delta):
 	# Move the object on the actual direction
-	position = position + direction.normalized() * speed * delta
-	# Screen top-bottom limits
-	if position.y <= 0 + offset or position.y >= screen_height - offset: ## TEST ##
+	var collision = move_and_collide(direction.normalized() * speed * delta)
+	if collision:
+		var type_collision = collision.get_collider().get_class()
+		# Player collision
+		if type_collision == "RigidBody2D":
+			direction = direction.bounce(collision.get_normal())
+		# Brick collision
+		if type_collision == "StaticBody2D":
+			direction = direction.bounce(collision.get_normal())
+	if position.y <= 0 + offset:
+		direction.y = - direction.y
+	if position.y >= screen_height + 50:
 		direction.y = - direction.y
 	# Screen lef-rigth limits
-	if position.x <= 0 + offset or position.x >= screen_width - offset: # Left
+	if position.x <= 0 + offset or position.x >= screen_width - offset:
 		direction.x = - direction.x
 
 # The ball collisions with stick
@@ -99,10 +107,9 @@ func stick_collision(num_player, zone_touch, stick_direction):
 			
 func start_ball():
 	# Inicializa la posición
-	position = Vector2(screen_width / 2 - offset, screen_height / 2 + 35)
+	position = Vector2(screen_width / 2, screen_height / 2 + 35)
 	# Inicializa la dirección - Sale hacia abajo con un angulo aleatorio
 	direction = Vector2( random_number(-0.5, 0.5), 1)
-	print(direction)
 	
 func random_number(num_min, num_max):
 	# Generate a random number between min_value (inclusive) and max_value (exclusive)
