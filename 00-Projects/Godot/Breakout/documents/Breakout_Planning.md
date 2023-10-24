@@ -35,4 +35,5 @@ This project is a breakout type game. It consist in 10 simple levels where the p
 	- Ball asset
 	- Backgrounds
 - Create componentes
-## Game components
+## Game main components
+![Components diagram](./components.svg)

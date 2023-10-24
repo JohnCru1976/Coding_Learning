@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="16.933334mm"
+   height="8.4666672mm"
+   viewBox="0 0 16.933334 8.4666671"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="cyan_tile.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="5.0495043"
+     inkscape:cx="-7.7235304"
+     inkscape:cy="13.565688"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <linearGradient
+       id="linearGradient580"
+       inkscape:collect="always">
+      <stop
+         style="stop-color:#007d89;stop-opacity:1;"
+         offset="0.05504588"
+         id="stop580" />
+      <stop
+         style="stop-color:#30e5e8;stop-opacity:1;"
+         offset="0.17584099"
+         id="stop582" />
+      <stop
+         style="stop-color:#29e1de;stop-opacity:1;"
+         offset="0.36964828"
+         id="stop585" />
+      <stop
+         style="stop-color:#34e6e3;stop-opacity:1;"
+         offset="0.51701069"
+         id="stop586" />
+      <stop
+         style="stop-color:#47ebe8;stop-opacity:1;"
+         offset="0.64296639"
+         id="stop583" />
+      <stop
+         style="stop-color:#aaf1f0;stop-opacity:1;"
+         offset="0.83371562"
+         id="stop584" />
+      <stop
+         style="stop-color:#007b86;stop-opacity:1;"
+         offset="0.96330273"
+         id="stop581" />
+    </linearGradient>
+    <linearGradient
+       id="swatch22"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#ff0000;stop-opacity:1;"
+         offset="0"
+         id="stop22" />
+    </linearGradient>
+    <filter
+       inkscape:label="Pixellize"
+       inkscape:menu="Pixel Tools"
+       inkscape:menu-tooltip="Reduce or remove antialiasing around shapes"
+       style="color-interpolation-filters:sRGB"
+       id="filter50"
+       x="-0.0054234145"
+       y="-0.010965773"
+       width="1.0108469"
+       height="1.0219315">
+      <feColorMatrix
+         values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1000 -500 "
+         id="feColorMatrix50" />
+    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath563">
+      <path
+         id="path563"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.264583"
+         d="m 2.6057075,2.6911126 v 3.9765015 c 0.00429,0.010568 0.00811,0.021418 0.011369,0.032556 0.010574,0.024019 0.012454,0.051105 0.021704,0.075448 0.00645,0.0186 0.014334,0.036743 0.022221,0.054777 H 10.963337 V 2.6911126 Z" />
+    </clipPath>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient580"
+       id="linearGradient584"
+       x1="6.7058415"
+       y1="2.62554"
+       x2="6.6796427"
+       y2="6.751873"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-2.6057076,-2.6911127)">
+    <rect
+       style="opacity:1;mix-blend-mode:normal;fill:url(#linearGradient584);stroke:none;stroke-width:0;stroke-miterlimit:3.4;paint-order:markers stroke fill"
+       id="rect1"
+       width="8.3574619"
+       height="4.1394324"
+       x="2.6057074"
+       y="2.6911125"
+       clip-path="url(#clipPath563)"
+       transform="matrix(1.9944752,0,0,1.981523,-2.5913113,-2.6413888)" />
+  </g>
+</svg>

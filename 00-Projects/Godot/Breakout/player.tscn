@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp2apoh7k4y3p"]
+
+[ext_resource type="Texture2D" uid="uid://cuvbn16y7rmrw" path="res://art/stick.svg" id="1_l7lje"]
+[ext_resource type="Script" path="res://player.gd" id="1_wlqhr"]
+[ext_resource type="Script" path="res://player_sprite.gd" id="2_g0gg1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l5ea1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l7lje")
+}],
+"loop": true,
+"name": &"Static",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_12jra"]
+radius = 11.1947
+height = 26.6598
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ed500"]
+size = Vector2(43, 22)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_wlqhr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_l5ea1")
+animation = &"Static"
+script = ExtResource("2_g0gg1")
+
+[node name="Timer" type="Timer" parent="AnimatedSprite2D"]
+wait_time = 2.0
+one_shot = true
+
+[node name="LeftCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-26, 6.51926e-09)
+rotation = 1.57683
+scale = Vector2(0.982589, 1.57583)
+shape = SubResource("CapsuleShape2D_12jra")
+
+[node name="CenterCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_ed500")
+
+[node name="RightCollision" type="CollisionShape2D" parent="."]
+position = Vector2(26, 5.58793e-09)
+rotation = 1.57683
+scale = Vector2(0.982589, 1.57583)
+shape = SubResource("CapsuleShape2D_12jra")
+
+[connection signal="timeout" from="AnimatedSprite2D/Timer" to="AnimatedSprite2D" method="_on_timer_timeout"]
