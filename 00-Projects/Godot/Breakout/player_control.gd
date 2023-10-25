@@ -30,6 +30,10 @@ func _physics_process(delta):
 			player_direction = -1
 		else:
 			player_direction = 0
+		if new_position.x < 0:
+			new_position.x = 0
+		if new_position.x > 480:
+			new_position.x = 480
 		player_position.x = new_position.x
 
 func get_player_direction():
