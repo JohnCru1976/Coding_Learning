@@ -7,7 +7,51 @@ var top_gap = 68 + height / 2
 var left_gap = 16 + width / 2
 var num_colors = 6
 
-var level1 = ["1111111", 
+var level1= ["0101010", 
+			  "1010101",
+			  "1111111",
+			  "1100011",
+			  "1100011",
+			  "1100011",
+			  "1001001",
+			  "1001001",
+			  "1001001",
+			  "1111111"]
+
+var level2= ["1100011", 
+			  "0001000",
+			  "0010100",
+			  "0101010",
+			  "1010101",
+			  "1010101",
+			  "0101010",
+			  "0010100",
+			  "0001000",
+			  "1100011"]
+
+var level3= ["1010101", 
+			 "0101010",
+			 "1010101",
+			 "0101010",
+			 "1010101",
+			 "0101010",
+			 "1010101",
+			 "0101010",
+			 "1010101",
+			 "0101010"]
+			
+var level4= ["0000111", 
+			 "0001110",
+			 "0011110",
+			 "1111000",
+			 "1111000",
+			 "1111000",
+			 "1111100",
+			 "0111110",
+			 "0001110",
+			 "0000111"]
+			
+var level5 = ["1111111", 
 			  "1111111",
 			  "1111111",
 			  "1111111",
@@ -20,7 +64,7 @@ var level1 = ["1111111",
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spawn_bricks(level1)
+	spawn_bricks(level5)
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

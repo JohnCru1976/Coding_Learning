@@ -16,11 +16,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aukbv"]
-size = Vector2(79.0043, 14.0013)
+size = Vector2(100, 20.125)
 
 [node name="Player" type="AnimatableBody2D"]
 collision_mask = 6
-collision_priority = 20.0
 script = ExtResource("4_0bb0u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -33,10 +32,9 @@ wait_time = 2.0
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.0055, -1.00618)
+rotation = -0.00231099
 scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_aukbv")
-one_way_collision = true
-one_way_collision_margin = 4.0
+one_way_collision_margin = 2.0
 
 [connection signal="timeout" from="AnimatedSprite2D/Timer" to="AnimatedSprite2D" method="_on_timer_timeout"]
