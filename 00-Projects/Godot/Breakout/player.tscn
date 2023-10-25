@@ -1,10 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dp2apoh7k4y3p"]
+[gd_scene load_steps=6 format=3 uid="uid://dp2apoh7k4y3p"]
 
 [ext_resource type="Texture2D" uid="uid://cuvbn16y7rmrw" path="res://art/stick.svg" id="1_l7lje"]
-[ext_resource type="Script" path="res://player.gd" id="1_wlqhr"]
 [ext_resource type="Script" path="res://player_sprite.gd" id="2_g0gg1"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_tmugx"]
+[ext_resource type="Script" path="res://player_control.gd" id="4_0bb0u"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l5ea1"]
 animations = [{
@@ -18,15 +16,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aukbv"]
-size = Vector2(80, 11)
+size = Vector2(79.0043, 14.0013)
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="AnimatableBody2D"]
 collision_mask = 6
-mass = 0.1
-inertia = 1.0
-physics_material_override = SubResource("PhysicsMaterial_tmugx")
-gravity_scale = 0.0
-script = ExtResource("1_wlqhr")
+collision_priority = 20.0
+script = ExtResource("4_0bb0u")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l5ea1")
@@ -38,7 +33,10 @@ wait_time = 2.0
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -1)
+position = Vector2(-1.0055, -1.00618)
+scale = Vector2(0.999999, 0.999999)
 shape = SubResource("RectangleShape2D_aukbv")
+one_way_collision = true
+one_way_collision_margin = 4.0
 
 [connection signal="timeout" from="AnimatedSprite2D/Timer" to="AnimatedSprite2D" method="_on_timer_timeout"]

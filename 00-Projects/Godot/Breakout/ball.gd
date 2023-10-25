@@ -1,11 +1,12 @@
 extends CharacterBody2D
 
 var direction		# Is a normalized 2D vector
-var speed = 450		# Initial speed
+var speed = 600		# Initial speed
 var offset = 5
 # Screen parameters
 var screen_width = 480
 var screen_height = 720
+var limits_bounce = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,14 +21,22 @@ func _physics_process(delta):
 	if collision:
 		var type_collision = collision.get_collider().get_class()
 		# Player collision
-		if type_collision == "RigidBody2D":
+		if type_collision == "AnimatableBody2D":
+			#TODO - Control the impact with the stick
 			direction = direction.bounce(collision.get_normal())
 		# Brick collision
 		if type_collision == "StaticBody2D":
 			direction = direction.bounce(collision.get_normal())
+			var brick = collision.get_collider()
+			brick.kill_instance()
+			
+	# TODO: Hay que solucionar el glitch de los límites
+	# Screen top limits
 	if position.y <= 0 + offset:
 		direction.y = - direction.y
+	# Screen bottom limits
 	if position.y >= screen_height + 50:
+		## TEST CODING ##
 		direction.y = - direction.y
 	# Screen lef-rigth limits
 	if position.x <= 0 + offset or position.x >= screen_width - offset:
@@ -114,7 +123,6 @@ func start_ball():
 func random_number(num_min, num_max):
 	# Generate a random number between min_value (inclusive) and max_value (exclusive)
 	var random_number = randf() * (num_max - num_min) + num_min
-	print(random_number)
 	return random_number
 
 func accelerate(level):
@@ -138,7 +146,7 @@ func change_direcction_y(direction_y, variation, up_down, down_up, invert):
 			final_direction = - 2.5
 		if invert:
 			return - final_direction
-	
+
 	# The ball is going down
 	if direction_y > 0 and up_down == true:
 		if abs(direction_y) + variation < 2.5:

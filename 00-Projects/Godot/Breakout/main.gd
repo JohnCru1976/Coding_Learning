@@ -15,7 +15,6 @@ func _ready():
 	spawn_stars()
 	# Spawn ball
 	spawn_ball()
-	# TESTS #
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
