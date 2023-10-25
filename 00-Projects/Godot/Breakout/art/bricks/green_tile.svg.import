@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b34y0momicnv1"
-path="res://.godot/imported/yellow_tile.svg-8e5807accbc11ce790db06a669cd6f27.ctex"
+uid="uid://gxefsgsqi44o"
+path="res://.godot/imported/green_tile.svg-c0018177e568054a6a6a6a94e2f34ba3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/yellow_tile.svg"
-dest_files=["res://.godot/imported/yellow_tile.svg-8e5807accbc11ce790db06a669cd6f27.ctex"]
+source_file="res://art/bricks/green_tile.svg"
+dest_files=["res://.godot/imported/green_tile.svg-c0018177e568054a6a6a6a94e2f34ba3.ctex"]
 
 [params]
 

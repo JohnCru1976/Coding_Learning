@@ -1,13 +1,13 @@
 [gd_scene load_steps=12 format=3 uid="uid://jst7qlynk2aq"]
 
-[ext_resource type="Script" path="res://brick.gd" id="1_5ftdy"]
-[ext_resource type="Texture2D" uid="uid://bi80r73btpqdl" path="res://art/blue_tile.svg" id="1_rxo11"]
-[ext_resource type="Texture2D" uid="uid://bah0pr8jl35vp" path="res://art/cyan_tile.svg" id="2_7evqf"]
-[ext_resource type="Texture2D" uid="uid://gxefsgsqi44o" path="res://art/green_tile.svg" id="3_txfg3"]
-[ext_resource type="Texture2D" uid="uid://bvl6bvq6aw2ic" path="res://art/purple_tile.svg" id="4_xs21v"]
-[ext_resource type="Texture2D" uid="uid://dsgc7ksm5n35y" path="res://art/red_tile.svg" id="5_mbw5r"]
-[ext_resource type="Texture2D" uid="uid://b34y0momicnv1" path="res://art/yellow_tile.svg" id="6_bxekf"]
-[ext_resource type="Script" path="res://brick_sprite.gd" id="7_35e27"]
+[ext_resource type="Script" path="res://scripts/brick.gd" id="1_yvy6j"]
+[ext_resource type="Texture2D" uid="uid://bi80r73btpqdl" path="res://art/bricks/blue_tile.svg" id="2_010uo"]
+[ext_resource type="Texture2D" uid="uid://bah0pr8jl35vp" path="res://art/bricks/cyan_tile.svg" id="3_tj7o8"]
+[ext_resource type="Texture2D" uid="uid://gxefsgsqi44o" path="res://art/bricks/green_tile.svg" id="4_gb2a7"]
+[ext_resource type="Texture2D" uid="uid://bvl6bvq6aw2ic" path="res://art/bricks/purple_tile.svg" id="5_81k56"]
+[ext_resource type="Texture2D" uid="uid://dsgc7ksm5n35y" path="res://art/bricks/red_tile.svg" id="6_na3gd"]
+[ext_resource type="Texture2D" uid="uid://b34y0momicnv1" path="res://art/bricks/yellow_tile.svg" id="7_tbvps"]
+[ext_resource type="Script" path="res://scripts/brick_sprite.gd" id="8_x3bxw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gih3u"]
 friction = 0.0
@@ -17,7 +17,7 @@ bounce = 1.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_rxo11")
+"texture": ExtResource("2_010uo")
 }],
 "loop": true,
 "name": &"blue",
@@ -25,7 +25,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_7evqf")
+"texture": ExtResource("3_tj7o8")
 }],
 "loop": true,
 "name": &"cyan",
@@ -33,7 +33,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_txfg3")
+"texture": ExtResource("4_gb2a7")
 }],
 "loop": true,
 "name": &"green",
@@ -41,7 +41,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_xs21v")
+"texture": ExtResource("5_81k56")
 }],
 "loop": true,
 "name": &"purple",
@@ -49,7 +49,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_mbw5r")
+"texture": ExtResource("6_na3gd")
 }],
 "loop": true,
 "name": &"red",
@@ -57,7 +57,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_bxekf")
+"texture": ExtResource("7_tbvps")
 }],
 "loop": true,
 "name": &"yellow",
@@ -69,12 +69,12 @@ size = Vector2(64, 31)
 
 [node name="Brick" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_gih3u")
-script = ExtResource("1_5ftdy")
+script = ExtResource("1_yvy6j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x1ui6")
 animation = &"blue"
-script = ExtResource("7_35e27")
+script = ExtResource("8_x3bxw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)

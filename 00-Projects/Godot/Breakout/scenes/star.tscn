@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dnkxcjje2fwh6"]
+
+[ext_resource type="Texture2D" uid="uid://cv4prm2qpef8s" path="res://art/stars/star_yellow.svg" id="1_x32s5"]
+[ext_resource type="Texture2D" uid="uid://clws8vmeou77b" path="res://art/stars/star_purple.svg" id="2_8y58n"]
+[ext_resource type="Texture2D" uid="uid://dsurfgt0wtv3c" path="res://art/stars/star_white.svg" id="3_bkdco"]
+[ext_resource type="Texture2D" uid="uid://kj17pplaijl" path="res://art/stars/star_cyan.svg" id="4_kiqiq"]
+[ext_resource type="Script" path="res://scripts/star.gd" id="5_221w4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c3exa"]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": ExtResource("1_x32s5")
+}, {
+"duration": 15.0,
+"texture": ExtResource("2_8y58n")
+}, {
+"duration": 15.0,
+"texture": ExtResource("3_bkdco")
+}, {
+"duration": 15.0,
+"texture": ExtResource("4_kiqiq")
+}],
+"loop": true,
+"name": &"change_color",
+"speed": 50.0
+}]
+
+[node name="Star" type="AnimatedSprite2D"]
+visible = false
+z_index = -1
+position = Vector2(47.4648, 37.4648)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_c3exa")
+animation = &"change_color"
+speed_scale = 0.6
+script = ExtResource("5_221w4")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

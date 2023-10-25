@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dp2apoh7k4y3p"]
 
+[ext_resource type="Script" path="res://scripts/player_control.gd" id="1_axeen"]
 [ext_resource type="Texture2D" uid="uid://cuvbn16y7rmrw" path="res://art/stick.svg" id="1_l7lje"]
-[ext_resource type="Script" path="res://player_sprite.gd" id="2_g0gg1"]
-[ext_resource type="Script" path="res://player_control.gd" id="4_0bb0u"]
+[ext_resource type="Script" path="res://scripts/player_sprite.gd" id="3_x5pe0"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l5ea1"]
 animations = [{
@@ -20,12 +20,12 @@ size = Vector2(100, 20.125)
 
 [node name="Player" type="AnimatableBody2D"]
 collision_mask = 6
-script = ExtResource("4_0bb0u")
+script = ExtResource("1_axeen")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l5ea1")
 animation = &"Static"
-script = ExtResource("2_g0gg1")
+script = ExtResource("3_x5pe0")
 
 [node name="Timer" type="Timer" parent="AnimatedSprite2D"]
 wait_time = 2.0

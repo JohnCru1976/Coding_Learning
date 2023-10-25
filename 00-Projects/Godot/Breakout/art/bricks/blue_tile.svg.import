@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kj17pplaijl"
-path="res://.godot/imported/star_cyan.svg-36bcbf0cb07d9c469d992644a10fa4c7.ctex"
+uid="uid://bi80r73btpqdl"
+path="res://.godot/imported/blue_tile.svg-3c960254b46db9cbe494454cfbac778e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/star_cyan.svg"
-dest_files=["res://.godot/imported/star_cyan.svg-36bcbf0cb07d9c469d992644a10fa4c7.ctex"]
+source_file="res://art/bricks/blue_tile.svg"
+dest_files=["res://.godot/imported/blue_tile.svg-3c960254b46db9cbe494454cfbac778e.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var direction		# Is a normalized 2D vector
-var speed = 350		# Initial speed
+var speed = 300		# Initial speed
 var offset = 5
 # Screen parameters
 var screen_width = 480
@@ -19,7 +19,7 @@ func _physics_process(delta):
 		var type_collision = collision.get_collider().get_class()
 		# Player collision
 		if type_collision == "AnimatableBody2D":
-			#TODO - Control the impact with the stick
+			# Control the impact with the stick
 			stick_collision(collision)
 		# Brick collision
 		if type_collision == "StaticBody2D":
@@ -31,17 +31,22 @@ func _physics_process(delta):
 			direction = direction_after
 			brick.kill_instance()
 			
-	# TODO: Hay que solucionar el glitch de los límites
 	# Screen top limits
 	if position.y <= 0 + offset:
+		position.y = 3
 		direction.y = - direction.y
 	# Screen bottom limits
 	if position.y >= screen_height + 50:
 		## TODO: La bola toca la parte inferior ##
 		direction.y = - direction.y
 	# Screen lef-rigth limits
-	if position.x <= 0 + offset or position.x >= screen_width - offset:
+	if position.x <= 0 + offset:
+		position.x = offset + 3
 		direction.x = - direction.x
+	if position.x >= screen_width - offset:
+		position.x = screen_width - offset - 3
+		direction.x = - direction.x
+		
 
 # The ball collisions with stick
 func stick_collision(collision):
@@ -81,8 +86,8 @@ func stick_collision(collision):
 			direction_after.x += 0.2
 			speed += 10
 	# Avoid excessive angle
-	if absf(direction_after.y) <= 0.2:
-		direction_after.y = (direction_after.y / abs(direction_after.y)) * 0.4
+	if absf(direction_after.y) <= 0.3:
+		direction_after.y = (direction_after.y / abs(direction_after.y)) * 0.6
 	# Applying new direction
 	direction = direction_after
 	speed += 5

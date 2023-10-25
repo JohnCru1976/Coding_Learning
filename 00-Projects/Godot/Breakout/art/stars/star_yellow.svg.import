@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdsa7as7pk80y"
-path="res://.godot/imported/level1.svg-2e115494d30ec6c178f73b5f6f6cde27.ctex"
+uid="uid://cv4prm2qpef8s"
+path="res://.godot/imported/star_yellow.svg-0a5ae8fbb539ed9a4434d5783e5a2783.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/level1.svg"
-dest_files=["res://.godot/imported/level1.svg-2e115494d30ec6c178f73b5f6f6cde27.ctex"]
+source_file="res://art/stars/star_yellow.svg"
+dest_files=["res://.godot/imported/star_yellow.svg-0a5ae8fbb539ed9a4434d5783e5a2783.ctex"]
 
 [params]
 
