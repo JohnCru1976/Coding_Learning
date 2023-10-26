@@ -54,7 +54,7 @@ This project is a breakout type game. It consist in 10 simple levels where the p
 - Animations: I've discovered the node Tween
 - I've used Inkscape svg editor to create the assets. 
 ### 2023-10-26
-- Today I've created the HUD and ended the game.
+- Today I've created the **HUD scene** and ended the game.
 - I've created a record saving.
 - **I have to review the physics on stick collision**
 - **I need to practice particle system. For instance, I could apply some kind of explosion when a brick is broken.**
