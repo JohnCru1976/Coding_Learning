@@ -50,7 +50,7 @@ This project is a breakout type game. It consist in 10 simple levels where the p
 	- **BrickDistribution**: a Node2D node with the only pourpose of contain an script that controls the configuration of the bricks on the screen for every level. I've used a kind of matrix that contain 10 strings with 7 binary characters each. The bricks color change every new line. From here I can instantiate the scene **Brik** an change properties like position and color. The Brick scene contain an AnimatedSprite2D that make an animation on collision with the ball.
 - I've been practicing with different collision nodes selecting the ones that fitted my necesities, but here **I need deppen on the topic** ([https://docs.godotengine.org/en/stable/tutorials/physics/index.html](https://docs.godotengine.org/en/stable/tutorials/physics/index.html "Phisics documentation in Godot web")).
 - It's important the next time I **organize the files in different directories** from the start.
-- I haven't design with **scalability in mind** --> error.
+- I haven't code with **scalability in mind** --> error.
 - Animations: I've discovered the node Tween
 - I've used Inkscape svg editor to create the assets. 
 ### 2023-10-26
