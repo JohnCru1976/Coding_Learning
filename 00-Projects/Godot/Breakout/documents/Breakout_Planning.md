@@ -4,7 +4,7 @@
 - Author: Juan Cru
 - Mail: juanbcru@hotmail.com
 - Start Date: 2023-10-21
-- Last update: 2023-10-25
+- Last update: 2023-10-26
 - Platform: Android
 - Resolution: 480x720
 - Engine: Godot with GDScript
@@ -53,3 +53,9 @@ This project is a breakout type game. It consist in 10 simple levels where the p
 - I haven't design with **scalability in mind** --> error.
 - Animations: I've discovered the node Tween
 - I've used Inkscape svg editor to create the assets. 
+### 2023-10-26
+- Today I've created the HUD and ended the game.
+- I've created a record saving.
+- **I have to review the physics on stick collision**
+- **I need to practice particle system. For instance, I could apply some kind of explosion when a brick is broken.**
+### 2023-10-27

@@ -1,11 +1,17 @@
 extends Node2D
 
+signal next_level(num)
+signal emit_success
+
+
 @export var brick_scene: PackedScene
 var width = 64
 var height = 32
 var top_gap = 68 + height / 2
 var left_gap = 16 + width / 2
 var num_colors = 6
+var bricks = 0
+var level_num = 0
 
 var level1= ["0101010", 
 			  "1010101",
@@ -51,6 +57,17 @@ var level4= ["0000111",
 			 "0001110",
 			 "0000111"]
 			
+var level_TEST = ["0000000", 
+			  "0000100",
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000"]
+
 var level5 = ["1111111", 
 			  "1111111",
 			  "1111111",
@@ -62,9 +79,22 @@ var level5 = ["1111111",
 			  "1111111",
 			  "1111111"]
 
+var level_blank = ["0000000", 
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000",
+			  "0000000"]
+
+var levels = [level1, level2, level3, level4, level5, level_blank]
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	spawn_bricks(level5)
+	pass
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -102,4 +132,28 @@ func new_brick(pos_x, pos_y, color):
 		else:
 			brick_sprite.play("blue")
 		add_child(brick)
-	
+		bricks += 1
+		brick.brick_broken.connect(_on_brick_broken)
+		var parent_main = get_parent()
+		var hud_node = parent_main.get_node("HUD")
+		hud_node.start_game.connect(brick._on_start_button)
+
+func _on_brick_broken():
+	bricks -= 1
+	if bricks <= 0:
+		# TODO: Aquí se pasa de nivel
+		level_num += 1
+		if level_num > 4:  ## SUCCESS
+			emit_success.emit()
+			level_num = 0
+		else:
+			next_level.emit(level_num + 1)
+			$Timer.start()
+		
+func _on_timer_timeout():
+		spawn_bricks(levels[level_num])
+		
+func _on_start_button():
+	level_num = 0
+	#next_level.emit(level_num + 1)
+	spawn_bricks(levels[level_num])

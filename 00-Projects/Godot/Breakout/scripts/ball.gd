@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal ball_lost
+
 var direction		# Is a normalized 2D vector
 var speed = 300		# Initial speed
 var offset = 5
@@ -13,6 +15,7 @@ func _ready():
 	start_ball()
 
 func _physics_process(delta):
+	print(direction)
 	# Move the object on the actual direction
 	var collision = move_and_collide(direction.normalized() * speed * delta)
 	if collision:
@@ -33,12 +36,14 @@ func _physics_process(delta):
 			
 	# Screen top limits
 	if position.y <= 0 + offset:
-		position.y = 3
+		position.y = 10
 		direction.y = - direction.y
 	# Screen bottom limits
 	if position.y >= screen_height + 50:
 		## TODO: La bola toca la parte inferior ##
-		direction.y = - direction.y
+		#direction.y = - direction.y
+		ball_lost.emit()
+		queue_free()
 	# Screen lef-rigth limits
 	if position.x <= 0 + offset:
 		position.x = offset + 3
@@ -47,7 +52,7 @@ func _physics_process(delta):
 		position.x = screen_width - offset - 3
 		direction.x = - direction.x
 		
-
+	
 # The ball collisions with stick
 func stick_collision(collision):
 	var stick = collision.get_collider()	
@@ -88,6 +93,7 @@ func stick_collision(collision):
 	# Avoid excessive angle
 	if absf(direction_after.y) <= 0.3:
 		direction_after.y = (direction_after.y / abs(direction_after.y)) * 0.6
+		direction_after.x = (direction_after.x / abs(direction_after.x)) * 0.2
 	# Applying new direction
 	direction = direction_after
 	speed += 5
@@ -102,3 +108,6 @@ func random_number(num_min, num_max):
 	# Generate a random number between min_value (inclusive) and max_value (exclusive)
 	var random_number = randf() * (num_max - num_min) + num_min
 	return random_number
+	
+
+

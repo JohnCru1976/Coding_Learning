@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://vao67o42mrdk"]
+[gd_scene load_steps=9 format=3 uid="uid://vao67o42mrdk"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_n6anj"]
 [ext_resource type="PackedScene" uid="uid://dnkxcjje2fwh6" path="res://scenes/star.tscn" id="2_yqna7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bdsa7as7pk80y" path="res://art/backgrounds/level1.svg" id="5_a5gsm"]
 [ext_resource type="PackedScene" uid="uid://dp2apoh7k4y3p" path="res://scenes/player.tscn" id="6_e3kbp"]
 [ext_resource type="Script" path="res://scripts/brick_distribution.gd" id="7_sk5k1"]
+[ext_resource type="PackedScene" uid="uid://h0mla4ufbgir" path="res://scenes/hud.tscn" id="8_bfaxi"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_n6anj")
@@ -25,3 +26,13 @@ position = Vector2(258, 670)
 [node name="BrickDistribution" type="Node2D" parent="."]
 script = ExtResource("7_sk5k1")
 brick_scene = ExtResource("4_ci6lu")
+
+[node name="Timer" type="Timer" parent="BrickDistribution"]
+one_shot = true
+
+[node name="HUD" parent="." instance=ExtResource("8_bfaxi")]
+
+[connection signal="emit_success" from="BrickDistribution" to="." method="_on_brick_distribution_emit_success"]
+[connection signal="emit_success" from="BrickDistribution" to="HUD" method="_on_brick_distribution_emit_success"]
+[connection signal="next_level" from="BrickDistribution" to="." method="_on_brick_distribution_next_level"]
+[connection signal="timeout" from="BrickDistribution/Timer" to="BrickDistribution" method="_on_timer_timeout"]
