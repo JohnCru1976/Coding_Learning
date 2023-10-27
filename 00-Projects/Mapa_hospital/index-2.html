@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #myImage {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+        .circle {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: red;
+            border-radius: 50%;
+            z-index: 1; /* Asegura que el círculo esté por encima de la imagen */
+        }
+    </style>
+</head>
+<body>
+
+<div id="myImage">
+    <img src="images/mapa_hopspital.svg" alt="Tu imagen" style="position:absolute;">
+</div>
+
+<input type="text" id="coordinates" readonly>
+
+<script>
+    var circle = document.createElement("div");
+    circle.className = "circle";
+    document.getElementById("myImage").appendChild(circle);
+
+    // Establece las coordenadas iniciales del círculo aquí
+    var x = 100; // Coordenada X
+    var y = 200; // Coordenada Y
+
+    circle.style.left = x + 'px';
+    circle.style.top = y + 'px';
+
+    circle.addEventListener('mousedown', function(e) {
+        window.addEventListener('mousemove', mousemove);
+        window.addEventListener('mouseup', mouseup);
+    });
+
+    function mousemove(e) {
+        x = e.clientX - circle.offsetWidth / 2;
+        y = e.clientY - circle.offsetHeight / 2;
+
+        circle.style.left = x + 'px';
+        circle.style.top = y + 'px';
+
+        document.getElementById('coordinates').value = 'X: ' + x + ', Y: ' + y;
+    }
+
+    function mouseup() {
+        window.removeEventListener('mousemove', mousemove);
+        window.removeEventListener('mouseup', mouseup);
+    }
+</script>
+
+</body>
+</html>
