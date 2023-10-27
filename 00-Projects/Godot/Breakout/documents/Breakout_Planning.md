@@ -59,3 +59,5 @@ This project is a breakout type game. It consist in 10 simple levels where the p
 - **I have to review the physics on stick collision**
 - **I need to practice particle system. For instance, I could apply some kind of explosion when a brick is broken.**
 ### 2023-10-27
+- I've being working on particle system. I've changed the brick sprite animation by a explosion made with particle system.
+- I've applied the sounds.

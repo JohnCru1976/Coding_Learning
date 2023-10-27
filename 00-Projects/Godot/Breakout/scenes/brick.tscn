@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://jst7qlynk2aq"]
+[gd_scene load_steps=15 format=3 uid="uid://jst7qlynk2aq"]
 
 [ext_resource type="Script" path="res://scripts/brick.gd" id="1_yvy6j"]
 [ext_resource type="Texture2D" uid="uid://bi80r73btpqdl" path="res://art/bricks/blue_tile.svg" id="2_010uo"]
@@ -8,6 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dsgc7ksm5n35y" path="res://art/bricks/red_tile.svg" id="6_na3gd"]
 [ext_resource type="Texture2D" uid="uid://b34y0momicnv1" path="res://art/bricks/yellow_tile.svg" id="7_tbvps"]
 [ext_resource type="Script" path="res://scripts/brick_sprite.gd" id="8_x3bxw"]
+[ext_resource type="PackedScene" uid="uid://dbbqf0ymnnqen" path="res://scenes/explosion.tscn" id="9_3frg1"]
+[ext_resource type="Texture2D" uid="uid://dxynymbic7cn4" path="res://art/particle/smoke_particle.png" id="10_61haf"]
+[ext_resource type="AudioStream" uid="uid://csfarpn3uwvec" path="res://sounds/brick.wav" id="11_0a82a"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gih3u"]
 friction = 0.0
@@ -83,5 +86,13 @@ shape = SubResource("RectangleShape2D_i5xji")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="Explosion" parent="." instance=ExtResource("9_3frg1")]
+position = Vector2(0, 0)
+amount = 3
+texture = ExtResource("10_61haf")
+
+[node name="ExplosionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_0a82a")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

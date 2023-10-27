@@ -39,9 +39,6 @@ func start():
 	# Spawn ball
 	spawn_ball() 
 	
-func stop():
-	pass
-	
 func brick_broken():
 	bricks -= 1
 	print(bricks)
@@ -50,7 +47,6 @@ func brick_broken():
 func _on_brick_distribution_next_level(level_num):
 	$Ball.queue_free()
 	$HUD.set_level(level_num)
-
 
 func _on_brick_distribution_emit_success():
 	$Ball.queue_free()

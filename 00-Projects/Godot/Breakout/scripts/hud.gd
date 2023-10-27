@@ -32,6 +32,7 @@ func stop():
 		if (record == 0 or game_time < record) and first_time == false:
 			record = game_time
 			save_record(record)
+			$Victory.play()
 			$Message.text = "¡¡Nuevo record!!"
 			$Message.visible = true
 	else:
@@ -104,11 +105,13 @@ func _on_game_time_timeout():
 		
 	elif count_down == 0:
 		$Message.visible = true
+		$StartGo.play()
 		$Message.text = str("¡¡Vamos!!!")
 		count_down -= 1
 		bola_lanzada = false
 	elif count_down > 0:
 		$Message.visible = true
+		$StartTick.play()
 		$Message.text = str(count_down)
 		count_down -= 1
 		bola_lanzada = false
@@ -133,5 +136,3 @@ func _on_brick_distribution_emit_success():
 	success = true
 	stop() 
 
-
-	

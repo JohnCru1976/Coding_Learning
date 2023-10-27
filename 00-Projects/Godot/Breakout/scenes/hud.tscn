@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://h0mla4ufbgir"]
+[gd_scene load_steps=7 format=3 uid="uid://h0mla4ufbgir"]
 
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_0urly"]
 [ext_resource type="Texture2D" uid="uid://cv4b781oovecl" path="res://art/ball.svg" id="1_80pv6"]
 [ext_resource type="FontFile" uid="uid://catrrf8p3prki" path="res://fonts/Potato Chips.otf" id="2_wnial"]
+[ext_resource type="AudioStream" uid="uid://b8s2n4inoxr6" path="res://sounds/start_tick.wav" id="4_whkvr"]
+[ext_resource type="AudioStream" uid="uid://ccr3vs4mr0y8b" path="res://sounds/start_go.wav" id="5_aos7x"]
+[ext_resource type="AudioStream" uid="uid://clpplwjjg14u4" path="res://sounds/victory.wav" id="6_5rais"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_0urly")
@@ -69,6 +72,15 @@ theme_override_fonts/font = ExtResource("2_wnial")
 theme_override_font_sizes/font_size = 35
 text = "Nivel 1"
 horizontal_alignment = 1
+
+[node name="StartTick" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_whkvr")
+
+[node name="StartGo" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_aos7x")
+
+[node name="Victory" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_5rais")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="GameTime" to="." method="_on_game_time_timeout"]

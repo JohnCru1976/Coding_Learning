@@ -129,8 +129,10 @@ func new_brick(pos_x, pos_y, color):
 		# Da el color si se ha dado el índice correcto
 		if color >= 0 and color <= num_colors - 1:
 			brick_sprite.play(color_animation[color])
+			brick.brick_color = color
 		else:
 			brick_sprite.play("blue")
+			brick.brick_color = 0
 		add_child(brick)
 		bricks += 1
 		brick.brick_broken.connect(_on_brick_broken)
