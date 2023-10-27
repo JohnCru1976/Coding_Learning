@@ -13,6 +13,7 @@ func _ready():
 	$HUD.start_game.connect($BrickDistribution._on_start_button)
 	# Spawn player position
 	$Player.position = initial_player_position
+	
 	# Background stars
 	spawn_stars()
 	

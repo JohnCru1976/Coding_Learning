@@ -11,14 +11,18 @@ config_version=5
 [application]
 
 config/name="Breakout"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=720
+window/size/mode=2
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
+window/handheld/orientation=1
 
 [input]
 
@@ -46,3 +50,5 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 renderer/rendering_method="mobile"
+renderer/rendering_method.web="mobile"
+textures/vram_compression/import_etc2_astc=true

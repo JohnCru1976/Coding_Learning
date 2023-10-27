@@ -4,7 +4,7 @@
 - Author: Juan Cru
 - Mail: juanbcru@hotmail.com
 - Start Date: 2023-10-21
-- Last update: 2023-10-26
+- Last update: 2023-10-27
 - Platform: Android
 - Resolution: 480x720
 - Engine: Godot with GDScript
@@ -61,3 +61,5 @@ This project is a breakout type game. It consist in 10 simple levels where the p
 ### 2023-10-27
 - I've being working on particle system. I've changed the brick sprite animation by a explosion made with particle system.
 - I've applied the sounds.
+- I've exported the game to Android
+- The learnings aims of this project are acomplished

@@ -103,6 +103,7 @@ func _process(delta):
 func spawn_bricks(level):
 	var num_color = 0
 	var num_line = 0
+	var bricks = 0
 	for line in level:
 		var num_element = 0
 		for element in line:
