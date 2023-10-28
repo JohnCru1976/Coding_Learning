@@ -1,33 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        #container_image {
-            position: relative;
-            width: 100%; 
-            height: auto;
-            border: 1px solid black;
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        #point {
-            position: absolute;
-            width: 3%;
-            height: 3%;
-            background-color: red;
-            border-radius: 50%;
-            top: 0;
-            left: 0;
-            transform: translate(-50%, -50%);
-        }
-    </style>
+    <title>Mapa Hospital</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <div id="container_image">
-        <img src="https://i.ibb.co/myHbyPr/mapa-hopspital.png" alt="mapa-hopspital" border="0" />
+        <img src="images/mapa_hospital.png" alt="mapa-hospital" border="0" />
         <div id="point"></div>
     </div>
     <div>
@@ -36,56 +15,7 @@
         <button id="pointButton">Point</button>
         <p id="testPointContent"></p>
     </div>
-    <script>
-        var test_point = {
-            "id": 0,
-            "x_percentage": 71.386, // Porcentaje de la posición en el eje X
-            "y_percentage": 76.24, // Porcentaje de la posición en el eje Y
-            "text": "Traumatología",
-            "building": "Pabellón B",
-            "floor": 0
-        };
-    
-        const container_image = document.getElementById("container_image");
-        const point = document.getElementById("point");
-        const coordinates = document.getElementById("coordinates");
-        const pointButton = document.getElementById("pointButton");
-        const testPointContent = document.getElementById("testPointContent");
-    
-        // Función para mostrar el punto
-        function showPoint(pointArg) {
-            point.style.left = pointArg.x_percentage + "%";
-            point.style.top = pointArg.y_percentage + "%";
-            coordinates.value = `X: ${pointArg.x_percentage.toFixed(3)}%, Y: ${pointArg.y_percentage.toFixed(3)}%`;
-        }
-    
-        // Event listener para detectar clics en el contenedor de la imagen
-        container_image.addEventListener("click", function (event) {
-            const containerRect = container_image.getBoundingClientRect();
-            const containerWidth = containerRect.width;
-            const containerHeight = containerRect.height;
-    
-            let x = (event.clientX - containerRect.left) / containerWidth * 100;
-            let y = (event.clientY - containerRect.top) / containerHeight * 100;
-    
-            x = Math.max(0, Math.min(100, x));
-            y = Math.max(0, Math.min(100, y));
-    
-            showPoint({ ...test_point, x_percentage: x, y_percentage: y });
-        });
-    
-        // Event listener para el botón "Point"
-        pointButton.addEventListener("click", function () {
-            showPoint(test_point);
-            showTestPointContent(test_point);
-        });
-    
-        // Función para mostrar el contenido de test_point
-        function showTestPointContent(pointArg) {
-            const content = `ID: ${pointArg.id}, X: ${pointArg.x_percentage}%, Y: ${pointArg.y_percentage}%, Text: ${pointArg.text}, Building: ${pointArg.building}, Floor: ${pointArg.floor}`;
-            testPointContent.textContent = content;
-        }
-    </script>
-    
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
