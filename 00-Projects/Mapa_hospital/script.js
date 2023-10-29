@@ -49,6 +49,9 @@ document.addEventListener("DOMContentLoaded", function() {
 // *************************************************************
 const showBackButton = document.getElementById("show_back");
 showBackButton.addEventListener("click", handleClick);
+buscarInput.addEventListener("input", mostrarResultados);
+
+mostrarResultados(); // Mostrar resultados iniciales
 
 // Función que se llamará cuando se haga clic en el botón
 function handleClick() {
@@ -66,6 +69,7 @@ function mostrarResultados() {
         var texto = quitarAcentos(point.text.toLowerCase());
         if (texto.includes(filtro)) {
             var listItem = document.createElement("li");
+            listItem.style.fontSize = "50px";
             listItem.innerHTML = `<strong>${point.text}</strong>, ${point.building}, Planta: ${point.floor}`;
             listItem.setAttribute("data-index", index);
             listItem.addEventListener("click", function() {
@@ -86,12 +90,8 @@ function mostrarResultados() {
 
 function quitarAcentos(texto) {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-  }
+}
 
-
-
-buscarInput.addEventListener("input", mostrarResultados);
-mostrarResultados(); // Mostrar resultados iniciales
 
 // *************************************************************
 // Muestra información sobre el lugar y el punto en el mapa
