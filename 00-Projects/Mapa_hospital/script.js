@@ -92,7 +92,6 @@ function quitarAcentos(texto) {
     return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-
 // *************************************************************
 // Muestra información sobre el lugar y el punto en el mapa
 // *************************************************************
