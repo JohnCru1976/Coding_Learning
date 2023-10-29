@@ -1,0 +1,198 @@
+  /* Estilos globales */
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+
+#test_image, #show_image{
+    display: none;
+}
+#container_image, #container_show_image {
+    position: relative;
+    width: 100%; 
+    height: auto;
+    border: 1px solid black;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+#point, #show_point {
+    position: absolute;
+    width: 3%;
+    height: 3%;
+    background-color: red;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+
+ul {
+    list-style-type:none;
+}
+
+ul li:hover {
+    color: #2600ff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+
+  
+  h1 {
+    background-color: #0078d4;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  #list_places {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+}
+
+.scroll-container{
+    flex: 1;
+    overflow-y: auto;
+    max-height: 60vh;
+}
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px 0px 10px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+  
+  li:hover {
+    background-color: #ddd;
+  }
+
+  /*  SHOW IMAGE */
+
+  #place_data {
+    color: #333;
+    margin-top: 10px;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  #show_image {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 100%;
+  }
+  
+  #show_back {
+    display: block;
+    text-align: center;
+    background-color: #0078d4;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+  
+  #show_back:hover {
+    background-color: #00539f;
+  }
+  
+  #container_show_image {
+    text-align: center;
+  }
+  
+  #container_show_image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  #show_point {
+    text-align: center;
+  }
+
+  /* MAPA PARA TEST */
+
+  #test_image {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 100%;
+  }
+  
+  #back {
+    display: block;
+    text-align: center;
+    background-color: #0078d4;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 20px;
+  }
+  
+  #back:hover {
+    background-color: #00539f;
+  }
+  
+  #container_image {
+    text-align: center;
+  }
+  
+  #container_image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  #coordinates {
+    text-align: center;
+  }
+
+  #place_data, #show_back, #back, #list_places, input {
+    font-size: 50px;
+  }
