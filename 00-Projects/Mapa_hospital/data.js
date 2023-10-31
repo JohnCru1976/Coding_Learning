@@ -63,4 +63,5 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "30-10-2023 Incluído el apartado Proponer Nuevo Punto",
 "31-10-2023 Incluído el apartado Proponer modificación",
 "31-10-2023 Añadido punto Bar/Almuerzo (Gracias por la colaboración)",
+"31-10-2023 Se han especificado como obligatorios algunos campos mínimos para la introducción de puntos",
 ]

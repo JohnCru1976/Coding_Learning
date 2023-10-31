@@ -218,12 +218,23 @@ function new_point_start_button (){
 button_new.addEventListener("click", function () {
     const lugar_new = document.getElementById("lugar");
     const edificio_new = document.getElementById("edificio");
-    const edificio_text_new = document.getElementById("edificio_text");
     const planta_new = document.getElementById("planta");
-    const planta_text_new = document.getElementById("planta_text");
     const observaciones_new = document.getElementById("observaciones");
+    if (lugar_new.value == "") {
+      lugar_new.focus();
+      return
+    }
+    if (edificio_new.value == "") {
+      edificio_new.focus();
+      return
+    }
+    if (planta_new.value == "") {
+      planta_new.focus();
+      return
+    }
+    
     var texto = `Nuevo punto:
-    {"x_percentage": ${new_x}, "y_percentage": ${new_y}, "text": "${lugar_new.value}", "building": "${edificio_new.value + " - " + edificio_text_new.value}", "floor": "${planta_new.value + " - " + planta_text_new.value}", "comment": "${observaciones_new.value}"},`;
+    {"x_percentage": ${new_x}, "y_percentage": ${new_y}, "text": "${lugar_new.value}", "building": "${edificio_new.value}", "floor": "${planta_new.value}", "comment": "${observaciones_new.value}"},`;
     send_mail(texto)
     mostrar_ventana(0)
 }); 
@@ -286,6 +297,18 @@ button_edit.addEventListener("click", function () {
     const edificio_edit = document.getElementById("edit_edificio");
     const planta_edit = document.getElementById("edit_planta");
     const observaciones_edit = document.getElementById("edit_observaciones");
+    if (lugar_edit.value == "") {
+      lugar_edit.focus();
+      return
+    }
+    if (edificio_edit.value == "") {
+      edificio_edit.focus();
+      return
+    }
+    if (planta_edit.value == "") {
+      planta_edit.focus();
+      return
+    }
     var texto = `Punto editado:
     {"x_percentage": ${edit_x}, "y_percentage": ${edit_y}, "text": "${lugar_edit.value}", "building": "${edificio_edit.value}", "floor": "${planta_edit.value}", "comment": "${observaciones_edit.value}"},`;
     send_mail(texto)

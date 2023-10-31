@@ -62,23 +62,12 @@
     
         <!-- Campos de introducción de texto -->
         <div id="text_input">
+                <label for="lugar">* Campo obligatorio</label>
                 <input type="text" id="lugar" name="lugar" placeholder="Lugar (ej. Traumatología)...">
-                <select id="edificio" name="edificio">
-                    <option value="Pabellón A">Pabellón A</option>
-                    <option value="Pabellón B">Pabellón B</option>
-                    <option value="Edificio Maternidad">Edificio Maternidad</option>
-                    <option value="Pabellón Quirúrgico">Pabellón Quirúrgico</option>
-                    <option value="Patio Central">Patio Central</option>
-                </select>
-                <input type="text" id="edificio_text" name="edificio_text" placeholder="Otro edificio...">   
-                <select id="planta" name="planta">
-                    <option value="Bj">Planta Baja</option>
-                    <option value="1">Planta 1</option>
-                    <option value="2">Planta 2</option>
-                    <option value="3">Planta 3</option>
-                    <option value="4">Planta 4</option>
-                </select>
-                <input type="text" id="planta_text" name="planta_text" placeholder="Otra planta...">
+                <label for="edificio">* Campo obligatorio</label>
+                <input type="text" id="edificio" name="edificio_text" placeholder="Edificio (ej. Pabellón A)...">   
+                <label for="planta">* Campo obligatorio</label>
+                <input type="text" id="planta" name="planta_text" placeholder="Planta (ej. Planta Bj)...">
                 <textarea id="observaciones" name="observaciones" rows="4" placeholder="Observaciones..."></textarea>
         </div>
         <p id="new_point_text">Haz click en el mapa para establecer el punto</p>
@@ -99,10 +88,13 @@
     
         <!-- Campos de introducción de texto -->
         <div id="edit_text_input">
-                <input type="text" id="edit_lugar" name="edit_lugar" placeholder="Lugar (ej. Traumatología)...">
-                <input type="text" id="edit_edificio" name="edit_edificio_text" placeholder="Otro edificio...">
-                <input type="text" id="edit_planta" name="edit_planta_text" placeholder="Otra planta...">
-                <textarea id="edit_observaciones" name="edit_observaciones" rows="4" placeholder="Observaciones..."></textarea>
+            <label for="edit_lugar">* Campo obligatorio</label>
+            <input type="text" id="edit_lugar" name="edit_lugar" placeholder="Lugar (ej. Traumatología)...">
+            <label for="edit_edificio">* Campo obligatorio</label>
+            <input type="text" id="edit_edificio" name="edit_edificio_text" placeholder="Edificio (ej. Pabellón A)...">
+            <label for="edit_planta">* Campo obligatorio</label>
+            <input type="text" id="edit_planta" name="edit_planta_text" placeholder="Planta (ej. Planta Bj)...">
+            <textarea id="edit_observaciones" name="edit_observaciones" rows="4" placeholder="Observaciones..."></textarea>
         </div>
         <p id="edit_point_text">Haz click en el mapa para establecer el punto</p>
         <div id="container_edit_image">

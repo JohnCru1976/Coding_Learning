@@ -283,8 +283,10 @@ img {
 
 label {
   display: block;
-  font-size: 50px;
+  font-size: 20%;
   margin-top: 10px;
+  margin-bottom: 2px;
+  color: red;
 }
 
 textarea, 
