@@ -27,6 +27,10 @@ body {
 }
 
 /* Header */
+a{
+  text-decoration: none;
+  color: white;
+}
 #header-container {
   display:block;
   margin-top: 0px;
@@ -41,7 +45,7 @@ body {
 
 .header-option {
   background-color: #0078d4;
-  width: 50%;
+  width: 33.33%;
   color: white;
   text-align: center;
   padding: 30px;
@@ -57,7 +61,7 @@ body {
 
 h1 {
   background-color: #0078d4;
-  width: 90%;
+  width: 98%;
   margin-top: 0px;
   margin-bottom: 0px;
   color: white;
@@ -76,6 +80,8 @@ h1 {
     height: auto;
     border: 1px solid black;
 }
+
+
 
 img {
     width: 100%;

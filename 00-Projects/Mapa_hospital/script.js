@@ -282,7 +282,7 @@ function show_data_edit(data){
   const observaciones_edit = document.getElementById("edit_observaciones");
   lugar_edit.value = data.text
   edificio_edit.value = data.building
-  planta_edit.value = "Planta" + data.floor
+  planta_edit.value = "Planta " + data.floor
   observaciones_edit.value = data.comment
   showPoint_edit(data)
 }
