@@ -206,6 +206,8 @@ var button_new = document.getElementById("send_new_point");
 
 function new_point_start_button (){
   mostrar_ventana(4)
+  const lugar_new = document.getElementById("lugar");
+  lugar_new.focus();
 }
 
 // Añade un EventListener para el evento "click"
@@ -274,15 +276,17 @@ function show_data_edit(data){
   const edificio_edit = document.getElementById("edit_edificio");
   const planta_edit = document.getElementById("edit_planta");
   const observaciones_edit = document.getElementById("edit_observaciones");
-  lugar_edit.value = data.text
-  edificio_edit.value = data.building
-  planta_edit.value = "Planta " + data.floor
-  observaciones_edit.value = data.comment
-  showPoint_edit(data)
+  lugar_edit.value = data.text;
+  edificio_edit.value = data.building;
+  planta_edit.value = "Planta " + data.floor;
+  observaciones_edit.value = data.comment;
+  showPoint_edit(data);
 }
 
 function edit_point_start_button (){
-  mostrar_ventana(5)
+  mostrar_ventana(5);
+  const lugar_edit = document.getElementById("edit_lugar");
+  lugar_edit.focus()
 }
 
 // Añade un EventListener para el evento "click"
