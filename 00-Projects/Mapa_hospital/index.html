@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Mapa Hospital</title>
+    <link rel="icon" type="image/png" href="images/localizacion.png">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <h1 id="header">Mapa Hospital</h1>
+    <div id="header-container">
+        <h1 id="header">Mapa Hospital</h1>
+        <div id="header-options">
+            <div class="header-option" id="new_point_proposal">
+                Proponer nuevo punto
+            </div>
+            <div class="header-option" id="last_updates">
+                Últimas actualizaciones
+            </div>
+        </div>
+    </div>
     <!-- Listado con los lugares del hospital con cuadro de búsqueda -->
     <div id="list_places">
         <input type="text" id="buscar" placeholder="Buscar...">
@@ -18,6 +29,7 @@
     <div id="show_image">
         <a href="#" id="show_back">Volver atras</a>
         <p id="place_data">Datos del lugar</p>
+        <p id="edit_point_proposal">Proponer Modificación</p>
         <div id="container_show_image">
             <img src="images/mapa_hospital.png" alt="mapa-hospital" />
             <div id="show_point"></div>
@@ -35,8 +47,78 @@
             <p id="coordinates"></p>
         </div>
     </div>  
+    <!-- Ultimas actualizaciones -->
+    <div id="updates">
+        <a href="#" id="updates_back">Volver atras</a>
+        <p id="updates_title">Últimas actualizaciones</p>
+        <div class="scroll-container">
+            <ul id="updates-lista"></ul>
+        </div>
+    </div> 
+    <!-- Nuevo punto -->
+    <div id="new_point">
+        <a href="#" id="new_point_back">Volver atrás</a>
+        <p id="new_point_text">Introduce los datos para un nuevo punto</p>
+    
+        <!-- Campos de introducción de texto -->
+        <div id="text_input">
+                <input type="text" id="lugar" name="lugar" placeholder="Lugar (ej. Traumatología)...">
+                <select id="edificio" name="edificio">
+                    <option value="Pabellón A">Pabellón A</option>
+                    <option value="Pabellón B">Pabellón B</option>
+                    <option value="Edificio Maternidad">Edificio Maternidad</option>
+                    <option value="Pabellón Quirúrgico">Pabellón Quirúrgico</option>
+                    <option value="Patio Central">Patio Central</option>
+                </select>
+                <input type="text" id="edificio_text" name="edificio_text" placeholder="Otro edificio...">   
+                <select id="planta" name="planta">
+                    <option value="Bj">Planta Baja</option>
+                    <option value="1">Planta 1</option>
+                    <option value="2">Planta 2</option>
+                    <option value="3">Planta 3</option>
+                    <option value="4">Planta 4</option>
+                </select>
+                <input type="text" id="planta_text" name="planta_text" placeholder="Otra planta...">
+                <textarea id="observaciones" name="observaciones" rows="4" placeholder="Observaciones..."></textarea>
+        </div>
+        <p id="new_point_text">Haz click en el mapa para establecer el punto</p>
+        <div id="container_new_image">
+            <img src="images/mapa_hospital.png" alt="mapa-hospital" />
+            <div id="new_point_map"></div>
+        </div>
+    
+        <div style="text-align: center;">
+            <button id="send_new_point">Enviar Información</button>
+        </div>
+    </div>
+    <!-- Editar un punto -->
+    <!-- Nuevo punto -->
+    <div id="edit_point">
+        <a href="#" id="edit_point_back">Volver atrás</a>
+        <p id="edit_point_text">Modifica los datos que desees</p>
+    
+        <!-- Campos de introducción de texto -->
+        <div id="edit_text_input">
+                <input type="text" id="edit_lugar" name="edit_lugar" placeholder="Lugar (ej. Traumatología)...">
+                <input type="text" id="edit_edificio" name="edit_edificio_text" placeholder="Otro edificio...">
+                <input type="text" id="edit_planta" name="edit_planta_text" placeholder="Otra planta...">
+                <textarea id="edit_observaciones" name="edit_observaciones" rows="4" placeholder="Observaciones..."></textarea>
+        </div>
+        <p id="edit_point_text">Haz click en el mapa para establecer el punto</p>
+        <div id="container_edit_image">
+            <img src="images/mapa_hospital.png" alt="mapa-hospital" />
+            <div id="edit_point_map"></div>
+        </div>
+    
+        <div style="text-align: center;">
+            <button id="send_edit_point">Enviar Información</button>
+        </div>
+    </div>
+
     <!-- scripts -->
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
+
+

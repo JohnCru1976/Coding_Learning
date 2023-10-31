@@ -52,4 +52,15 @@ var test_point = [
 {"x_percentage": 75.865, "y_percentage": 66.849, "text": "Espirometría", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 75.414, "y_percentage": 71.852, "text": "Cirugía Mayor Torácica", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 88.496, "y_percentage": 17.650, "text": "Ginecología Urgencias", "building": "Edificio Maternidad", "floor": "4", "comment": ""},
+{"x_percentage": 44.576, "y_percentage": 62.894, "text": "Analí­ticas", "building": "Patio Central", "floor": "Bj", "comment": "Se trata de un prefabricado temporal que se ubica cerca del acceso al Pabellón A desde el patio interior"},
+{"x_percentage": 35.218, "y_percentage": 40.310, "text": "Unidad del dolor", "building": "Pabellón A", "floor": "2", "comment": "Acceso B3. Si no es correcto, comunicarlo, por favor."},
+{"x_percentage": 48.546, "y_percentage": 0.267, "text": "Bar/ almuerzo", "building": "Fuera del recinto", "floor": "Bj", "comment": ""},
 ];
+
+var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la colaboración)",
+"30-10-2023 Añadido el punto Unidad del Dolor (Gracias por la colaboración)",
+"30-10-2023 Incluído el apartado Últimas Actualizaciones",
+"30-10-2023 Incluído el apartado Proponer Nuevo Punto",
+"31-10-2023 Incluído el apartado Proponer modificación",
+"31-10-2023 Añadido punto Bar/Almuerzo (Gracias por la colaboración)",
+]
