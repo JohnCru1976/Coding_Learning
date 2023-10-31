@@ -10,6 +10,8 @@ body {
 
 #buscar{
   font-size: 50px;
+  padding: 10px;
+  width: 98%;
 }
 
 /*#place_data, #show_back, #back, #list_places, li, input {
@@ -41,6 +43,8 @@ a{
 
 #header-options {
   display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .header-option {
@@ -53,6 +57,8 @@ a{
   padding-left: 40px;
   font-size: 35px; 
   cursor: pointer;
+  flex: 1;
+  align-items: center;
 }
 
 .header-option:hover {
@@ -103,6 +109,7 @@ img {
     transform: translate(-50%, -50%);
     font-size: 22px;
     font-weight: bold;
+    
 }
 
 /* Listados */
@@ -148,7 +155,7 @@ img {
     border-radius: 5px;
     padding: 10px;
     padding-top: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     cursor: pointer;
   }
 
@@ -221,6 +228,7 @@ img {
   
   #show_point {
     text-align: center;
+    color:black;
   }
 
   /* MAPA PARA TEST */
@@ -289,7 +297,7 @@ img {
 
 label {
   display: block;
-  font-size: 20%;
+  font-size: 25%;
   margin-top: 10px;
   margin-bottom: 2px;
   color: red;

@@ -1,13 +1,3 @@
-const container_show_image = document.getElementById("container_show_image");
-
-
-const show_point = document.getElementById("show_point");
-
-const coordinates = document.getElementById("coordinates");
-
-const puntosLista = document.getElementById("puntos-lista");
-const buscarInput = document.getElementById("buscar");
-
 // **********
 // Inicio
 // **********
@@ -86,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Muestra el listado inicial y un cuadro de búsqueda
 // *************************************************************
 const showBackButton = document.getElementById("show_back");
+const buscarInput = document.getElementById("buscar");
 showBackButton.addEventListener("click", handleClick);
 buscarInput.addEventListener("input", mostrarResultados);
 
@@ -97,35 +88,36 @@ function handleClick() {
 }
 
 function mostrarResultados() {
-    puntosLista.innerHTML = "";
-    var filtro = quitarAcentos(buscarInput.value.toLowerCase());
-    
-    // Ordenar el array por la clave "text" de menor a mayor
-    test_point.sort((a, b) => a.text.localeCompare(b.text));
-    
-    test_point.forEach(function(point, index) {
-        var texto = quitarAcentos(point.text.toLowerCase());
-        if (texto.includes(filtro)) {
-            var listItem = document.createElement("li");
-            listItem.style.fontSize = "50px";
-            listItem.innerHTML = `<strong>${point.text}</strong>, ${point.building}, Planta: ${point.floor}`;
-            listItem.setAttribute("data-index", index);
-            listItem.addEventListener("click", function() {
-                var dataIndex = this.getAttribute("data-index");
-                var place_text = document.getElementById("place_data");
-                var data = test_point[dataIndex];
-                mostrar_ventana(1);
-                showPoint_show(data);
-                place_text.innerHTML = `<strong>${data.text}</strong><br>${data.building} - Planta: ${data.floor}`;
-                if (data.comment != ""){
-                    place_text.innerHTML = place_text.innerHTML + "<br>" + `Comentarios: ${data.comment}`
-                }
-                // Pasando datos para actualizar punto
-                show_data_edit(data)
-            });
-            puntosLista.appendChild(listItem);
-        }
-    });
+  const puntosLista = document.getElementById("puntos-lista");
+  puntosLista.innerHTML = "";
+  var filtro = quitarAcentos(buscarInput.value.toLowerCase());
+  
+  // Ordenar el array por la clave "text" de menor a mayor
+  test_point.sort((a, b) => a.text.localeCompare(b.text));
+  
+  test_point.forEach(function(point, index) {
+      var texto = quitarAcentos(point.text.toLowerCase());
+      if (texto.includes(filtro)) {
+          var listItem = document.createElement("li");
+          listItem.style.fontSize = "50px";
+          listItem.innerHTML = `<strong>${point.text}</strong>, ${point.building}, Planta: ${point.floor}`;
+          listItem.setAttribute("data-index", index);
+          listItem.addEventListener("click", function() {
+              var dataIndex = this.getAttribute("data-index");
+              var place_text = document.getElementById("place_data");
+              var data = test_point[dataIndex];
+              mostrar_ventana(1);
+              showPoint_show(data);
+              place_text.innerHTML = `<strong>${data.text}</strong><br>${data.building} - Planta: ${data.floor}`;
+              if (data.comment != ""){
+                  place_text.innerHTML = place_text.innerHTML + "<br>" + `Comentarios: ${data.comment}`
+              }
+              // Pasando datos para actualizar punto
+              show_data_edit(data)
+          });
+          puntosLista.appendChild(listItem);
+      }
+  });
 }
 
 function quitarAcentos(texto) {
@@ -138,10 +130,11 @@ function quitarAcentos(texto) {
 
 // Función para mostrar el punto
 function showPoint_show(place) {
-    show_point.style.left = place.x_percentage + "%";
-    show_point.style.top = place.y_percentage + "%";
-    show_point.innerHTML = "P." + place.floor
-    show_point.style.textAlign = "center";
+  const show_point = document.getElementById("show_point");
+  show_point.style.left = place.x_percentage + "%";
+  show_point.style.top = place.y_percentage + "%";
+  show_point.innerHTML = "P." + place.floor
+  show_point.style.textAlign = "center";
 }
 
 // ****************************************
@@ -153,6 +146,7 @@ const container_image = document.getElementById("container_image");
 // Función para mostrar el punto
 function showPoint(pointArg) {
     const point = document.getElementById("point");
+    const coordinates = document.getElementById("coordinates");
     point.style.left = pointArg.x_percentage + "%";
     point.style.top = pointArg.y_percentage + "%";
     var x_percentage = pointArg.x_percentage.toFixed(3);
