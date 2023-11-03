@@ -55,6 +55,9 @@ var test_point = [
 {"x_percentage": 44.576, "y_percentage": 62.894, "text": "Analí­ticas", "building": "Patio Central", "floor": "Bj", "comment": "Se trata de un prefabricado temporal que se ubica cerca del acceso al Pabellón A desde el patio interior"},
 {"x_percentage": 35.218, "y_percentage": 40.310, "text": "Unidad del dolor", "building": "Pabellón A", "floor": "2", "comment": "Acceso B3. Si no es correcto, comunicarlo, por favor."},
 {"x_percentage": 48.546, "y_percentage": 0.267, "text": "Bar/ almuerzo", "building": "Fuera del recinto", "floor": "Bj", "comment": ""},
+{"x_percentage": 75.804, "y_percentage": 69.746, "text": "Unidad del Íctus", "building": "Pabellón B", "floor": "3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
+{"x_percentage": 75.395, "y_percentage": 70.577, "text": "Cirugí­a de Cólon", "building": "Pabellón B", "floor": "3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
+{"x_percentage": 31.335, "y_percentage": 40.966, "text": "Diálisis", "building": "Pabellón A", "floor": "3", "comment": "Se accede por la entrada que hay junto a urgencias"},
 ];
 
 var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la colaboración)",
@@ -65,4 +68,7 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "31-10-2023 Añadido punto Bar/Almuerzo (Gracias por la colaboración)",
 "31-10-2023 Se han especificado como obligatorios algunos campos mínimos para la introducción de puntos",
 "31-10-2023 Se ha añadido un enlace a un pequeño videotutorial en la parte superior derecha de la página",
+"03-11-2023 Se añade punto: Unidad del Íctus (Gracias por la colaboración)",
+"03-11-2023 Se añade punto: Cirugía de Cólon (Gracias por la colaboración)",
+"03-11-2023 Se añade punto: Diálisis (Gracias por la colaboración)",
 ]

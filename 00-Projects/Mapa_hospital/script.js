@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
       updates.style.display = "none"
       new_point.style.display = "block"
       edit_point.style.display = "none"
+
       new_x = 50
       new_y = 50
       showPoint_new({x_percentage: new_x, y_percentage: new_y});
@@ -207,6 +208,15 @@ var button_new = document.getElementById("send_new_point");
 function new_point_start_button (){
   mostrar_ventana(4)
   const lugar_new = document.getElementById("lugar");
+  const edificio_new = document.getElementById("edificio");
+  const planta_new = document.getElementById("planta");
+  const observaciones_new = document.getElementById("observaciones");
+
+  lugar_new.value = "";
+  edificio_new.value = "";
+  planta_new.value = "";
+  observaciones_new.value = "";
+
   lugar_new.focus();
 }
 
