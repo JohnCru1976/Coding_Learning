@@ -356,7 +356,7 @@ function send_mail(message){
   fetch('send_mail.php', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
+      'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
     },
     body: 'mensaje=' + message
   })
@@ -371,6 +371,3 @@ function send_mail(message){
     alert('Lo siento, hubo un problema al enviar el mensaje');
   });
 }
-
-
-

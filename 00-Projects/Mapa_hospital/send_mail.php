@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $headers .= "Content-type: text/plain; charset=UTF-8" . "\r\n";
 
     // Obtiene el mensaje enviado desde JavaScript
-    $message = utf8_encode($_POST["mensaje"]);
+    $message = $_POST["mensaje"];
 
     // Envía el correo
     $success = mail($to, $subject, $message, $headers);
