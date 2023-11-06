@@ -52,7 +52,7 @@ var test_point = [
 {"x_percentage": 75.865, "y_percentage": 66.849, "text": "Espirometría", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 75.414, "y_percentage": 71.852, "text": "Cirugía Mayor Torácica", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 88.496, "y_percentage": 17.650, "text": "Ginecología Urgencias", "building": "Edificio Maternidad", "floor": "4", "comment": ""},
-{"x_percentage": 44.576, "y_percentage": 62.894, "text": "Analí­ticas", "building": "Patio Central", "floor": "Bj", "comment": "Se trata de un prefabricado temporal que se ubica cerca del acceso al Pabellón A desde el patio interior"},
+{"x_percentage": 46.376, "y_percentage": 60.027, "text": "Analí­ticas", "building": "Patio Central", "floor": "Planta Bj", "comment": "Se trata de un prefabricado temporal que se ubica al lado del acceso al Pabellón A desde el patio interior"},
 {"x_percentage": 35.218, "y_percentage": 40.310, "text": "Unidad del dolor", "building": "Pabellón A", "floor": "2", "comment": "Acceso B3. Si no es correcto, comunicarlo, por favor."},
 {"x_percentage": 48.546, "y_percentage": 0.267, "text": "Bar/ almuerzo", "building": "Fuera del recinto", "floor": "Bj", "comment": ""},
 {"x_percentage": 75.804, "y_percentage": 69.746, "text": "Unidad del Íctus", "building": "Pabellón B", "floor": "3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
