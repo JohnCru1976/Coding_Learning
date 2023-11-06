@@ -31,7 +31,7 @@ var test_point = [
 {"x_percentage": 72.932, "y_percentage": 52.256, "text": "Alergología", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 76.090, "y_percentage": 50.380, "text": "Farmacía", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 80.376, "y_percentage": 58.093, "text": "Cirugía General", "building": "Pabellón B", "floor": "Bj", "comment": ""},
-{"x_percentage": 80.376, "y_percentage": 58.093, "text": "Cirugía de mama", "building": "Pabellón B", "floor": "Bj", "comment": ""},
+{"x_percentage": 80.376, "y_percentage": 58.093, "text": "Cirugía de Mama", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 80.376, "y_percentage": 58.093, "text": "Gastroenterología", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 80.376, "y_percentage": 58.093, "text": "Digestivo", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 80.376, "y_percentage": 58.093, "text": "Hepatología", "building": "Pabellón B", "floor": "Bj", "comment": ""},
