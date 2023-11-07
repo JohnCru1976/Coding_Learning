@@ -55,7 +55,7 @@ var test_point = [
 {"x_percentage": 35.218, "y_percentage": 40.310, "text": "Unidad del dolor", "building": "Pabellón A", "floor": "2", "comment": "Acceso B3. Si no es correcto, comunicarlo, por favor."},
 {"x_percentage": 48.546, "y_percentage": 0.267, "text": "Bar/ almuerzo", "building": "Fuera del recinto", "floor": "Bj", "comment": ""},
 {"x_percentage": 75.348, "y_percentage": 72.675, "text": "Unidad del Íctus", "building": "Pabellón B", "floor": "3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
-{"x_percentage": 75.395, "y_percentage": 70.577, "text": "Cirugí­a de Cólon", "building": "Pabellón B", "floor": "3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
+{"x_percentage": 75.395, "y_percentage": 70.577, "text": "Cirugí­a de Colon", "building": "Pabellón B", "floor": "3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
 {"x_percentage": 31.335, "y_percentage": 40.966, "text": "Diálisis", "building": "Pabellón A", "floor": "3", "comment": "Se accede por la entrada que hay junto a urgencias"},
 {"x_percentage": 73.433, "y_percentage": 73.588, "text": "Cirugía Ortopédica", "building": "Pabellón B", "floor": "Bj", "comment": "Es en el mismo lugar que traumatología"},
 ];
@@ -74,4 +74,5 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "06-11-2023 Se añade punto: Cirugía Ortopédica (en el mismo lugar que trauma)",
 "06-11-2023 Se modifica Ecografías: se indica que el sobre se puede entregar en consulta 32",
 "06-11-2023 Se modifica Nutrición y Dietética: se indica que está en el mismo lugar que trauma",
+"07-11-2023 Se quita tutorial de Youtube y se añade enlace a APK para Android",
 ]
