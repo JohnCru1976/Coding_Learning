@@ -17,20 +17,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </WebView>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="false"
         android:text="Versión: 1.04"
         android:textColor="#FFFFFF"
-        android:textSize="12sp"
-        android:textStyle="normal"
-        app:layout_constraintStart_toStartOf="@+id/webView"
-        app:layout_constraintTop_toTopOf="@+id/webView" />
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
