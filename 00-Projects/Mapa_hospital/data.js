@@ -75,4 +75,5 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "06-11-2023 Se modifica Ecografías: se indica que el sobre se puede entregar en consulta 32",
 "06-11-2023 Se modifica Nutrición y Dietética: se indica que está en el mismo lugar que trauma",
 "07-11-2023 Se quita tutorial de Youtube y se añade enlace a APK para Android",
+"07-11-2023 La actual APK es una actualización: ahora se borra el caché de forma automática y se confirma el envío el datos con un mensaje",
 ]
