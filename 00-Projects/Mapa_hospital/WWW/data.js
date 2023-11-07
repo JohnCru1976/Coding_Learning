@@ -75,5 +75,6 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "06-11-2023 Se modifica Nutrición y Dietética: se indica que está en el mismo lugar que trauma",
 "07-11-2023 Se quita tutorial de Youtube y se añade enlace a APK para Android v.1.00",
 "07-11-2023 La actual APK es una actualización v.1.03: ahora se borra el caché de forma automática y se confirma el envío el datos con un mensaje",
-"07-11-2023 Mapa modificado para ubicar correctamente el edificio de maternidad y puntos asociados"
+"07-11-2023 Mapa modificado para ubicar correctamente el edificio de maternidad y puntos asociados",
+"07-11-2023 Actualización de la APK a la v.1.04: se ha añadido un texto en la parte superior izquierda con la versión de la APK para saber cuando actualizarla",
 ]
