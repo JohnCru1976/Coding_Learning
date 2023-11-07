@@ -43,7 +43,6 @@ var test_point = [
 {"x_percentage": 72.932, "y_percentage": 70.602, "text": "Neurocirugía", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 72.932, "y_percentage": 70.602, "text": "Neurofisiología", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 72.932, "y_percentage": 70.602, "text": "Raquis", "building": "Pabellón B", "floor": "1", "comment": ""},
-{"x_percentage": 72.932, "y_percentage": 70.602, "text": "Neurología", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 72.481, "y_percentage": 71.852, "text": "Nutrición y dietética", "building": "Pabellón B", "floor": "Bj", "comment": "Es en el mismo lugar que traumatología"},
 {"x_percentage": 76.090, "y_percentage": 75.188, "text": "Odontoestomología", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 75.865, "y_percentage": 66.849, "text": "Neumología", "building": "Pabellón B", "floor": "1", "comment": ""},
