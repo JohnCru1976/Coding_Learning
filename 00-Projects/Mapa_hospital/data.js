@@ -16,7 +16,7 @@ var test_point = [
 {"x_percentage": 30.989, "y_percentage": 68.008, "text": "Resonancia", "building": "Pabellón A", "floor": "Bj", "comment": ""},
 {"x_percentage": 30.989, "y_percentage": 68.008, "text": "TAC", "building": "Pabellón A", "floor": "Bj", "comment": ""},
 {"x_percentage": 31.131, "y_percentage": 69.238, "text": "Radioterapia", "building": "Pabellón A", "floor": "Bj", "comment": ""},
-{"x_percentage": 88.308, "y_percentage": 17.410, "text": "Medicina Interna", "building": "Edificio Maternidad", "floor": "1", "comment": ""},
+{"x_percentage": 70.165, "y_percentage": 13.350, "text": "Medicina Interna", "building": "Edificio Maternidad", "floor": "1", "comment": ""},
 {"x_percentage": 75.880, "y_percentage": 74.740, "text": "Judiciales CNP", "building": "Pabellón B", "floor": "2", "comment": ""},
 {"x_percentage": 72.624, "y_percentage": 71.214, "text": "Pruebas Funcionales - PFRM2", "building": "Pabellón B", "floor": "2", "comment": "Es la puerta donde está enfermería, al lado de CNP<br>De aquí nos pueden derivar a la planta 1ª"},
 {"x_percentage": 31.429, "y_percentage": 43.362, "text": "Urgencias", "building": "Pabellón A", "floor": "Bj", "comment": ""},
@@ -50,7 +50,7 @@ var test_point = [
 {"x_percentage": 75.865, "y_percentage": 66.849, "text": "Gasometría", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 75.865, "y_percentage": 66.849, "text": "Espirometría", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 75.414, "y_percentage": 71.852, "text": "Cirugía Mayor Torácica", "building": "Pabellón B", "floor": "1", "comment": ""},
-{"x_percentage": 88.496, "y_percentage": 17.650, "text": "Ginecología Urgencias", "building": "Edificio Maternidad", "floor": "4", "comment": ""},
+{"x_percentage": 69.976, "y_percentage": 12.994, "text": "Ginecología Urgencias", "building": "Edificio Maternidad", "floor": "4", "comment": ""},
 {"x_percentage": 46.376, "y_percentage": 60.027, "text": "Analí­ticas", "building": "Patio Central", "floor": "Bj", "comment": "Se trata de un prefabricado temporal que se ubica al lado del acceso al Pabellón A desde el patio interior"},
 {"x_percentage": 35.218, "y_percentage": 40.310, "text": "Unidad del dolor", "building": "Pabellón A", "floor": "2", "comment": "Acceso B3. Si no es correcto, comunicarlo, por favor."},
 {"x_percentage": 48.546, "y_percentage": 0.267, "text": "Bar/Almuerzo", "building": "Fuera del recinto", "floor": "Bj", "comment": ""},
@@ -76,4 +76,5 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "06-11-2023 Se modifica Nutrición y Dietética: se indica que está en el mismo lugar que trauma",
 "07-11-2023 Se quita tutorial de Youtube y se añade enlace a APK para Android v.1.00",
 "07-11-2023 La actual APK es una actualización v.1.03: ahora se borra el caché de forma automática y se confirma el envío el datos con un mensaje",
+"07-11-2023 Mapa modificado para ubicar correctamente el edificio de maternidad y puntos asociados"
 ]
