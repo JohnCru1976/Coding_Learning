@@ -1,6 +1,12 @@
 // **********
 // Inicio
 // **********
+
+window.onbeforeunload = function() {
+  // Vacía el caché del navegador
+  window.location.reload(true);
+}
+
 // Este código se ejecutará una vez que se haya cargado completamente el DOM
 document.addEventListener("DOMContentLoaded", function() {
     mostrar_ventana(0)  // Cambiar a 2 para acceder a modo ubicar punto ... 0 para mostrar pantalla inicial
