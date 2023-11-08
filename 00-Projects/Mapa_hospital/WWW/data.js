@@ -18,7 +18,7 @@ var test_point = [
 {"x_percentage": 31.131, "y_percentage": 69.238, "text": "Radioterapia", "building": "Pabellón A", "floor": "Bj", "comment": ""},
 {"x_percentage": 70.165, "y_percentage": 13.350, "text": "Medicina Interna", "building": "Edificio Maternidad", "floor": "1", "comment": ""},
 {"x_percentage": 75.880, "y_percentage": 74.740, "text": "Judiciales CNP", "building": "Pabellón B", "floor": "2", "comment": ""},
-{"x_percentage": 72.624, "y_percentage": 71.214, "text": "Pruebas Funcionales - PFRM2", "building": "Pabellón B", "floor": "2", "comment": "Es la puerta donde está enfermería, al lado de CNP<br>De aquí nos pueden derivar a la planta 1ª"},
+{"x_percentage": 75.325, "y_percentage": 74.536, "text": "Pruebas Funcionales - PFRM2", "building": "Pabellón B", "floor": "2", "comment": "Es la puerta donde está enfermería, al lado de CNP. De aquí nos pueden derivar a la planta 1ª"},
 {"x_percentage": 31.429, "y_percentage": 43.362, "text": "Urgencias", "building": "Pabellón A", "floor": "Bj", "comment": ""},
 {"x_percentage": 75.639, "y_percentage": 40.165, "text": "Infecciosos", "building": "Pabellón B", "floor": "1", "comment": "Acceso por el patio interior hacia B5"},
 {"x_percentage": 72.256, "y_percentage": 39.123, "text": "Dermatología", "building": "Pabellón B", "floor": "Bj", "comment": ""},
