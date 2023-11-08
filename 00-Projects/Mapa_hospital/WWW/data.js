@@ -38,7 +38,7 @@ var test_point = [
 {"x_percentage": 72.932, "y_percentage": 62.054, "text": "Nefrología", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 72.932, "y_percentage": 62.054, "text": "Electroencefalograma", "building": "Pabellón B", "floor": "3", "comment": ""},
 {"x_percentage": 72.932, "y_percentage": 64.139, "text": "Otorrino", "building": "Pabellón B", "floor": "Bj", "comment": ""},
-{"x_percentage": 72.932, "y_percentage": 64.139, "text": "Ortopantografía", "building": "Pabellón B", "floor": "Bj", "comment": ""},
+{"x_percentage": 76.471, "y_percentage": 65.923, "text": "Ortopantografía - Radiografía de boca", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 76.316, "y_percentage": 64.347, "text": "Pruebas Otorrino", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 72.932, "y_percentage": 70.602, "text": "Neurocirugía", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 72.932, "y_percentage": 70.602, "text": "Neurofisiología", "building": "Pabellón B", "floor": "1", "comment": ""},
