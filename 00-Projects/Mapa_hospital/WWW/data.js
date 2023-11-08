@@ -77,4 +77,6 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "07-11-2023 La actual APK es una actualización v.1.03: ahora se borra el caché de forma automática y se confirma el envío el datos con un mensaje",
 "07-11-2023 Mapa modificado para ubicar correctamente el edificio de maternidad y puntos asociados",
 "07-11-2023 Actualización de la APK a la v.1.04: se ha añadido un texto en la parte superior izquierda con la versión de la APK para saber cuando actualizarla",
+"08-11-2023 Actualización de la APK a la v.1.05: se ha añadido un mensaje de error cuando no hay conexión y no se carga la página. La app de Android funciona cargando la web online y necesita conexión",
+"08-11-2023 Se modifica el punto Ortopantografía y se ubica correctamente. Se especifica que se trata de 'Radiografía de la boca'",
 ]
