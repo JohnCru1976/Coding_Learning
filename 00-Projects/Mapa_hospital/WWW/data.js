@@ -57,6 +57,7 @@ var test_point = [
 {"x_percentage": 75.395, "y_percentage": 70.577, "text": "Cirugí­a de Colon", "building": "Pabellón B", "floor": "3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
 {"x_percentage": 31.335, "y_percentage": 40.966, "text": "Diálisis", "building": "Pabellón A", "floor": "3", "comment": "Se accede por la entrada que hay junto a urgencias"},
 {"x_percentage": 73.433, "y_percentage": 73.588, "text": "Cirugía Ortopédica", "building": "Pabellón B", "floor": "Bj", "comment": "Es en el mismo lugar que traumatología"},
+{"x_percentage": 84.391, "y_percentage": 56.419, "text": "Electromiografía ", "building": "Pabellón B", "floor": "3", "comment": "Planta 3 por digestivo"},
 ];
 
 var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la colaboración)",
@@ -79,4 +80,5 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "07-11-2023 Actualización de la APK a la v.1.04: se ha añadido un texto en la parte superior izquierda con la versión de la APK para saber cuando actualizarla",
 "08-11-2023 Actualización de la APK a la v.1.05: se ha añadido un mensaje de error cuando no hay conexión y no se carga la página. La app de Android funciona cargando la web online y necesita conexión",
 "08-11-2023 Se modifica el punto Ortopantografía y se ubica correctamente. Se especifica que se trata de 'Radiografía de la boca'",
+"09-11-2023 Se añade punto Electromiografía: planta 3 por digestivo (Gracias por la colaboración)"
 ]
