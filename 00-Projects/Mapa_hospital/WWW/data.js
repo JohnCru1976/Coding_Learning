@@ -1,7 +1,7 @@
 var test_point = [
 {"x_percentage": 71.386, "y_percentage": 76.240, "text": "Traumatología", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 13.294, "y_percentage": 26.834, "text": "Paranestesia", "building": "Pabellón Quirúrgico", "floor": "1", "comment": ""},
-{"x_percentage": 13.294, "y_percentage": 26.834, "text": "Quirófanos", "building": "Pabellón Quirúrgico", "floor": "Bj", "comment": "Puede tratarse de otra planta según la operación"},
+{"x_percentage": 13.294, "y_percentage": 26.834, "text": "Quirófanos", "building": "Pabellón Quirúrgico", "floor": "Bj", "comment": "Normalmente las puertas grandes que hay justo enfrente de la entrada. Puede tratarse de otra planta según la operación"},
 {"x_percentage": 32.114, "y_percentage": 40.017, "text": "Oncología", "building": "Pabellón A", "floor": "1", "comment": ""},
 {"x_percentage": 32.114, "y_percentage": 47.690, "text": "Colonoscopia", "building": "Pabellón A", "floor": "3", "comment": ""},                 
 {"x_percentage": 32.114, "y_percentage": 47.690, "text": "Endoscopia", "building": "Pabellón A", "floor": "3", "comment": ""},
