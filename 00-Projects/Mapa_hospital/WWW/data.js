@@ -56,7 +56,7 @@ var test_point = [
 {"x_percentage": 31.335, "y_percentage": 40.966, "text": "Diálisis", "building": "Pabellón A", "floor": "3", "comment": "Se accede por la entrada que hay junto a urgencias"},
 {"x_percentage": 73.433, "y_percentage": 73.588, "text": "Cirugía Ortopédica", "building": "Pabellón B", "floor": "Bj", "comment": "Es en el mismo lugar que traumatología"},
 {"x_percentage": 80.749, "y_percentage": 59.075, "text": "Electromiografía ", "building": "Pabellón B", "floor": "3", "comment": "Ascensor de la zona de digestivo, en la planta baja. Acceso por Neurofisiología"},
-{"x_percentage": 32.050, "y_percentage": 38.955, "text": "Consulta Básica Urgencias", "building": "Edificio A", "floor": "Bj", "comment": "Mandan aquí a los traumas que llevan lesionados más de una semana"},
+{"x_percentage": 33.965, "y_percentage": 47.803, "text": "Consulta Básica Urgencias", "building": "Edificio A", "floor": "Bj", "comment": "Mandan aquí a los traumas que llevan lesionados más de una semana. Se accede desde rayos-x de urgencias, como si se fuera hacia la calle"},
 {"x_percentage": 80.561, "y_percentage": 58.912, "text": "Neurofisiología", "building": "Pabellón B", "floor": "3", "comment": "Aquí está electromiografía y Unidad del sueño"},
 {"x_percentage": 80.135, "y_percentage": 59.461, "text": "Unidad del sueño", "building": "Edificio B", "floor": "3", "comment": "Está en la sala Neurofisiología"},
 {"x_percentage": 34.523, "y_percentage": 63.250, "text": "Mamografías", "building": "Pabellón A", "floor": "1", "comment": "Enfrente de Rayos-X, dónde se hacen las ecografías. En el caso de las eco el sobre se puede entregar en la consulta 32. Confirmad si para las mamografías también"},
