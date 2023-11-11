@@ -329,6 +329,14 @@ button_edit.addEventListener("click", function () {
     mostrar_ventana(0)
 }); 
 
+//Añadir un click event listener en enlace_APK para cuando se descargue el enlace
+function descarga_android(){
+  var enlace_APK = document.getElementById("enlace-APK");
+  enlace_APK.addEventListener("click", function () {
+    alert("Sólo se puede descagar la APK a través de la web. Abre el explorador y entra en https://mapahospital.ovh")
+  })
+}
+
 
 // Función para mostrar el punto
 function showPoint_edit(pointArg) {

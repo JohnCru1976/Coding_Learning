@@ -89,5 +89,5 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "10-11-2023 Se añade punto Unidad del sueño: está en la zona de Neurofisiología",
 "10-11-2023 Actualización de la APK a la v.1.07: ahora sale un mensaje cuando se pulsa el botón atrás de Android y se puede elegir si salir de la aplicación. Se ha modifica también el icono de la aplicación",
 "11-11-2023 Se añade punto Mamografía: está en el mismo lugar que las ecografías, enfrente de rayos-x",
-"11-11-2023 Actualización de la APK a la v.1.08: cuando se pulsa el botón atrás de Android vuelve a la ventana de inicio y no sale de la APP"
+"11-11-2023 Actualización de la APK a la v.1.08: cuando se pulsa el botón atrás de Android vuelve a la ventana de inicio y no sale de la APP. Se muestra un mensaje informando que no se puede descagar la APK desde la propia APP de Android"
 ]
