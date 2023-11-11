@@ -8,7 +8,7 @@ var test_point = [
 {"x_percentage": 32.114, "y_percentage": 47.690, "text": "Gastroscopia", "building": "Pabellón A", "floor": "3", "comment": ""},
 {"x_percentage": 35.157, "y_percentage": 62.939, "text": "RayosX-Radiografías", "building": "Pabellón A", "floor": "1", "comment": ""},
 {"x_percentage": 31.844, "y_percentage": 67.481, "text": "Ecografía", "building": "Pabellón A", "floor": "1", "comment": "El sobre se puede entregar en la consulta 32"},
-{"x_percentage": 34.411, "y_percentage": 70.907, "text": "Cardiología", "building": "Pabellón A", "floor": "2", "comment": "Se puede acceder por la planta baja,<br>en unas escaleras al fondo, pasado el TAC<br>Aquí tratan el tema de los marcapasos"},
+{"x_percentage": 34.411, "y_percentage": 70.907, "text": "Cardiología", "building": "Pabellón A", "floor": "2", "comment": "Se puede acceder también por la planta baja,<br>en unas escaleras al fondo, pasado el TAC<br>Aquí tratan el tema de los marcapasos"},
 {"x_percentage": 31.987, "y_percentage": 66.207, "text": "Hematología", "building": "Pabellón A", "floor": "1", "comment": ""},
 {"x_percentage": 31.987, "y_percentage": 66.207, "text": "Neurología - 2ª Opción", "building": "Pabellón A", "floor": "1", "comment": "Se viene aquí cuando se deriva del Pabellón B"},
 {"x_percentage": 72.766, "y_percentage": 68.447, "text": "Neurología - 1ª Opción", "building": "Pabellón B", "floor": "1", "comment": "De aquí nos pueden derivar al Pabellón A - Primera planta"},
@@ -60,6 +60,7 @@ var test_point = [
 {"x_percentage": 80.561, "y_percentage": 58.912, "text": "Neurofisiología", "building": "Pabellón B", "floor": "3", "comment": "Aquí está electromiografía y Unidad del sueño"},
 {"x_percentage": 80.135, "y_percentage": 59.461, "text": "Unidad del sueño", "building": "Edificio B", "floor": "3", "comment": "Está en la sala Neurofisiología"},
 {"x_percentage": 34.523, "y_percentage": 63.250, "text": "Mamografías", "building": "Pabellón A", "floor": "1", "comment": "Enfrente de Rayos-X, dónde se hacen las ecografías. En el caso de las eco el sobre se puede entregar en la consulta 32. Confirmad si para las mamografías también"},
+{"x_percentage": 34.411, "y_percentage": 70.907, "text": "Marcapasos-Cardiología", "building": "Pabellón A", "floor": "2", "comment": "Se puede acceder también por la planta baja, en unas escaleras al fondo, pasado el TAC"}
 ];
 
 var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la colaboración)",
