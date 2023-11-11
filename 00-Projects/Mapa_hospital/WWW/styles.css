@@ -364,3 +364,7 @@ button#send_new_point, button#send_edit_point {
   margin: 0 auto;
   margin-top: 20px;
 }
+
+#updates_title{
+  font-weight: bold;
+}
