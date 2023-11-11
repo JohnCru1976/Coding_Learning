@@ -9,7 +9,7 @@ window.onbeforeunload = function() {
 
 // Este código se ejecutará una vez que se haya cargado completamente el DOM
 document.addEventListener("DOMContentLoaded", function() {
-    mostrar_ventana(0)  // Cambiar a 2 para acceder a modo ubicar punto ... 0 para mostrar pantalla inicial
+    mostrar_ventana(2)  // Cambiar a 2 para acceder a modo ubicar punto ... 0 para mostrar pantalla inicial
   });
 
   function mostrar_ventana(num) {
