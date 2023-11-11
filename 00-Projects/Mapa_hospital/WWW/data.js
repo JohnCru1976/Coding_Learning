@@ -7,7 +7,6 @@ var test_point = [
 {"x_percentage": 32.114, "y_percentage": 47.690, "text": "Endoscopia", "building": "Pabellón A", "floor": "3", "comment": ""},
 {"x_percentage": 32.114, "y_percentage": 47.690, "text": "Gastroscopia", "building": "Pabellón A", "floor": "3", "comment": ""},
 {"x_percentage": 35.157, "y_percentage": 62.939, "text": "RayosX-Radiografías", "building": "Pabellón A", "floor": "1", "comment": ""},
-{"x_percentage": 31.702, "y_percentage": 65.109, "text": "Mamografía", "building": "Pabellón A", "floor": "1", "comment": ""},
 {"x_percentage": 31.844, "y_percentage": 67.481, "text": "Ecografía", "building": "Pabellón A", "floor": "1", "comment": "El sobre se puede entregar en la consulta 32"},
 {"x_percentage": 34.411, "y_percentage": 70.907, "text": "Cardiología", "building": "Pabellón A", "floor": "2", "comment": "Se puede acceder por la planta baja,<br>en unas escaleras al fondo, pasado el TAC<br>Aquí tratan el tema de los marcapasos"},
 {"x_percentage": 31.987, "y_percentage": 66.207, "text": "Hematología", "building": "Pabellón A", "floor": "1", "comment": ""},
@@ -41,7 +40,6 @@ var test_point = [
 {"x_percentage": 76.471, "y_percentage": 65.923, "text": "Ortopantografía - Radiografía de boca", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 76.316, "y_percentage": 64.347, "text": "Pruebas Otorrino", "building": "Pabellón B", "floor": "Bj", "comment": ""},
 {"x_percentage": 72.932, "y_percentage": 70.602, "text": "Neurocirugía", "building": "Pabellón B", "floor": "1", "comment": ""},
-{"x_percentage": 72.932, "y_percentage": 70.602, "text": "Neurofisiología", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 72.932, "y_percentage": 70.602, "text": "Raquis", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 72.481, "y_percentage": 71.852, "text": "Nutrición y dietética", "building": "Pabellón B", "floor": "Bj", "comment": "Es en el mismo lugar que traumatología"},
 {"x_percentage": 76.090, "y_percentage": 75.188, "text": "Odontoestomología", "building": "Pabellón B", "floor": "Bj", "comment": ""},
@@ -57,7 +55,11 @@ var test_point = [
 {"x_percentage": 75.395, "y_percentage": 70.577, "text": "Cirugí­a de Colon", "building": "Pabellón B", "floor": "3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
 {"x_percentage": 31.335, "y_percentage": 40.966, "text": "Diálisis", "building": "Pabellón A", "floor": "3", "comment": "Se accede por la entrada que hay junto a urgencias"},
 {"x_percentage": 73.433, "y_percentage": 73.588, "text": "Cirugía Ortopédica", "building": "Pabellón B", "floor": "Bj", "comment": "Es en el mismo lugar que traumatología"},
-{"x_percentage": 80.749, "y_percentage": 59.075, "text": "Electromiografía ", "building": "Pabellón B", "floor": "3", "comment": "Se puede acceder por el ascensor de la zona de digestivo, en la planta baja"},
+{"x_percentage": 80.749, "y_percentage": 59.075, "text": "Electromiografía ", "building": "Pabellón B", "floor": "3", "comment": "Ascensor de la zona de digestivo, en la planta baja. Acceso por Neurofisiología"},
+{"x_percentage": 32.050, "y_percentage": 38.955, "text": "Consulta Básica Urgencias", "building": "Edificio A", "floor": "Bj", "comment": "Mandan aquí a los traumas que llevan lesionados más de una semana"},
+{"x_percentage": 80.561, "y_percentage": 58.912, "text": "Neurofisiología", "building": "Pabellón B", "floor": "3", "comment": "Aquí está electromiografía y Unidad del sueño"},
+{"x_percentage": 80.135, "y_percentage": 59.461, "text": "Unidad del sueño", "building": "Edificio B", "floor": "3", "comment": "Está en la sala Neurofisiología"},
+{"x_percentage": 34.523, "y_percentage": 63.250, "text": "Mamografías", "building": "Pabellón A", "floor": "1", "comment": "Enfrente de Rayos-X, dónde se hacen las ecografías. En el caso de las eco el sobre se puede entregar en la consulta 32. Confirmad si para las mamografías también"},
 ];
 
 var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la colaboración)",
@@ -82,4 +84,9 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "08-11-2023 Se modifica el punto Ortopantografía y se ubica correctamente. Se especifica que se trata de 'Radiografía de la boca'",
 "09-11-2023 Se añade punto Electromiografía: planta 3 por digestivo (Gracias por la colaboración)",
 "09-11-2023 Actualización de la APK a la v.1.06: ahora se puede ampliar la imagen con los dedos sobre la pantalla",
+"10-11-2023 Se añade punto Consulta Básica de Urgencias: mandan aquí a los de trauma que llevan más de una semana lesionados",
+"10-11-2023 Se modifica punto Neurofisiología: la unidad se ha trasladado a la planta 3ª",
+"11-11-2023 Se añade punto Unidad del sueño: está en la zona de Neurofisiología",
+"11-11-2023 Actualización de la APK a la v.1.07: ahora sale un mensaje cuando se pulsa el botón atrás de Android y se puede elegir si salir de la aplicación. Se ha modifica también el icono de la aplicación",
+"11-11-2023 Se añade punto Mamografía: está en el mismo lugar que las ecografías, enfrente de rayos-x"
 ]
