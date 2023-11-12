@@ -43,7 +43,7 @@ var test_point = [
 {"x_percentage": 72.804, "y_percentage": 75.228, "text": "Raquis", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 71.047, "y_percentage": 81.418, "text": "Nutrición y dietética", "building": "Pabellón B", "floor": "Bj", "comment": "Es en el mismo lugar que traumatología"},
 {"x_percentage": 74.866, "y_percentage": 80.867, "text": "Odontoestomología", "building": "Pabellón B", "floor": "Bj", "comment": ""},
-{"x_percentage": 73.873, "y_percentage": 73.165, "text": "Neumología", "building": "Pabellón B", "floor": "1", "comment": ""},
+{"x_percentage": 76.093, "y_percentage": 57.097, "text": "Neumología", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 73.873, "y_percentage": 73.165, "text": "Gasometría", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 75.865, "y_percentage": 66.849, "text": "Espirometría", "building": "Pabellón B", "floor": "1", "comment": ""},
 {"x_percentage": 74.484, "y_percentage": 71.583, "text": "Cirugía Mayor Torácica", "building": "Pabellón B", "floor": "1", "comment": ""},
