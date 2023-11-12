@@ -368,16 +368,6 @@ function showCustomAlert(title_alert, text_alert) {
 
   // Agrega un evento de clic al fondo del documento
   document.addEventListener('click', handleDocumentClick);
-
-}
-
-// Función para ocultar la alerta personalizada
-function hideCustomAlert() {
-  // Oculta la alerta
-  document.getElementById('custom-alert').style.display = 'none';
-
-  // Oculta el fondo semitransparente
-  document.querySelector('.overlay').style.display = 'none';
 }
 
 // Función para manejar el clic en el fondo del documento
@@ -406,7 +396,7 @@ function hideCustomAlert() {
 function descarga_android(){
   var enlace_APK = document.getElementById("enlace-APK");
   enlace_APK.addEventListener("click", function () {
-    alert("Sólo se puede descagar la APK a través de la web. Abre el explorador y entra en https://mapahospital.ovh")
+    alert("Sólo se puede descagar la APK a través de la web. Abre el explorador y entra en https://mapahospital.ovh");
   })
 }
 
