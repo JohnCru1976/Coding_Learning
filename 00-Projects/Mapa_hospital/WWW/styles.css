@@ -339,7 +339,7 @@ textarea:focus,
 #edit_edificio:focus, 
 #edit_planta:focus, 
 #edit_observaciones:focus {
-  background-color:rgb(226, 230, 173);
+  background-color:rgb(246, 247, 237);
   box-shadow: 8px 8px 15px rgb(0, 0, 0);
 }
 
