@@ -339,7 +339,7 @@ textarea:focus,
 #edit_edificio:focus, 
 #edit_planta:focus, 
 #edit_observaciones:focus {
-  background-color:lightblue;
+  background-color:rgb(226, 230, 173);
   box-shadow: 8px 8px 15px rgb(0, 0, 0);
 }
 
@@ -356,7 +356,7 @@ button#send_new_point, button#send_edit_point {
 }
 
 button#send_new_point:hover, button#send_edit_point:hover {
-  background-color: rgb(247, 243, 200);
+  background-color: #00539f;
 }
 
 button#send_new_point, button#send_edit_point {
