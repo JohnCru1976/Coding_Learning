@@ -365,6 +365,6 @@ button#send_new_point, button#send_edit_point {
   margin-top: 20px;
 }
 
-#updates_title{
+#updates_title, #new_point_text, #edit_point_text{
   font-weight: bold;
 }
