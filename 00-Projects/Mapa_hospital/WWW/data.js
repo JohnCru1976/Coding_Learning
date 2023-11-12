@@ -8,7 +8,7 @@ var test_point = [
 {"x_percentage": 31.627, "y_percentage": 50.675, "text": "Gastroscopia", "building": "Pabellón A", "floor": "3", "comment": ""},
 {"x_percentage": 35.676, "y_percentage": 62.160, "text": "RayosX-Radiografías", "building": "Pabellón A", "floor": "1", "comment": ""},
 {"x_percentage": 31.933, "y_percentage": 68.900, "text": "Ecografía", "building": "Pabellón A", "floor": "1", "comment": "El sobre se puede entregar en la consulta 32"},
-{"x_percentage": 32.162, "y_percentage": 77.085, "text": "Cardiología", "building": "Pabellón A", "floor": "2", "comment": "Se puede acceder también por la planta baja,<br>en unas escaleras al fondo, pasado el TAC<br>Aquí tratan el tema de los marcapasos"},
+{"x_percentage": 32.162, "y_percentage": 77.085, "text": "Cardiología", "building": "Pabellón A", "floor": "2", "comment": "Se puede acceder también por la planta baja, en unas escaleras al fondo, pasado el TAC. Aquí tratan el tema de los marcapasos"},
 {"x_percentage": 32.086, "y_percentage": 71.858, "text": "Hematología", "building": "Pabellón A", "floor": "1", "comment": ""},
 {"x_percentage": 32.086, "y_percentage": 71.858, "text": "Neurología - 2ª Opción", "building": "Pabellón A", "floor": "1", "comment": "Se viene aquí cuando se deriva del Pabellón B"},
 {"x_percentage": 72.727, "y_percentage": 75.297, "text": "Neurología - 1ª Opción", "building": "Pabellón B", "floor": "1", "comment": "De aquí nos pueden derivar al Pabellón A - Primera planta"},

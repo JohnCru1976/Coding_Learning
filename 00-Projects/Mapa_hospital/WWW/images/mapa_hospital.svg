@@ -29,7 +29,7 @@
      inkscape:document-units="mm"
      inkscape:zoom="0.44631734"
      inkscape:cx="798.75902"
-     inkscape:cy="615.03324"
+     inkscape:cy="612.79268"
      inkscape:window-width="1366"
      inkscape:window-height="697"
      inkscape:window-x="-8"
@@ -415,14 +415,7 @@
        inkscape:label="Imagen_Fondo" /></g><g
      id="layer2"
      inkscape:label="Elementos_Superpuestos"
-     transform="matrix(0.85115117,0,0,0.94850609,42.787485,53.990237)"><rect
-       style="fill:#ffffff;fill-opacity:0;stroke:#000000;stroke-width:2.24929;stroke-miterlimit:3.4;paint-order:markers stroke fill"
-       id="rect1"
-       width="422.53183"
-       height="421.59171"
-       x="-48.13657"
-       y="-54.938538"
-       inkscape:label="Borde_Recuadro" /><g
+     transform="matrix(0.85115117,0,0,0.94850609,42.787485,53.990237)"><g
        id="g7"
        transform="matrix(1.2950731,0,0,1.3245138,-32.392421,-21.49235)"
        inkscape:label="Edificio"><path
@@ -439,7 +432,7 @@
            inkscape:label="PabellónA"><tspan
              x="359.80834"
              y="267.61443"
-             id="tspan5">Pabellón A</tspan></text><path
+             id="tspan2">Pabellón A</tspan></text><path
            style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:5.49255;stroke-miterlimit:3.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            d="m 122.4082,27.975586 v 29.785125 h 11.07358 V 28.684756 h 8.12063 4.42943 L 129.79058,2.4454759 111.33461,28.684756 Z"
            id="path24"
@@ -545,7 +538,7 @@
            inkscape:label="PabellónB"><tspan
              x="358.33699"
              y="267.61443"
-             id="tspan6">Pabellón B</tspan></text><text
+             id="tspan3">Pabellón B</tspan></text><text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.61164px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;stroke:#fdfdfd;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:3.4;paint-order:markers stroke fill"
            x="267.08646"
