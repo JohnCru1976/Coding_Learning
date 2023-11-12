@@ -60,7 +60,7 @@ var test_point = [
 {"x_percentage": 78.151, "y_percentage": 61.404, "text": "Neurofisiología", "building": "Pabellón B", "floor": "3", "comment": "Aquí está electromiografía y Unidad del sueño"},
 {"x_percentage": 78.151, "y_percentage": 61.404, "text": "Unidad del sueño", "building": "Edificio B", "floor": "3", "comment": "Está en la sala Neurofisiología"},
 {"x_percentage": 31.780, "y_percentage": 68.900, "text": "Mamografías", "building": "Pabellón A", "floor": "1", "comment": "Enfrente de Rayos-X, dónde se hacen las ecografías. En el caso de las eco el sobre se puede entregar en la consulta 32. Confirmad si para las mamografías también"},
-{"x_percentage": 32.162, "y_percentage": 77.497, "text": "Marcapasos-Cardiología", "building": "Pabellón A", "floor": "2", "comment": "Se puede acceder también por la planta baja, en unas escaleras al fondo, pasado el TAC"}
+{"x_percentage": 32.162, "y_percentage": 77.497, "text": "Marcapasos-Cardiología", "building": "Pabellón A", "floor": "2", "comment": "Se puede acceder también por la planta baja, en unas escaleras al fondo, pasado el TAC"},
 {"x_percentage": 65.667, "y_percentage": 81.424, "text": "Servicios-WC-Lavabos", "building": "Edificio B", "floor": "Bj", "comment": "En trauma hay unos lavabos al fondo de la sala. Son los más cercanos al bus."},
 ];
 
