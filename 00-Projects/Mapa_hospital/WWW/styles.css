@@ -368,3 +368,45 @@ button#send_new_point, button#send_edit_point {
 #updates_title, #new_point_text, #edit_point_text{
   font-weight: bold;
 }
+
+/* Estilos CSS para el cuadro de diálogo personalizado */
+#custom-alert {
+  display: none;
+  position: fixed;
+  font-size: 1.5em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  max-width: 800px;
+  width: 90%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+#button_alert{
+  display: block;
+  margin: 0 auto; 
+  margin-top: 10px; 
+  padding: 10px 20px;
+  background-color: #3f96cf;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+/* Fondo semitransparente cuando la alerta está activa */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente negro */
+  z-index: 999; /* Mayor que el z-index del cuadro de diálogo */
+}

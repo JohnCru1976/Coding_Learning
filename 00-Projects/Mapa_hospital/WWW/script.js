@@ -9,7 +9,7 @@ window.onbeforeunload = function() {
 
 // Este código se ejecutará una vez que se haya cargado completamente el DOM
 document.addEventListener("DOMContentLoaded", function() {
-    mostrar_ventana(2)  // Cambiar a 2 para acceder a modo ubicar punto ... 0 para mostrar pantalla inicial
+    mostrar_ventana(0)  // Cambiar a 2 para acceder a modo ubicar punto ... 0 para mostrar pantalla inicial
   });
 
   function mostrar_ventana(num) {
@@ -329,14 +329,6 @@ button_edit.addEventListener("click", function () {
     mostrar_ventana(0)
 }); 
 
-//Añadir un click event listener en enlace_APK para cuando se descargue el enlace
-function descarga_android(){
-  var enlace_APK = document.getElementById("enlace-APK");
-  enlace_APK.addEventListener("click", function () {
-    alert("Sólo se puede descagar la APK a través de la web. Abre el explorador y entra en https://mapahospital.ovh")
-  })
-}
-
 
 // Función para mostrar el punto
 function showPoint_edit(pointArg) {
@@ -362,6 +354,62 @@ container_edit_image.addEventListener("click", function (event) {
   showPoint_edit({x_percentage: edit_x, y_percentage: edit_y});
 });
 
+// Función para mostrar la alerta personalizada
+function showCustomAlert(title_alert, text_alert) {
+  // Muestra el fondo semitransparente
+  document.querySelector('.overlay').style.display = 'block';
+
+  // Configura el contenido de la alerta
+  document.getElementById('custom-alert-title').innerText = title_alert;
+  document.getElementById('custom-alert-text').innerText = text_alert;
+
+  // Muestra la alerta
+  document.getElementById('custom-alert').style.display = 'block';
+
+  // Agrega un evento de clic al fondo del documento
+  document.addEventListener('click', handleDocumentClick);
+
+}
+
+// Función para ocultar la alerta personalizada
+function hideCustomAlert() {
+  // Oculta la alerta
+  document.getElementById('custom-alert').style.display = 'none';
+
+  // Oculta el fondo semitransparente
+  document.querySelector('.overlay').style.display = 'none';
+}
+
+// Función para manejar el clic en el fondo del documento
+function handleDocumentClick(event) {
+  // Si el clic no está dentro del cuadro de diálogo, oculta la alerta
+  if (!document.getElementById('custom-alert').contains(event.target)) {
+      hideCustomAlert();
+      // Oculta el fondo semitransparente
+      document.querySelector('.overlay').style.display = 'none';
+  }
+}
+
+// Función para ocultar la alerta personalizada
+function hideCustomAlert() {
+  // Oculta la alerta
+  document.getElementById('custom-alert').style.display = 'none';
+
+  // Oculta el fondo semitransparente
+  document.querySelector('.overlay').style.display = 'none';
+
+  // Elimina el evento de clic del fondo del documento
+  document.removeEventListener('click', handleDocumentClick);
+}
+
+//Añadir un click event listener en enlace_APK para cuando se descargue el enlace
+function descarga_android(){
+  var enlace_APK = document.getElementById("enlace-APK");
+  enlace_APK.addEventListener("click", function () {
+    alert("Sólo se puede descagar la APK a través de la web. Abre el explorador y entra en https://mapahospital.ovh")
+  })
+}
+
 
 // ********************************************
 // ENVIAR UN CORREO CON PHP
@@ -376,12 +424,12 @@ function send_mail(message){
   })
   .then(response => {
     if (response.ok) {
-      alert('El mensaje ha sido enviado con éxito\nUna vez revisado se añadira la información\nGracias por colaborar');
+      showCustomAlert("Mensaje enviado con éxito",'Una vez revisado se añadirá la información.\n\nGracias por colaborar');
     } else {
-      alert('Lo siento, hubo un problema al enviar el mensaje');
+      showCustomAlert("Error de envío", 'Lo siento, hubo un problema al enviar el mensaje');
     }
   })
   .catch(error => {
-    alert('Lo siento, hubo un problema al enviar el mensaje');
+    showCustomAlert("Error de envío", 'Lo siento, hubo un problema al enviar el mensaje');
   });
 }
