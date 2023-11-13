@@ -95,5 +95,6 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "11-11-2023 Se añade punto Mamografía: está en el mismo lugar que las ecografías, enfrente de rayos-x",
 "11-11-2023 Actualización de la APK a la v.1.08: cuando se pulsa el botón atrás de Android vuelve a la ventana de inicio y no sale de la APP. Se muestra un mensaje informando que no se puede descagar la APK desde la propia APP de Android",
 "11-11-2023 Se ha incluido una fotografía de Google maps sobre la cual se muestra el mapa",
-"12-11-2023 Se han personalizado los mensajes que arroja la web cuando se envía información"
+"12-11-2023 Se han personalizado los mensajes que arroja la web cuando se envía información",
+"13-11-2023 La APK de Android pasa a considerarse estable. No se esperan más actualizaciones en breve."
 ]
