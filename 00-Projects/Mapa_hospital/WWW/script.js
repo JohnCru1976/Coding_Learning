@@ -395,13 +395,13 @@ function hideCustomAlert() {
 //Añadir un click event listener en enlace_APK para cuando se descargue el enlace
 var android_active = false
 function descarga_android(){
-  var enlace_APK = document.getElementById("enlace-APK");
-  if (!android_active){
-    enlace_APK.addEventListener("click", function () {
-      alert("Sólo se puede descagar la APK a través de la web. Abre el explorador y entra en https://mapahospital.ovh");
-    })
-    android_active = true;
-  }
+    var enlace_APK = document.getElementById("enlace-APK");
+    if (enlace_APK && !android_active){
+      enlace_APK.onclick = function () {
+        alert("Sólo se puede descagar la APK a través de la web. Abre el explorador y entra en https://mapahospital.ovh");
+      }
+      android_active = true;
+    }
 }
 
 
