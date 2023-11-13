@@ -24,11 +24,11 @@ body {
 .scroll-container{
   flex: 1;
   overflow-y: auto;
-  height: 83vh;
+  height: 85vh;
 }
 
 #child-container{
-  height: 79vh;
+  height: 75vh;
 }
 
 /*#place_data, #show_back, #back, #list_places, li, input {
