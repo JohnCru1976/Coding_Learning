@@ -50,7 +50,7 @@ var test_point = [
 {"x_percentage": 71.581, "y_percentage": 16.768, "text": "Ginecología Urgencias", "building": "Edificio Maternidad", "floor": "4", "comment": ""},
 {"x_percentage": 43.927, "y_percentage": 64.224, "text": "Analí­ticas", "building": "Patio Central", "floor": "Bj", "comment": "Se trata de un prefabricado temporal que se ubica al lado del acceso al Pabellón A desde el patio interior"},
 {"x_percentage": 32.009, "y_percentage": 40.702, "text": "Unidad del dolor", "building": "Pabellón A", "floor": "2", "comment": "Acceso B3. Si no es correcto, comunicarlo, por favor."},
-{"x_percentage": 52.330, "y_percentage": 0.262, "text": "Bar/Almuerzo", "building": "Fuera del recinto", "floor": "Bj", "comment": ""},
+{"x_percentage": 52.33, "y_percentage": 0.262, "text": "Bar La Terraza", "building": "Fuera del recinto", "floor": "Bj", "comment": "Está en un parque justo enfrente de la salida indicada en el mapa. El bar tiene unas escaleras para acceder"},
 {"x_percentage": 73.797, "y_percentage": 78.735, "text": "Unidad del Íctus", "building": "Pabellón B", "floor": "3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
 {"x_percentage": 73.797, "y_percentage": 78.735, "text": "Cirugí­a de Colon", "building": "Pabellón B", "floor": "3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
 {"x_percentage": 31.016, "y_percentage": 47.786, "text": "Diálisis", "building": "Pabellón A", "floor": "3", "comment": "Se accede por la entrada que hay junto a urgencias"},
@@ -62,6 +62,8 @@ var test_point = [
 {"x_percentage": 31.780, "y_percentage": 68.900, "text": "Mamografías", "building": "Pabellón A", "floor": "1", "comment": "Enfrente de Rayos-X, dónde se hacen las ecografías. En el caso de las eco el sobre se puede entregar en la consulta 32. Confirmad si para las mamografías también"},
 {"x_percentage": 32.162, "y_percentage": 77.497, "text": "Marcapasos-Cardiología", "building": "Pabellón A", "floor": "2", "comment": "Se puede acceder también por la planta baja, en unas escaleras al fondo, pasado el TAC"},
 {"x_percentage": 65.667, "y_percentage": 81.424, "text": "Servicios-WC-Lavabos", "building": "Edificio B", "floor": "Bj", "comment": "En trauma hay unos lavabos al fondo de la sala. Son los más cercanos al bus y con poca afluencia."},
+{"x_percentage": 27.807, "y_percentage": 12.573, "text": "Bar Hospital", "building": "Dentro del recinto", "floor": "Bj", "comment": ""},
+{"x_percentage": 1.299, "y_percentage": 59.066, "text": "Bar Julivert", "building": "Fuera del recinto", "floor": "Bj", "comment": "Enfrente del acceso principal al Hospital. Hay otros bares."},
 ];
 
 var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la colaboración)",
