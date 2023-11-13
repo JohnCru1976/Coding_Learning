@@ -50,6 +50,12 @@ a{
   text-decoration: none;
   color: white;
 }
+
+#link-dialisis{
+  text-decoration:underline;
+  color: #160d4d;
+}
+
 #header-container {
   display:block;
   margin-top: 0px;
