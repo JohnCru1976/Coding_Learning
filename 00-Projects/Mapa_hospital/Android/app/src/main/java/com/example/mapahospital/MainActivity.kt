@@ -45,8 +45,13 @@ class MainActivity : AppCompatActivity() {
                 // Carga una página de error personalizada
                 myWebView.loadUrl("file:///android_asset/error.html")
             }
-            override fun onPageFinished(view: WebView, url: String) {
-                myWebView.evaluateJavascript("javascript:descarga_android()", null)
+            //override fun onPageFinished(view: WebView, url: String) {
+            //    myWebView.evaluateJavascript("javascript:descarga_android()", null)
+            //}
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                // Llama a la función JavaScript después de que la página se haya cargado completamente
+                view?.evaluateJavascript("javascript:descarga_android()", null)
             }
         }
     }
