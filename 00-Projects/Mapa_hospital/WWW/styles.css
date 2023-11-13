@@ -14,6 +14,23 @@ body {
   width: 98.3%;
 }
 
+#global-container {
+  /*display: flex;
+  flex-direction: column;*/
+  height: 100vh; /* 100% del viewport height */
+}
+
+
+.scroll-container{
+  flex: 1;
+  overflow-y: auto;
+  height: 83vh;
+}
+
+#child-container{
+  height: 79vh;
+}
+
 /*#place_data, #show_back, #back, #list_places, li, input {
   font-size: 50px;
 }*/
@@ -39,7 +56,22 @@ a{
   margin-bottom: 0px;
   background-color: #0078d4;
   color: white;
-  /*height: 20vh;*/
+}
+
+h1 {
+  background-color: #0078d4;
+  width: 98%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 40px;
+  padding-bottom: 15px;
+  color: white;
+  text-align: center;
+  height: 50%;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #header-options {
@@ -63,21 +95,7 @@ a{
   background-color: #084e83;
 }
 
-h1 {
-  background-color: #0078d4;
-  width: 98%;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 40px;
-  padding-bottom: 15px;
-  color: white;
-  text-align: center;
-  height: 50%;
-  font-size: 1.5em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 
 
 /* Imagen y contenedores de imagen */
@@ -133,11 +151,7 @@ img {
   
 }
 
-.scroll-container{
-    flex: 1;
-    overflow-y: auto;
-    height: 69vh;
-}
+
   
   input[type="text"] {
     width: 100%;
@@ -349,7 +363,9 @@ button#send_new_point, button#send_edit_point {
   border-radius: 5px;
   text-decoration: none;
   margin-top: 20px;
-  font-size: 50px;
+  font-size: 90px;
+  font-weight: bold;
+  width: 100%;
 }
 
 button#send_new_point:hover, button#send_edit_point:hover {
