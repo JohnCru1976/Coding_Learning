@@ -67,7 +67,8 @@ var test_point = [
 {"x_percentage": 27.807, "y_percentage": 12.573, "text": "Bar Hospital", "building": "Dentro del recinto", "floor": "Planta: Bj", "comment": ""},
 {"x_percentage": 1.299, "y_percentage": 59.066, "text": "Bar Julivert", "building": "Fuera del recinto", "floor": "Planta: Bj", "comment": "Enfrente del acceso principal al Hospital. Hay otros bares."},
 {"x_percentage": 44.268, "y_percentage": 63.888, "text": "Preoperatorios", "building": "Pabellón A", "floor": "Planta: Bj", "comment": "Paso 1.- Analítica (antes de las 09:00); Paso 2.- Electrocardiograma en Cardiología (planta 2ª); Paso 3.- Anestesista (planta 1 del Edificio Quirúrgico. Antes de las 10:00)"},
-{"x_percentage": 0.000, "y_percentage": 0.000, "text": "Diálisis - Xirivella (Diaverum)", "building": "Carrer dels Corretgers", "floor": "nº 68", "comment": "<a href='https://maps.app.goo.gl/KTUJVTGXqhtsYRte7' id='link-dialisis' target='blank'>Enlace a Google Maps</a>", "meta": 0},
+{"x_percentage": 0.000, "y_percentage": 0.000, "text": "Diálisis - Xirivella (Diaverum)", "building": "Carrer dels Corretgers, nº 68", "floor": "<a href='https://maps.app.goo.gl/KTUJVTGXqhtsYRte7' id='link-dialisis' target='blank'>Enlace a Google Maps</a>", "comment": "Llévate bocata y cargador de móvil", "meta": 0},
+{"x_percentage": 0.000, "y_percentage": 0.000, "text": "Urgencias", "building": "La Nueva Fe", "floor": "<a href='https://maps.app.goo.gl/EWB2GnLGvdahAvD6A' id='link-dialisis' target='blank'>Enlace a Google Maps</a>", "comment": "<a href='https://maps.app.goo.gl/EWB2GnLGvdahAvD6A' id='link-dialisis' target='blank'>Enlace a Google Maps</a>", "comment": "Se viene aquí para oftalmología a partir de ciertos horarios. Si conoces los horarios, por favor, comunícalos modificando el punto", "meta": 0},
 ];
 
 var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la colaboración)",

@@ -154,8 +154,9 @@ function showPoint_show(place) {
   const show_point = document.getElementById("show_point");
   show_point.style.left = place.x_percentage + "%";
   show_point.style.top = place.y_percentage + "%";
-  show_point.innerHTML = "P." + place.floor
+  show_point.innerHTML = place.floor
   show_point.style.textAlign = "center";
+  show_point.style.color ="white";
 }
 
 // ****************************************

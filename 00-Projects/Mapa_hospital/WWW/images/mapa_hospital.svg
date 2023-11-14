@@ -28,8 +28,8 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      inkscape:zoom="0.44631734"
-     inkscape:cx="655.36328"
-     inkscape:cy="1031.7771"
+     inkscape:cx="655.36329"
+     inkscape:cy="494.04309"
      inkscape:window-width="1366"
      inkscape:window-height="697"
      inkscape:window-x="-8"
@@ -462,7 +462,7 @@
        id="g7"
        transform="matrix(1.2950731,0,0,1.3245138,-32.392421,-21.49235)"
        inkscape:label="Edificio"><path
-         style="fill:#d8d8d8;fill-opacity:1;stroke:#000000;stroke-width:2.12442;stroke-linejoin:round;stroke-miterlimit:3.4;stroke-dasharray:none;paint-order:markers stroke fill"
+         style="fill:#ababab;fill-opacity:1;stroke:#000000;stroke-width:2.12442;stroke-linejoin:round;stroke-miterlimit:3.4;stroke-dasharray:none;paint-order:markers stroke fill"
          d="m 215.83457,229.71252 -18.82287,0.23593 0.2689,15.5717 63.99775,-0.70779 -0.26891,-15.80764 h -25.0075 l -0.2689,-19.81854 h 5.37796 l -0.53781,-22.64975 19.62957,-0.23591 -0.80668,-39.63707 -18.28508,0.23593 -0.26891,-22.17787 h -4.57127 l 0.2689,-16.98731 h 22.58746 V 88.151607 l -88.46749,0.235929 0.2689,-2.359348 h 2.68898 l 0.2689,-11.796742 h -6.99135 l -0.2689,-9.909266 -15.32719,-0.235934 v 9.437395 l -9.14254,0.235935 -0.2689,13.44829 3.76458,0.235929 -0.2689,1.415615 -86.854087,-0.235937 v 17.459177 h 18.016175 v 47.42291 h -4.033473 l 0.268899,28.54811 h 4.03347 l -0.537795,46.95105 -15.864988,0.23594 0.537797,15.80763 61.846562,-0.47187 -0.2689,-16.04358 -23.663032,0.47188 -0.268898,-19.5826 h 5.37796 l -0.53779,-22.17787 19.09176,-0.23594 -0.53779,-39.87299 -17.47838,0.23593 -0.2689,-40.34486 111.32382,-0.47186 0.53779,46.95103 h -6.18465 l 0.26889,27.84031 h 5.10907 z"
          id="path19"
          inkscape:label="Edificio" /><g
@@ -475,7 +475,7 @@
            inkscape:label="PabellónA"><tspan
              x="359.80834"
              y="267.61443"
-             id="tspan2">Pabellón A</tspan></text><path
+             id="tspan5">Pabellón A</tspan></text><path
            style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#000000;stroke-width:5.49255;stroke-miterlimit:3.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
            d="m 122.4082,27.975586 v 29.785125 h 11.07358 V 28.684756 h 8.12063 4.42943 L 129.79058,2.4454759 111.33461,28.684756 Z"
            id="path24"
@@ -589,7 +589,7 @@
            inkscape:label="PabellónB"><tspan
              x="358.33699"
              y="267.61443"
-             id="tspan3">Pabellón B</tspan></text><text
+             id="tspan6">Pabellón B</tspan></text><text
            xml:space="preserve"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:8.61164px;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#000000;stroke:#fdfdfd;stroke-width:0;stroke-linejoin:round;stroke-miterlimit:3.4;paint-order:markers stroke fill"
            x="267.08646"
@@ -637,7 +637,7 @@
            style="stroke-width:3.19713"
            x="340.34946"
            y="-15.636705">Maternidad</tspan></text><rect
-         style="fill:#e5e5e5;fill-opacity:1;stroke:#000000;stroke-width:2.92082;stroke-miterlimit:3.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#ababab;fill-opacity:1;stroke:#000000;stroke-width:2.92082;stroke-miterlimit:3.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect7"
          width="33.758194"
          height="97.869423"
@@ -692,7 +692,7 @@
            x="8.2700081"
            y="-0.48369467"
            id="tspan11">Quirúrgico</tspan></text><rect
-         style="fill:#e9e9e9;fill-opacity:1;stroke:#000000;stroke-width:3.66747;stroke-miterlimit:3.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
+         style="fill:#ababab;fill-opacity:1;stroke:#000000;stroke-width:3.66747;stroke-miterlimit:3.4;stroke-dasharray:none;stroke-opacity:1;paint-order:markers stroke fill"
          id="rect5"
          width="48.194775"
          height="75.029594"
