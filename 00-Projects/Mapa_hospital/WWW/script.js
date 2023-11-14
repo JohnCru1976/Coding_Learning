@@ -134,7 +134,7 @@ function mostrarResultados() {
               showPoint_show(data);
               place_text.innerHTML = `<strong>${data.text}</strong><br>${data.building} - ${data.floor}`;
               if (data.comment != ""){
-                  place_text.innerHTML = place_text.innerHTML + "<br>" + `Comentarios: ${data.comment}`
+                  place_text.innerHTML = place_text.innerHTML + "<br>" + `<b>Comentarios:</b> ${data.comment}`
               }
               // Pasando datos para actualizar punto
               show_data_edit(data)
