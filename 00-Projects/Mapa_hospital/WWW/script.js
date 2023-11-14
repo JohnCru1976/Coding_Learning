@@ -157,6 +157,8 @@ function showPoint_show(place) {
   show_point.innerHTML = place.floor
   show_point.style.textAlign = "center";
   show_point.style.color ="white";
+  show_point.style.whiteSpace ="nowrap";
+  show_point.style.overflow ="visible";
 }
 
 // ****************************************
