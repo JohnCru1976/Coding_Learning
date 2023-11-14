@@ -87,6 +87,12 @@ document.addEventListener("DOMContentLoaded", function() {
     handleClick()
   });
 
+  // El usuario pulsa el título de la página y vuelve al inicio
+  const h1_click = document.getElementById("header")
+  h1_click.addEventListener("click", function (){
+    mostrar_ventana(0);
+  })
+
 // *************************************************************
 // Muestra el listado inicial y un cuadro de búsqueda
 // *************************************************************
@@ -152,13 +158,17 @@ function quitarAcentos(texto) {
 // Función para mostrar el punto
 function showPoint_show(place) {
   const show_point = document.getElementById("show_point");
+  const show_point_text = document.getElementById("show-point-text")
   show_point.style.left = place.x_percentage + "%";
   show_point.style.top = place.y_percentage + "%";
-  show_point.innerHTML = place.floor
-  show_point.style.textAlign = "center";
-  show_point.style.color ="white";
-  show_point.style.whiteSpace ="nowrap";
-  show_point.style.overflow ="visible";
+  // Texto del punto
+  show_point_text.innerHTML = place.floor;
+  show_point_text.style.color ="white";
+  show_point_text.style.fontWeight ="bold";
+  show_point_text.style.whiteSpace ="nowrap";
+  show_point_text.style.overflow ="visible";
+  show_point_text.style.textAlign = "center";
+  show_point_text.style.transform = "translate(100%,0%)"
 }
 
 // ****************************************
