@@ -103,5 +103,6 @@ var last_updates = ["30-10-2023 Añadido el punto Analíticas (Gracias por la co
 "12-11-2023 Se han personalizado los mensajes que arroja la web cuando se envía información",
 "13-11-2023 La APK de Android pasa a considerarse estable. No se esperan más actualizaciones en breve.",
 "13-11-2023 Se añade punto: Diálisis - Xirivella. Incluye un enlace a Google Maps",
-"14-11-2023 Actualización de la APK a la v.1.09: Permite abrir enlaces externos. Por ejemplo, puede abrir el enlace a Diálisis de Xirivella en Google Maps o puede abrir enlace a la descarga de la APK de Android"
+"14-11-2023 Actualización de la APK a la v.1.09: Permite abrir enlaces externos. Por ejemplo, puede abrir el enlace a Diálisis de Xirivella en Google Maps o puede abrir enlace a la descarga de la APK de Android",
+"14-11-2023 Se añade punto: Hospital La Nueva Fe. Incluye un enlace a Google Maps",
 ]
