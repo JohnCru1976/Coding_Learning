@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const updates = document.getElementById("updates")
     const new_point = document.getElementById("new_point")
     const edit_point = document.getElementById("edit_point")
+    // Se activa la lista de lugares
     if (num == 0) {
       list_places.style.display = "block"; 
       show_image.style.display = "none";
@@ -28,6 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
       new_point.style.display = "none"
       edit_point.style.display = "none"
     }
+    // Se activa el mapa del lugar elegido
     if (num == 1) {
       list_places.style.display = "none"; 
       show_image.style.display = "block";
@@ -36,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
       new_point.style.display = "none"
       edit_point.style.display = "none"
     }
+    // Se activa el test para comprabación de puntos
     if (num == 2) {
       list_places.style.display = "none"; 
       show_image.style.display = "none";
@@ -44,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
       new_point.style.display = "none"
       edit_point.style.display = "none"
     }
+    // Se activa la ventana últimas actualizaciones
     if (num == 3) {
       list_places.style.display = "none"; 
       show_image.style.display = "none";
@@ -52,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function() {
       new_point.style.display = "none"
       edit_point.style.display = "none"
     }
+    // Se activa la ventana nuevo punto
     if (num == 4) {
       list_places.style.display = "none"; 
       show_image.style.display = "none";
@@ -64,13 +69,16 @@ document.addEventListener("DOMContentLoaded", function() {
       new_y = 50
       showPoint_new({x_percentage: new_x, y_percentage: new_y});
     }
+    // Se activa la ventana editar punto
     if (num == 5) {
+      const container_edit_image = document.getElementById("container_edit_image")
       list_places.style.display = "none"; 
       show_image.style.display = "none";
       test_image.style.display = "none";
       updates.style.display = "none"
       new_point.style.display = "none"
       edit_point.style.display = "block"
+      container_edit_image.display = "block"
     }
   }
 
@@ -107,20 +115,26 @@ function mostrarResultados() {
       if (texto.includes(filtro)) {
           var listItem = document.createElement("li");
           listItem.style.fontSize = "50px";
-          listItem.innerHTML = `<strong>${point.text}</strong>, ${point.building}, Planta: ${point.floor}`;
+          listItem.innerHTML = `<strong>${point.text}</strong>, ${point.building}, ${point.floor}`;
           listItem.setAttribute("data-index", index);
+          // Listener que funciona cuando se hace click en un lugar de la lista
           listItem.addEventListener("click", function() {
+              const container_show_image = document.getElementById("container_show_image")
               var dataIndex = this.getAttribute("data-index");
               var place_text = document.getElementById("place_data");
               var data = test_point[dataIndex];
               mostrar_ventana(1);
+              container_show_image.style.display = "block";
               showPoint_show(data);
-              place_text.innerHTML = `<strong>${data.text}</strong><br>${data.building} - Planta: ${data.floor}`;
+              place_text.innerHTML = `<strong>${data.text}</strong><br>${data.building} - ${data.floor}`;
               if (data.comment != ""){
                   place_text.innerHTML = place_text.innerHTML + "<br>" + `Comentarios: ${data.comment}`
               }
               // Pasando datos para actualizar punto
               show_data_edit(data)
+              if (data.meta == 0){
+                container_show_image.style.display = "none";
+              }
           });
           puntosLista.appendChild(listItem);
       }
@@ -294,9 +308,13 @@ function show_data_edit(data){
   const observaciones_edit = document.getElementById("edit_observaciones");
   lugar_edit.value = data.text;
   edificio_edit.value = data.building;
-  planta_edit.value = "Planta " + data.floor;
+  planta_edit.value = data.floor;
   observaciones_edit.value = data.comment;
   showPoint_edit(data);
+  if (data.meta == 0){
+    const container_show_image = document.getElementById("container_edit_image")
+    container_edit_image.style.display = "none";
+  }
 }
 
 function edit_point_start_button (){
