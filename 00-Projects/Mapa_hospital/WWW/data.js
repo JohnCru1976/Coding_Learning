@@ -110,4 +110,5 @@ var last_updates = ["<b>30-10-2023</b> Añadido el punto Analíticas (Gracias po
 "<b>14-11-2023</b> Actualización de la APK a la v.1.09: Permite abrir enlaces externos. Por ejemplo, puede abrir el enlace a Diálisis de Xirivella en Google Maps o puede abrir enlace a la descarga de la APK de Android",
 "<b>14-11-2023</b> Se añade punto: Hospital La Nueva Fe. Incluye un enlace a Google Maps",
 "<b>15-11-2023</b> Se agrupan los menús en un botón desplegable arriba a la izquierda. Se incluye un formulario de contacto",
+"<b>15-11-2023</b> Añadidos nuevos puntos: Cirugía Mayor, Terapia del dolor, Oncología Ginecológica y UCI",
 ]
