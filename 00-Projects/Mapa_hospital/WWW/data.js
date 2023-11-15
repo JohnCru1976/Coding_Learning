@@ -42,7 +42,7 @@ var test_point = [
 {"x_percentage": 74.332, "y_percentage": 71.995, "text": "Ortopantografía - Radiografía de boca", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
 {"x_percentage": 74.866, "y_percentage": 68.900, "text": "Pruebas Otorrino", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
 {"x_percentage": 72.804, "y_percentage": 75.228, "text": "Neurocirugía-Consulta", "building": "Pabellón B", "floor": "P.1", "comment": "También Pabellón B, tercer piso, acceso B-3"},
-{"x_percentage": 72.804, "y_percentage": 75.228, "text": "Raquis-Neurocirugía", "building": "Pabellón B", "floor": "P.1", "comment": "Según el día hay que acudir a trauma primero. Consultas Externas de Cirugía Osteoarticular y Traumatología (planta baja Pabellón B) y de Neurocirugía (Planta 1ª, Pabellón B, 1.4)"},
+{"x_percentage": 72.804, "y_percentage": 75.228, "text": "Raquis-Neurocirugía", "building": "Pabellón B", "floor": "P.1", "comment": "Según el día hay que acudir a trauma primero"},
 {"x_percentage": 71.047, "y_percentage": 81.418, "text": "Nutrición y dietética", "building": "Pabellón B", "floor": "P.Bj", "comment": "Es en el mismo lugar que traumatología"},
 {"x_percentage": 74.866, "y_percentage": 80.867, "text": "Odontoestomología", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
 {"x_percentage": 76.093, "y_percentage": 57.097, "text": "Neumología", "building": "Pabellón B", "floor": "P.1", "comment": ""},
