@@ -29,7 +29,7 @@ var test_point = [
 {"x_percentage": 72.269, "y_percentage": 50.262, "text": "Urología", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
 {"x_percentage": 72.422, "y_percentage": 54.114, "text": "Cirugía Vascular", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
 {"x_percentage": 72.422, "y_percentage": 55.077, "text": "Cirugía Plástica", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
-{"x_percentage": 72.422, "y_percentage": 55.077, "text": "Alergología", "building": "Pabellón B", "floor": "P.1", "comment": ""},
+{"x_percentage": 72.422, "y_percentage": 55.077, "text": "Alergología", "building": "Pabellón B", "floor": "P.1", "comment": "(Esta información necesita ser verificada)"},
 {"x_percentage": 75.325, "y_percentage": 54.045, "text": "Farmacía", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
 {"x_percentage": 77.944, "y_percentage": 63.346, "text": "Cirugía General", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
 {"x_percentage": 78.801, "y_percentage": 63.925, "text": "Cirugía de Mama", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
