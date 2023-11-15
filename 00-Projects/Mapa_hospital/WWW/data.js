@@ -71,7 +71,7 @@ var test_point = [
 {"x_percentage": 0.000, "y_percentage": 0.000, "text": "Urgencias", "building": "La Nueva Fe", "floor": "<a href='https://maps.app.goo.gl/EWB2GnLGvdahAvD6A' class='link' target='blank'>Enlace a Google Maps</a>", "comment": "<a href='https://maps.app.goo.gl/EWB2GnLGvdahAvD6A' class='link' target='blank'>Enlace a Google Maps</a>", "comment": "Se viene aquí para <b>Oftalmología</b> a partir de ciertos horarios (posiblemente a partir de las 15:00 los laborables y siempre los no laborables). (Esta información necesita ser concretada)", "meta": 0},
 {"x_percentage": 13.080, "y_percentage": 25.294, "text": "Terapia del dolor", "building": "Pabellón Quirúrgico", "floor": "P.1", "comment": ""},
 {"x_percentage": 13.235, "y_percentage": 25.503, "text": "Cirugía Mayor Ambulatoria", "building": "Edificio Quirúrgico", "floor": "P.Bj", "comment": ""},
-{"x_percentage": 71.749, "y_percentage": 16.584, "text": "Endoscopia y Oncología Ginecológica", "building": "Edificio Maternidad", "floor": "P.Bj", "comment": ""},
+{"x_percentage": 71.749, "y_percentage": 16.584, "text": "Oncología Ginecológica", "building": "Edificio Maternidad", "floor": "P.Bj", "comment": ""},
 {"x_percentage": 13.467, "y_percentage": 25.225, "text": "UCI", "building": "Pabellón Quirúrgico", "floor": "P.4", "comment": ""},
 ];
 
