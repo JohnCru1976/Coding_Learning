@@ -58,43 +58,43 @@ document.addEventListener("DOMContentLoaded", function() {
     const container_contact_form = document.getElementById("container-contact-form")
     // Se activa la lista de lugares
     if (num == 0) {
-      list_places.style.display = "block"; 
       show_image.style.display = "none";
       test_image.style.display = "none";
       updates.style.display = "none"
       new_point.style.display = "none"
       edit_point.style.display = "none"
       container_contact_form.style.display = "none"
+      list_places.style.display = "block"; 
     }
     // Se activa el mapa del lugar elegido
     if (num == 1) {
       list_places.style.display = "none"; 
-      show_image.style.display = "block";
       test_image.style.display = "none";
       updates.style.display = "none"
       new_point.style.display = "none"
       edit_point.style.display = "none"
       container_contact_form.style.display  = "none"
+      show_image.style.display = "block";
     }
     // Se activa el test para comprabación de puntos
     if (num == 2) {
       list_places.style.display = "none"; 
       show_image.style.display = "none";
-      test_image.style.display = "block";
       updates.style.display = "none"
       new_point.style.display = "none"
       edit_point.style.display = "none"
       container_contact_form.style.display  = "none"
+      test_image.style.display = "block";
     }
     // Se activa la ventana últimas actualizaciones
     if (num == 3) {
       list_places.style.display = "none"; 
       show_image.style.display = "none";
       test_image.style.display = "none";
-      updates.style.display = "block"
       new_point.style.display = "none"
       edit_point.style.display = "none"
       container_contact_form.style.display  = "none"
+      updates.style.display = "block"
     }
     // Se activa la ventana nuevo punto
     if (num == 4) {
@@ -102,9 +102,9 @@ document.addEventListener("DOMContentLoaded", function() {
       show_image.style.display = "none";
       test_image.style.display = "none";
       updates.style.display = "none"
-      new_point.style.display = "block"
       edit_point.style.display = "none"
       container_contact_form.style.display  = "none"
+      new_point.style.display = "block"
 
       new_x = 50
       new_y = 50
@@ -118,9 +118,9 @@ document.addEventListener("DOMContentLoaded", function() {
       test_image.style.display = "none";
       updates.style.display = "none"
       new_point.style.display = "none"
+      container_contact_form.style.display  = "none"
       edit_point.style.display = "block"
       container_edit_image.display = "block"
-      container_contact_form.style.display  = "none"
     }
     // Se activa la ventana formulario de contacto
     if (num == 6) {

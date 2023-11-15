@@ -8,6 +8,8 @@ body {
   color: #333;
 }
 
+
+
 #buscar{
   font-size: 50px;
   padding: 10px;
@@ -91,16 +93,6 @@ img {
 
 .header-option:hover {
   background-color: #084e83;
-}
-
-/* Pantallas ocultas*/
-#test_image, 
-#show_image, 
-#updates, 
-#new_point,
-#edit_point,
-#container-contact-form{
-  display: none;
 }
 
 h1 {
@@ -459,4 +451,14 @@ button#button-send-contact-form:hover {
   height: 100%;
   background: rgba(0, 0, 0, 0.5); 
   z-index: 999; 
+}
+
+/* Pantallas ocultas*/
+#test_image, 
+#show_image, 
+#updates, 
+#new_point,
+#edit_point,
+#container-contact-form{
+  display: none;
 }
