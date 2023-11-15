@@ -20,20 +20,83 @@ body {
   height: 100vh; /* 100% del viewport height */
 }
 
-
 .scroll-container{
   flex: 1;
   overflow-y: auto;
-  height: 85vh;
+  height: 90vh;
 }
 
 #child-container{
-  height: 75vh;
+  height: 80vh;
 }
 
 /*#place_data, #show_back, #back, #list_places, li, input {
   font-size: 50px;
 }*/
+
+/* HEADER CON OPTIONS BUTTON */
+#header-container {
+  display:flex;
+  flex-direction: column;
+  position: relative;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: #0078d4;
+  color: white;
+}
+
+#options-button {
+  padding: 30px;
+  height: 60px;
+  width: 10%;
+  cursor: pointer;
+}
+
+#options-button:hover {
+  background-color: #084e83;
+}
+
+#header-title {
+  display: flex;
+  align-items: center;
+}
+
+#header-options {
+  /*display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50%;*/
+  display: none;
+  transition: display 0.6s;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background-color: #0078d4;
+  /*border: 1px solid #ccc;*/
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+.hidden {
+  display: none;
+}
+
+.header-option {
+  background-color: #0078d4;
+  color: white;
+  text-align: center;
+  font-size: 35px; 
+  cursor: pointer;
+  flex: 1;
+  align-items: center;
+  padding: 50px;
+}
+
+.header-option:hover {
+  background-color: #084e83;
+}
+
 
 /* Pantallas ocultas*/
 
@@ -41,27 +104,9 @@ body {
 #show_image, 
 #updates, 
 #new_point,
-#edit_point{
+#edit_point,
+#container-contact-form{
   display: none;
-}
-
-/* Header */
-a{
-  text-decoration: none;
-  color: white;
-}
-
-.link-dialisis{
-  text-decoration:underline;
-  color: #160d4d;
-}
-
-#header-container {
-  display:block;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  background-color: #0078d4;
-  color: white;
 }
 
 h1 {
@@ -69,7 +114,7 @@ h1 {
   width: 98%;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-top: 40px;
+  padding-top: 35px;
   padding-bottom: 15px;
   color: white;
   text-align: center;
@@ -81,29 +126,17 @@ h1 {
   cursor: pointer;
 }
 
-#header-options {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 50%;
-}
+/* OTROS */
 
-.header-option {
-  background-color: #0078d4;
+a{
+  text-decoration: none;
   color: white;
-  text-align: center;
-  font-size: 35px; 
-  cursor: pointer;
-  flex: 1;
-  align-items: center;
 }
 
-.header-option:hover {
-  background-color: #084e83;
+.link-dialisis{
+  text-decoration:underline;
+  color: #160d4d;
 }
-
-
-
 
 /* Imagen y contenedores de imagen */
 #container_image, 
@@ -115,8 +148,6 @@ h1 {
     height: auto;
     border: 1px solid black;
 }
-
-
 
 img {
     width: 100%;
@@ -155,164 +186,168 @@ img {
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  
 }
 
+input[type="text"] {
+  width: 100%;
+  padding: 10px 0px 10px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 
-  
-  input[type="text"] {
-    width: 100%;
-    padding: 10px 0px 10px 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
-  
-  ul {
-    list-style-type:none;
-    padding: 0px;
-    margin-top: 0px;
-  }
+ul {
+  list-style-type:none;
+  padding: 0px;
+  margin-top: 0px;
+}
 
-  #list_places li,  #updates li {
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    padding-top: 0px;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
+#list_places li,  #updates li {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  padding-top: 0px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
 
-  #updates li {
-    cursor: default;
-    font-size: 30px;
-  }
-  
-  #list_places li:hover {
-    background-color: #c0c0c0;
-    color: #160d4d;
-    /*font-weight: bold;*/
-  }
+#updates li {
+  cursor: default;
+  font-size: 30px;
+}
 
-  /*  SHOW IMAGE */
+#list_places li:hover {
+  background-color: #c0c0c0;
+  color: #160d4d;
+  /*font-weight: bold;*/
+}
 
-  #place_data, 
-  #updates_title, 
-  #new_point_text,
-  #edit_point_text {
-    color: #333;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    text-align: center;
-  }
+/*  SHOW IMAGE */
 
-  #show_image {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 100%;
-  }
-  
-  #show_back, 
-  #edit_point_proposal{
-    display: block;
-    text-align: center;
-    background-color: #0078d4;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    cursor: pointer;
-  }
-  
-  #show_back:hover, 
-  #edit_point_proposal:hover {
-    background-color: #00539f;
-  }
-  
-  #container_show_image {
-    text-align: center;
-  }
-  
-  #container_show_image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  #show_point {
-    text-align: center;
-    color:black;
-  }
+#place_data, 
+#updates_title, 
+#new_point_text,
+#edit_point_text,
+#contact_point_text {
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+}
 
-  /* MAPA PARA TEST */
+#show_image {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 100%;
+}
 
-  #test_image, 
-  #new_point,
-  #edit_point {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px auto;
-    padding: 20px;
-    max-width: 100%;
-  }
-  
-  #back, 
-  #updates_back, 
-  #new_point_back, 
-  #edit_point_back {
-    display: block;
-    text-align: center;
-    background-color: #0078d4;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-bottom: 20px;
-  }
-  
-  #back:hover, 
-  #updates_back:hover, 
-  #new_point_back:hover,
-  #edit_point_back:hover {
-    background-color: #00539f;
-  }
-  
-  #container_image, 
-  #container_new_image, 
-  #container_edit_image {
-    text-align: center;
-  }
-  
-  #container_image img, 
-  #container_new_image img, 
-  #container_edit_image img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  #coordinates {
-    text-align: center;
-  }
+#show_back, 
+#edit_point_proposal,
+#contact_point_back{
+  display: block;
+  text-align: center;
+  background-color: #0078d4;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
 
-  /* Nuevo punto */
+#show_back:hover, 
+#edit_point_proposal:hover {
+  background-color: #00539f;
+}
 
-#text_input, #edit_text_input {
+#container_show_image {
+  text-align: center;
+}
+
+#container_show_image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#show_point {
+  text-align: center;
+  color:black;
+}
+
+/* MAPA PARA TEST */
+
+#test_image, 
+#new_point,
+#edit_point,
+#container-contact-form {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 100%;
+}
+
+#back, 
+#updates_back, 
+#new_point_back, 
+#edit_point_back
+#contact_point_back {
+  display: block;
+  text-align: center;
+  background-color: #0078d4;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+#back:hover, 
+#updates_back:hover, 
+#new_point_back:hover,
+#edit_point_back:hover,
+#contact_point_back:hover {
+  background-color: #00539f;
+}
+
+#container_image, 
+#container_new_image, 
+#container_edit_image {
+  text-align: center;
+}
+
+#container_image img, 
+#container_new_image img, 
+#container_edit_image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#coordinates {
+  text-align: center;
+}
+
+/* Nuevo punto */
+
+#text_input, 
+#edit_text_input,
+#form_input {
   background-color: #f0f0f0;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -338,7 +373,11 @@ textarea,
 #edit_lugar, 
 #edit_edificio, 
 #edit_planta, 
-#edit_observaciones {
+#edit_observaciones,
+#form-name,
+#form-mail,
+#form-title,
+#form-text {
   width: 97%;
   padding: 10px;
   border: 1px solid #ddd;
@@ -361,7 +400,9 @@ textarea:focus,
   box-shadow: 8px 8px 15px rgb(0, 0, 0);
 }
 
-button#send_new_point, button#send_edit_point {
+button#send_new_point, 
+button#send_edit_point,
+button#button-send-contact-form{
   display: block;
   text-align: center;
   background-color: #0078d4;
@@ -373,19 +414,20 @@ button#send_new_point, button#send_edit_point {
   font-size: 90px;
   font-weight: bold;
   width: 100%;
-}
-
-button#send_new_point:hover, button#send_edit_point:hover {
-  background-color: #00539f;
-}
-
-button#send_new_point, button#send_edit_point {
-  display: block;
   margin: 0 auto;
   margin-top: 20px;
 }
 
-#updates_title, #new_point_text, #edit_point_text{
+button#send_new_point:hover, 
+button#send_edit_point:hover,
+button#button-send-contact-form:hover {
+  background-color: #00539f;
+}
+
+#updates_title, 
+#new_point_text, 
+#edit_point_text,
+#contact_point_text{
   font-weight: bold;
 }
 

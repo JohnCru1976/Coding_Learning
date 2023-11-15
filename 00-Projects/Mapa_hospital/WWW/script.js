@@ -10,6 +10,41 @@ window.onbeforeunload = function() {
 // Este código se ejecutará una vez que se haya cargado completamente el DOM
 document.addEventListener("DOMContentLoaded", function() {
     mostrar_ventana(0)  // Cambiar a 2 para acceder a modo ubicar punto ... 0 para mostrar pantalla inicial
+    const menuButton = document.getElementById('options-button');
+    const headerOptions = document.getElementById('header-options');
+
+    // Función para mostrar u ocultar el menú
+    function toggleMenu() {
+        //headerOptions.classList.toggle('hidden');
+        if (headerOptions.style.display === "block"){
+            headerOptions.style.display = "none";
+            menuButton.focus = false;
+        } else {
+            headerOptions.style.display = "block";
+        }
+    }
+
+    // Evento para mostrar u ocultar el menú al hacer clic en el botón
+    menuButton.addEventListener('click', function(event) {
+        event.stopPropagation();
+        toggleMenu();
+    });
+
+    // Evento para ocultar el menú al hacer clic fuera del menú
+    document.addEventListener('click', function(event) {
+        if (!headerOptions.contains(event.target) && event.target !== menuButton) {
+            headerOptions.classList.add('hidden');
+            if (headerOptions.style.display == "block"){
+              headerOptions.style.display = "none";
+            } 
+        }
+    });
+
+    // Evento para ocultar el menú al seleccionar una de sus opciones
+    headerOptions.addEventListener('click', function() {
+        headerOptions.classList.add('hidden');
+        toggleMenu()
+    });
   });
 
   function mostrar_ventana(num) {
@@ -20,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const updates = document.getElementById("updates")
     const new_point = document.getElementById("new_point")
     const edit_point = document.getElementById("edit_point")
+    const container_contact_form = document.getElementById("container-contact-form")
     // Se activa la lista de lugares
     if (num == 0) {
       list_places.style.display = "block"; 
@@ -28,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
       updates.style.display = "none"
       new_point.style.display = "none"
       edit_point.style.display = "none"
+      container_contact_form.style.display = "none"
     }
     // Se activa el mapa del lugar elegido
     if (num == 1) {
@@ -37,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
       updates.style.display = "none"
       new_point.style.display = "none"
       edit_point.style.display = "none"
+      container_contact_form.style.display  = "none"
     }
     // Se activa el test para comprabación de puntos
     if (num == 2) {
@@ -46,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function() {
       updates.style.display = "none"
       new_point.style.display = "none"
       edit_point.style.display = "none"
+      container_contact_form.style.display  = "none"
     }
     // Se activa la ventana últimas actualizaciones
     if (num == 3) {
@@ -55,6 +94,7 @@ document.addEventListener("DOMContentLoaded", function() {
       updates.style.display = "block"
       new_point.style.display = "none"
       edit_point.style.display = "none"
+      container_contact_form.style.display  = "none"
     }
     // Se activa la ventana nuevo punto
     if (num == 4) {
@@ -64,6 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
       updates.style.display = "none"
       new_point.style.display = "block"
       edit_point.style.display = "none"
+      container_contact_form.style.display  = "none"
 
       new_x = 50
       new_y = 50
@@ -79,6 +120,17 @@ document.addEventListener("DOMContentLoaded", function() {
       new_point.style.display = "none"
       edit_point.style.display = "block"
       container_edit_image.display = "block"
+      container_contact_form.style.display  = "none"
+    }
+    // Se activa la ventana formulario de contacto
+    if (num == 6) {
+      list_places.style.display = "none"; 
+      show_image.style.display = "none";
+      test_image.style.display = "none";
+      updates.style.display = "none"
+      new_point.style.display = "none"
+      edit_point.style.display = "none"
+      container_contact_form.style.display = "block"
     }
   }
 
@@ -274,7 +326,7 @@ button_new.addEventListener("click", function () {
     
     var texto = `Nuevo punto:
     {"x_percentage": ${new_x}, "y_percentage": ${new_y}, "text": "${lugar_new.value}", "building": "${edificio_new.value}", "floor": "${planta_new.value}", "comment": "${observaciones_new.value}"},`;
-    send_mail(texto)
+    send_mail(texto,"")
     mostrar_ventana(0)
 }); 
 
@@ -356,7 +408,7 @@ button_edit.addEventListener("click", function () {
     }
     var texto = `Punto editado:
     {"x_percentage": ${edit_x}, "y_percentage": ${edit_y}, "text": "${lugar_edit.value}", "building": "${edificio_edit.value}", "floor": "${planta_edit.value}", "comment": "${observaciones_edit.value}"},`;
-    send_mail(texto)
+    send_mail(texto,"")
     mostrar_ventana(0)
 }); 
 
@@ -436,10 +488,77 @@ function descarga_android(){
 }
 
 
+// *********************************************
+// ENVIAR DATOS CON UN FORMULARIO
+// *********************************************
+const contact_button = document.getElementById("contact-button");
+contact_button.addEventListener("click", contact_form);
+
+const container_contact_form = document.getElementById("container-contact-form");
+
+var button_send_contact_form = document.getElementById("button-send-contact-form");
+
+function contact_form(){
+  mostrar_ventana(6)
+  const form_name = document.getElementById("form-name");
+  const form_email = document.getElementById("form-email");
+  const form_title = document.getElementById("form-title");
+  const form_text = document.getElementById("form-text");
+
+  form_name.value = "";
+  form_email.value = "";
+  form_title.value = "";
+  form_text.value = "";
+
+  form_name.focus();
+}
+
+// Añade un EventListener para el evento "click"
+button_send_contact_form.addEventListener("click", function () {
+  const form_name = document.getElementById("form-name");
+  const form_mail = document.getElementById("form-mail");
+  const form_title = document.getElementById("form-title");
+  const form_text = document.getElementById("form-text");
+
+  if (form_text.value == "") {
+    form_text.focus();
+    return
+  }
+  
+  var texto_form = "Nombre: " + form_name.value + "\nEmail: " + form_mail.value + "\nAsunto: " + form_title.value + "\nTexto: " + form_text.value;
+  
+  send_mail(texto_form,"form");
+
+  mostrar_ventana(0);
+}); 
+
+
+// Función para mostrar el punto
+function showPoint_new(pointArg) {
+  const new_point_map = document.getElementById("new_point_map");
+  new_point_map.style.left = pointArg.x_percentage + "%";
+  new_point_map.style.top = pointArg.y_percentage + "%";
+}
+
+// Event listener para detectar clicks en el contenedor de la imagen
+container_new_image.addEventListener("click", function (event) {
+  const containerRect = container_new_image.getBoundingClientRect();
+  const containerWidth = containerRect.width;
+  const containerHeight = containerRect.height;
+
+  let x = (event.clientX - containerRect.left) / containerWidth * 100;
+  let y = (event.clientY - containerRect.top) / containerHeight * 100;
+
+  new_x = Math.max(0, Math.min(100, x)).toFixed(3);
+  new_y = Math.max(0, Math.min(100, y)).toFixed(3);
+
+  showPoint_new({x_percentage: new_x, y_percentage: new_y});
+});
+
 // ********************************************
 // ENVIAR UN CORREO CON PHP
 // ********************************************
-function send_mail(message){
+function send_mail(message,tipo){
   fetch('send_mail.php', {
     method: 'POST',
     headers: {
@@ -449,7 +568,12 @@ function send_mail(message){
   })
   .then(response => {
     if (response.ok) {
-      showCustomAlert("Mensaje enviado con éxito",'Una vez revisado se añadirá la información.\n\nGracias por colaborar');
+      if (tipo=="form"){
+        showCustomAlert("Mensaje enviado con éxito",'Gracias por colaborar');
+      }else{
+        showCustomAlert("Mensaje enviado con éxito",'Una vez revisado se añadirá la información.\n\nGracias por colaborar');
+      }
+      
     } else {
       showCustomAlert("Error de envío", 'Lo siento, hubo un problema al enviar el mensaje');
     }

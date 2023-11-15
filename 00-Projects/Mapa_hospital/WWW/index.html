@@ -12,9 +12,12 @@
 </head>
 <body>
     <div id="global-container">
-        <div id="header-container">           
-            <h1 id="header">Mapa Hospital</h1>
-            <div id="header-options">
+        <div id="header-container"> 
+            <div id="header-title">
+                <img id="options-button" src="images/options.png">
+                <h1 id="header">Mapa Hospital</h1>
+            </div>          
+            <div id="header-options" class="hidden">
                 <div class="header-option" id="new_point_proposal">
                     Comunicar Nuevo Punto
                 </div>
@@ -23,6 +26,9 @@
                 </div>
                 <div class="header-option" id="video-link-container">
                     <a href="MapaHospital.apk" id="enlace-APK">APK Android v.1.09</a>
+                </div>
+                <div class="header-option" id="contact-button">
+                    Formulario Contacto
                 </div>
             </div>
         </div>
@@ -92,7 +98,6 @@
                 </div>
             </div>
             <!-- Editar un punto -->
-            <!-- Nuevo punto -->
             <div id="edit_point">
                 <a href="#" id="edit_point_back">Volver atrás</a>
                 <p id="edit_point_text">Modificar datos</p>
@@ -115,6 +120,23 @@
             
                 <div style="text-align: center;">
                     <button id="send_edit_point">Enviar Información</button>
+                </div>
+            </div>
+            <!-- Formulario de contacto -->
+            <div id="container-contact-form">
+                <a href="#" id="contact_point_back">Volver atrás</a>
+                <p id="contact_point_text">Formulario de contacto</p>
+            
+                <!-- Campos de introducción de texto -->
+                <div id="form_input">
+                        <input type="text" id="form-name" class="form-contact" name="name" placeholder="Nombre... (no requerido)...">
+                        <input type="text" id="form-mail" class="form-contact" name="mail" placeholder="Email... (no requerido)...">   
+                        <input type="text" id="form-title" class="form-contact" name="title" placeholder="Asunto... (no requerido)...">
+                        <textarea id="form-text" name="text" class="form-contact" rows="6" placeholder="Texto... (requerido)"></textarea>
+                </div>
+            
+                <div style="text-align: center;">
+                    <button id="button-send-contact-form">Enviar Información</button>
                 </div>
             </div>
             <!-- Contenido del cuadro de diálogo personalizado -->
