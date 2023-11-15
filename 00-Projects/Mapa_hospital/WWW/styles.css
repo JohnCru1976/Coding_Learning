@@ -171,7 +171,6 @@ img {
 }
 
 /* Listados */
-
 #list_places, #updates{
   background-color: #fff;
   border: 1px solid #ddd;
@@ -222,7 +221,6 @@ ul {
 }
 
 /*  SHOW IMAGE */
-
 #place_data, 
 #updates_title, 
 #new_point_text,
