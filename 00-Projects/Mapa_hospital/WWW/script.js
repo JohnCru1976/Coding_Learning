@@ -555,6 +555,7 @@ container_new_image.addEventListener("click", function (event) {
   showPoint_new({x_percentage: new_x, y_percentage: new_y});
 });
 
+
 // ********************************************
 // ENVIAR UN CORREO CON PHP
 // ********************************************

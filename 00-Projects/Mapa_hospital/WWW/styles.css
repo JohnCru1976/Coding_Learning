@@ -20,12 +20,13 @@ body {
   height: 100vh;
 }
 
+/* Scrolls generales */
 .scroll-container{
   flex: 1;
   overflow-y: auto;
-  height: 90vh;
+  height: 75vh;
 }
-
+/* Scroll de la lista inicial */
 #child-container{
   height: 80vh;
 }
@@ -130,6 +131,7 @@ a{
 #container_new_image, 
 #container_edit_image {
     position: relative;
+    overflow: hidden;
     width: 100%; 
     height: auto;
     border: 1px solid black;
