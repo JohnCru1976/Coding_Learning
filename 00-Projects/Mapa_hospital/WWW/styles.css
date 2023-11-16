@@ -52,14 +52,15 @@ img {
   padding-top: 45;
   height: 50%;*/
   padding: 1.9%;
-  width: 9%;
+  width: 10%;
   cursor: pointer;
   object-fit:contain;
 }
 
-#options-button:hover {
-  background-color: #084e83;
-}
+/*#options-button:hover {
+  background-color: #00539f;
+  transition: background-color 0.6s ease;
+}*/
 
 #header-title {
   display: flex;
@@ -95,11 +96,12 @@ img {
 
 .header-option:hover {
   background-color: #084e83;
+  transition: background-color 0.6s ease;
 }
 
 h1 {
   background-color: #0078d4;
-  width: 98%;
+  width: 88%;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-top: 35px;
@@ -209,6 +211,7 @@ ul {
 #list_places li:hover {
   background-color: #c0c0c0;
   color: #160d4d;
+  transition: background-color 0.6s ease, color 0.6s ease;
 }
 
 /*  SHOW IMAGE */
@@ -255,6 +258,7 @@ ul {
 #show_back:hover, 
 #edit_point_proposal:hover {
   background-color: #00539f;
+  transition: background-color 0.6s ease;
 }
 
 #container_show_image {
@@ -309,6 +313,7 @@ ul {
 #edit_point_back:hover,
 #contact_point_back:hover {
   background-color: #00539f;
+  transition: background-color 0.6s ease;
 }
 
 #container_image, 
@@ -410,6 +415,7 @@ button#send_new_point:hover,
 button#send_edit_point:hover,
 button#button-send-contact-form:hover {
   background-color: #00539f;
+  transition: background-color 0.6s ease;
 }
 
 #updates_title, 

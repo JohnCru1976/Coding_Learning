@@ -52,7 +52,7 @@ var test_point = [
 {"x_percentage": 71.581, "y_percentage": 16.768, "text": "Ginecología Urgencias", "building": "Edificio Maternidad", "floor": "P.4", "comment": ""},
 {"x_percentage": 43.927, "y_percentage": 64.224, "text": "Analí­ticas", "building": "Patio Central", "floor": "P.Bj", "comment": "Se trata de un prefabricado temporal que se ubica al lado del acceso al Pabellón A desde el patio interior"},
 {"x_percentage": 38.116, "y_percentage": 39.242, "text": "Unidad del dolor", "building": "Pabellón A", "floor": "P.2", "comment": "Acceso B3. (Esta información necesita ser verificada y concretada)"},
-{"x_percentage": 50.845, "y_percentage": 2.000, "text": "Bar La Terracita", "building": "Fuera del recinto", "floor": "P.Bj", "comment": "<a href='https://maps.app.goo.gl/3ua3tKknqiyAPZmk7' class='link' target='blank'>Enlace a Google Maps</a>"},
+{"x_percentage": 50.845, "y_percentage": 2.000, "text": "Bar La Terracita (escaleras)", "building": "Fuera del recinto", "floor": "P.Bj", "comment": "<a href='https://maps.app.goo.gl/3ua3tKknqiyAPZmk7' class='link' target='blank'>Enlace a Google Maps</a>"},
 {"x_percentage": 73.797, "y_percentage": 78.735, "text": "Unidad del Íctus", "building": "Pabellón B", "floor": "P.3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
 {"x_percentage": 73.797, "y_percentage": 78.735, "text": "Cirugí­a de Colon", "building": "Pabellón B", "floor": "P.3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
 {"x_percentage": 31.016, "y_percentage": 47.786, "text": "Diálisis", "building": "Pabellón A", "floor": "P.3", "comment": ""},

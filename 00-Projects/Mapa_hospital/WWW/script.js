@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function toggleMenu() {
         //headerOptions.classList.toggle('hidden');
         if (headerOptions.style.display === "block"){
-            headerOptions.style.display = "none";
-            menuButton.focus = false;
+          headerOptions.style.display = "none";
         } else {
             headerOptions.style.display = "block";
         }
