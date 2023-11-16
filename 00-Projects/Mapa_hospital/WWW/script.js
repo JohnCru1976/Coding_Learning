@@ -302,7 +302,7 @@ function new_point_start_button (){
   planta_new.value = "";
   observaciones_new.value = "";
 
-  lugar_new.focus();
+  //lugar_new.focus();
 }
 
 // Añade un EventListener para el evento "click"
@@ -385,7 +385,7 @@ function show_data_edit(data){
 function edit_point_start_button (){
   mostrar_ventana(5);
   const lugar_edit = document.getElementById("edit_lugar");
-  lugar_edit.focus()
+  //lugar_edit.focus()
 }
 
 // Añade un EventListener para el evento "click"
