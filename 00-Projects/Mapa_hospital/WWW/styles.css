@@ -24,11 +24,11 @@ body {
 .scroll-container{
   flex: 1;
   overflow-y: auto;
-  height: 75vh;
+  height: 76vh;
 }
 /* Scroll de la lista inicial */
 #child-container{
-  height: 80vh;
+  height: 84vh;
 }
 
 /* HEADER CON OPTIONS BUTTON */
