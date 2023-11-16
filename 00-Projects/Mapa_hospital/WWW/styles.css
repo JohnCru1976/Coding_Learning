@@ -1,17 +1,15 @@
 /* Estilos globales */
 body {
   font-family: Arial, sans-serif;
-  font-size: 50px;
+  font-size: 3em;
   margin: 0;
   padding: 0;
   background-color: #f7f7f7;
   color: #333;
 }
 
-
-
 #buscar{
-  font-size: 50px;
+  font-size: 1.3em;
   padding: 10px;
   width: 98.3%;
 }
@@ -85,7 +83,8 @@ img {
   background-color: #0078d4;
   color: white;
   text-align: center;
-  font-size: 35px; 
+  /*font-size: 1em;*/
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   flex: 1;
   align-items: center;
@@ -106,7 +105,8 @@ h1 {
   color: white;
   text-align: center;
   height: 50%;
-  font-size: 1.5em;
+  font-size: 1.5em; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -151,10 +151,13 @@ a{
     top: 0;
     left: 0;
     transform: translate(-50%, -50%);
-    font-size: 50%;
+    font-size: 0.5em;
     font-weight: bold;
     color: white;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
+
 
 /* Listados */
 #list_places, #updates{
@@ -193,11 +196,12 @@ ul {
   padding-top: 0px;
   margin-bottom: 10px;
   cursor: pointer;
+  font-size: 1.3em;
 }
 
 #updates li {
   cursor: default;
-  font-size: 30px;
+  /*font-size: 1em;*/
 }
 
 #list_places li:hover {
@@ -338,7 +342,7 @@ ul {
 
 label {
   display: block;
-  font-size: 0.6em;
+  font-size: 0.7em;
   margin-top: 10px;
   margin-bottom: 2px;
   color: red;
@@ -364,7 +368,7 @@ textarea,
   border: 1px solid #ddd;
   border-radius: 5px;
   font-family: Arial, sans-serif;
-  font-size: 50px;  
+  font-size: 1em; 
 }
 
 textarea:focus, 
@@ -393,7 +397,7 @@ button#button-send-contact-form{
   border-radius: 5px;
   text-decoration: none;
   margin-top: 20px;
-  font-size: 90px;
+  font-size: 1.5em;
   font-weight: bold;
   width: 100%;
   margin: 0 auto;
