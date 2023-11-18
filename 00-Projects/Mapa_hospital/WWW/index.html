@@ -45,16 +45,16 @@
         <div id="contenedor-circulo">
             <div id="circulo"></div>
         </div>
-        
+
         <!-- Imagen que muestra la información del lugar -->
         <div id="show_image">
             <a href="#" id="show_back">Volver atrás</a>
             <div class="scroll-container">
                 <p id="place_data">Datos del lugar</p>
                 <p id="edit_point_proposal">Comunicar Modificación</p>
-                <div id="container_show_image">
-                    <img src="images/mapa_hospital.png" alt="mapa-hospital" />
-                    <div id="show_point">
+                <div id="container_show_image" class="container-with-image">
+                    <img class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
+                    <div id="show_point" class="point-class">
                         <div id="show-point-text"></div>
                     </div>
                 </div>
@@ -63,9 +63,9 @@
         <!-- Imagen para crear los puntos con hardcoding -->
         <div id="test_image">
             <a href="#" id="back">Volver atrás</a>
-            <div id="container_image">
-                <img src="images/mapa_hospital.png" alt="mapa-hospital" />
-                <div id="point"></div>
+            <div id="container_image" class="container-with-image">
+                <img class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
+                <div id="point" class="point-class"></div>
             </div>
             <div>
                 <p>Coordenadas del punto:</p>
@@ -97,9 +97,9 @@
                         <textarea id="observaciones" name="observaciones" rows="4" placeholder="Observaciones..."></textarea>
                 </div>
                 <p id="new_point_text">Haz click en el mapa para establecer el punto</p>
-                <div id="container_new_image">
-                    <img src="images/mapa_hospital.png" alt="mapa-hospital" />
-                    <div id="new_point_map"></div>
+                <div id="container_new_image" class="container-with-image">
+                    <img class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
+                    <div id="new_point_map" class="point-class"></div>
                 </div>
             
                 <div style="text-align: center;">
@@ -123,10 +123,10 @@
                     <textarea id="edit_observaciones" name="edit_observaciones" rows="4" placeholder="Observaciones..."></textarea>
                 </div>
                 <p id="edit_point_text">Haz click en el mapa para establecer el punto</p>
-                <div id="container_edit_image">
+                <div id="container_edit_image" class="container-with-image">
                     <div id="zoomImage-edit">
-                        <img src="images/mapa_hospital.png" alt="mapa-hospital" />
-                        <div id="edit_point_map"></div>
+                        <img class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
+                        <div id="edit_point_map" class="point-class"></div>
                     </div>
                 </div>
             

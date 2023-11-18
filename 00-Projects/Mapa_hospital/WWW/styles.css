@@ -1,4 +1,5 @@
-/* Estilos globales */
+/********************** GLOBAL **********************/
+
 body {
   font-family: Arial, sans-serif;
   font-size: 3em;
@@ -8,14 +9,20 @@ body {
   color: #333;
 }
 
-#buscar{
-  font-size: 1.3em;
-  padding: 10px;
-  width: 98.3%;
-}
-
+/* Contenedor general */
 #global-container {
   height: 100vh;
+}
+
+/* Enlaces en general */
+a{
+  text-decoration: none;
+  color: white;
+}
+/* Enlaces especiales */
+.link{
+  text-decoration:underline;
+  color: #160d4d;
 }
 
 /* Scrolls generales */
@@ -29,7 +36,9 @@ body {
   height: 84vh;
 }
 
-/* HEADER CON OPTIONS BUTTON */
+/********************** HEADER **********************/
+
+/* Contenedor general del header */
 #header-container {
   display:flex;
   flex-direction: column;
@@ -40,65 +49,21 @@ body {
   color: white;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+/* Contenedor del h1 y el button del menú opciones */
+#header-title {
+  display: flex;
+  align-items: center;
 }
 
+/* img para el botón del menú de opciones */
 #options-button {
-  /*margin-top: 20px;*/
-  /*padding: 25px;
-  padding-top: 45;
-  height: 50%;*/
   padding: 1.9%;
   width: 10%;
   cursor: pointer;
   object-fit:contain;
 }
 
-/*#options-button:hover {
-  background-color: #00539f;
-  transition: background-color 0.6s ease;
-}*/
-
-#header-title {
-  display: flex;
-  align-items: center;
-}
-
-#header-options {
-  display: none;
-  transition: display 0.6s;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  background-color: #0078d4;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-.hidden {
-  display: none;
-}
-
-.header-option {
-  background-color: #0078d4;
-  color: white;
-  text-align: center;
-  /*font-size: 1em;*/
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  flex: 1;
-  align-items: center;
-  padding: 50px;
-}
-
-.header-option:hover {
-  background-color: #084e83;
-  transition: background-color 0.6s ease;
-}
-
+/* H1 ubicado en el header para mostrar el título de la página */
 h1 {
   background-color: #0078d4;
   width: 88%;
@@ -117,51 +82,91 @@ h1 {
   cursor: pointer;
 }
 
-/* OTROS */
+/* Contenedor para el menú de opciones */
+#header-options {
+  display: none;
+  transition: display 0.6s;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background-color: #0078d4;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
 
-a{
-  text-decoration: none;
+/* Clase ubicada en header-options para ocultar el menú de opciones */
+.hidden {
+  display: none;
+}
+
+/* Opción individual del menú de opciones */
+.header-option {
+  background-color: #0078d4;
   color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  flex: 1;
+  align-items: center;
+  padding: 50px;
 }
 
-.link{
-  text-decoration:underline;
-  color: #160d4d;
+/* Efecto cuando se hace hover sobre las opciones del menú*/
+.header-option:hover {
+  background-color: #084e83;
+  transition: background-color 0.6s ease;
 }
 
-/* Imagen y contenedores de imagen */
-#container_image, 
-#container_show_image, 
-#container_new_image, 
-#container_edit_image {
-    position: relative;
-    overflow: hidden;
-    width: 100%; 
-    height: auto;
-    border: 1px solid black;
+/********************** IMÁGENES CON MAPAS **********************/
+
+/* Contenedores de imagen */
+.container-with-image {
+  position: relative;
+  overflow: hidden;
+  width: 100%; 
+  height: auto;
+  border: 1px solid black;
 }
 
-
-
-#point, 
-#show_point, 
-#new_point_map,
-#edit_point_map {
-    position: absolute;
-    width: 3%;
-    height: 3%;
-    background-color: red;
-    border-radius: 50%;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    font-size: 0.5em;
-    font-weight: bold;
-    color: white;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
-    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+/* Imágenes en general */
+.map-image {
+width: 100%;
+height: 100%;
+object-fit: contain;
 }
 
+/* Configuración del punto en el mapa */
+.point-class {
+  position: absolute;
+  width: 3%;
+  height: 3%;
+  background-color: red;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  font-size: 0.5em;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+/********************** LISTADOS (LUGARES Y UPDATES **********************/
+
+/* Barra de búsqueda */
+#buscar{
+  font-size: 1.3em;
+  padding: 10px;
+  width: 98.3%;
+}
+
+/* Listados en general */
+ul {
+  list-style-type:none;
+  padding: 0px;
+  margin-top: 0px;
+}
 
 /* Listados */
 #list_places, #updates{
@@ -178,20 +183,7 @@ a{
   flex-direction: column;
 }
 
-input[type="text"] {
-  width: 100%;
-  padding: 10px 0px 10px 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-ul {
-  list-style-type:none;
-  padding: 0px;
-  margin-top: 0px;
-}
-
+/* Elementos de los listados */
 #list_places li,  #updates li {
   background-color: #f0f0f0;
   border: 1px solid #ddd;
@@ -203,16 +195,26 @@ ul {
   font-size: 1.3em;
 }
 
+/* Configuración particular para elementos de updates */
 #updates li {
   cursor: default;
-  /*font-size: 1em;*/
 }
 
+/* Efecto del hover sobre los elementos de la lista de lugares */
 #list_places li:hover {
   background-color: #c0c0c0;
   color: #160d4d;
   transition: background-color 0.6s ease, color 0.6s ease;
 }
+
+input[type="text"] {
+  width: 100%;
+  padding: 10px 0px 10px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
 
 /*  SHOW IMAGE */
 #place_data, 
