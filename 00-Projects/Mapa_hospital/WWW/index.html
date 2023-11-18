@@ -5,10 +5,7 @@
     <title>Mapa Hospital</title>
     <link rel="icon" type="image/png" href="images/localizacion.png">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <meta http-equiv="Expires" content="0">
-    <meta http-equiv="Last-Modified" content="0">
-    <meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
-    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="max-age=604800, public">
 </head>
 <body>
     <div id="global-container">
@@ -50,7 +47,7 @@
                 <p id="place_data">Datos del lugar</p>
                 <p id="edit_point_proposal">Comunicar Modificación</p>
                 <div id="container_show_image" class="container-with-image">
-                    <img class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
+                    <img id="mapa-show" class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
                     <div id="show_point" class="point-class">
                         <div id="show-point-text"></div>
                     </div>
@@ -162,8 +159,715 @@
         
     </div>
     <!-- scripts -->
-    <script src="data.js"></script>
-    <script src="script.js"></script>
+    <script>
+        var test_point = [
+            {"x_percentage": 71.123, "y_percentage": 80.867, "text": "Traumatología", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 13.293, "y_percentage": 28.735, "text": "Paranestesia", "building": "Pabellón Quirúrgico", "floor": "P.1", "comment": ""},
+            {"x_percentage": 13.293, "y_percentage": 28.735, "text": "Quirófanos", "building": "Pabellón Quirúrgico", "floor": "P.Bj", "comment": "Normalmente las puertas grandes que hay justo enfrente de la entrada (planta baja). Puede tratarse de otra planta según la operación."},
+            {"x_percentage": 13.293, "y_percentage": 28.735, "text": "Anestesista", "building": "Pabellón Quirúrgico", "floor": "P.1", "comment": "Acudir aquí en caso de preoperatorio"},
+            {"x_percentage": 31.780, "y_percentage": 42.766, "text": "Oncología", "building": "Pabellón A", "floor": "P.1", "comment": "Acceso A-3 (Esta información necesita ser verificada)"},
+            {"x_percentage": 33.405, "y_percentage": 45.991, "text": "Colonoscopia", "building": "Pabellón A", "floor": "P.3", "comment": ""},                 
+            {"x_percentage": 31.627, "y_percentage": 50.675, "text": "Endoscopia", "building": "Pabellón A", "floor": "P.3", "comment": " (Esta información necesita ser verificada)"},
+            {"x_percentage": 31.627, "y_percentage": 50.675, "text": "Gastroscopia", "building": "Pabellón A", "floor": "P.3", "comment": " (Esta información necesita ser verificada)"},
+            {"x_percentage": 35.676, "y_percentage": 62.160, "text": "RayosX-Radiografías", "building": "Pabellón A", "floor": "P.1", "comment": ""},
+            {"x_percentage": 31.933, "y_percentage": 68.900, "text": "Ecografía", "building": "Pabellón A", "floor": "P.1", "comment": "El sobre se puede entregar en la consulta 32"},
+            {"x_percentage": 32.162, "y_percentage": 77.085, "text": "Cardiología y Cirugía Cardiaca", "building": "Pabellón A", "floor": "P.2", "comment": "Acceso A-3. Aquí tratan el tema de los marcapasos  (Esta información necesita ser verificada)"},
+            {"x_percentage": 32.162, "y_percentage": 77.085, "text": "Electrocardiograma", "building": "Pabellón A", "floor": "P.2", "comment": "Es en cardiología  (Esta información necesita ser verificada)"},
+            {"x_percentage": 32.086, "y_percentage": 71.858, "text": "Hematología", "building": "Pabellón A", "floor": "P.1", "comment": "Acceso A-3"},
+            {"x_percentage": 32.086, "y_percentage": 71.858, "text": "Neurología - 2ª Opción", "building": "Pabellón A", "floor": "P.1", "comment": "Se viene aquí cuando se deriva del Pabellón B"},
+            {"x_percentage": 72.727, "y_percentage": 75.297, "text": "Neurología-Consultas 1ª Opción", "building": "Pabellón B", "floor": "P.1", "comment": "De aquí nos pueden derivar al Pabellón A - Primera planta"},
+            {"x_percentage": 31.092, "y_percentage": 72.477, "text": "Resonancia", "building": "Pabellón A", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 31.092, "y_percentage": 72.477, "text": "TAC", "building": "Pabellón A", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 30.940, "y_percentage": 76.535, "text": "Radioterapia", "building": "Pabellón A", "floor": "P.Bj", "comment": " (Esta información necesita ser verificada)"},
+            {"x_percentage": 72.116, "y_percentage": 16.768, "text": "Medicina Interna", "building": "Edificio Maternidad", "floor": "P.1", "comment": ""},
+            {"x_percentage": 73.797, "y_percentage": 78.735, "text": "Judiciales CNP", "building": "Pabellón B", "floor": "P.2", "comment": ""},
+            {"x_percentage": 73.797, "y_percentage": 78.735, "text": "Pruebas Funcionales - PFRM2", "building": "Pabellón B", "floor": "P.2", "comment": "Es la puerta donde está enfermería, al lado de CNP. De aquí nos pueden derivar a la planta 1ª"},
+            {"x_percentage": 29.794, "y_percentage": 47.099, "text": "Urgencias", "building": "Pabellón A", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 74.304, "y_percentage": 45.413, "text": "Infecciosos", "building": "Pabellón B", "floor": "P.1", "comment": ""},
+            {"x_percentage": 71.658, "y_percentage": 43.110, "text": "Dermatología", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 74.179, "y_percentage": 43.110, "text": "Oftalmología", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 72.269, "y_percentage": 43.178, "text": "Reumatología", "building": "Pabellón B", "floor": "P.1", "comment": ""},
+            {"x_percentage": 71.963, "y_percentage": 47.305, "text": "Endocrino", "building": "Pabellón B", "floor": "P.1", "comment": ""},
+            {"x_percentage": 72.269, "y_percentage": 50.262, "text": "Urología", "building": "Pabellón B", "floor": "P.1", "comment": "Pabellón B, 1er piso. B-12"},
+            {"x_percentage": 72.422, "y_percentage": 54.114, "text": "Cirugía Vascular y Angiología", "building": "Pabellón B", "floor": "P.Bj", "comment": "Acceso B-03"},
+            {"x_percentage": 72.422, "y_percentage": 55.077, "text": "Cirugía Plástica", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 72.422, "y_percentage": 55.077, "text": "Alergología", "building": "Pabellón B", "floor": "P.1", "comment": "(Esta información necesita ser verificada)"},
+            {"x_percentage": 75.325, "y_percentage": 54.045, "text": "Farmacía", "building": "Pabellón B", "floor": "P.Bj", "comment": "Acceso B-3"},
+            {"x_percentage": 77.944, "y_percentage": 63.346, "text": "Cirugía General", "building": "Pabellón B", "floor": "P.Bj", "comment": "También Pabellón A, tercera planta, acceso A-3"},
+            {"x_percentage": 78.801, "y_percentage": 63.925, "text": "Cirugía de Mama", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 81.605, "y_percentage": 63.839, "text": "Gastroenterología", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 81.605, "y_percentage": 63.839, "text": "Digestivo", "building": "Pabellón B", "floor": "P.Bj", "comment": "También Pabellón A, tercera planta, acceso A-3"},
+            {"x_percentage": 81.605, "y_percentage": 63.839, "text": "Hepatología", "building": "Pabellón B", "floor": "P.Bj", "comment": "(Esta información necesita ser verificada)"},
+            {"x_percentage": 71.719, "y_percentage": 69.862, "text": "Nefrología", "building": "Pabellón B", "floor": "P.Bj", "comment": "(Esta información necesita ser verificada)"},
+            {"x_percentage": 71.963, "y_percentage": 66.700, "text": "Electroencefalograma", "building": "Pabellón B", "floor": "P.3", "comment": "(Esta información necesita ser verificada)"},
+            {"x_percentage": 71.963, "y_percentage": 69.519, "text": "Otorrino", "building": "Pabellón B", "floor": "P.Bj", "comment": "Acceso B-3"},
+            {"x_percentage": 74.332, "y_percentage": 71.995, "text": "Ortopantografía - Radiografía de boca", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 74.866, "y_percentage": 68.900, "text": "Pruebas Otorrino", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 72.804, "y_percentage": 75.228, "text": "Neurocirugía-Consulta", "building": "Pabellón B", "floor": "P.1", "comment": "También Pabellón B, tercer piso, acceso B-3"},
+            {"x_percentage": 72.804, "y_percentage": 75.228, "text": "Raquis-Neurocirugía", "building": "Pabellón B", "floor": "P.1", "comment": "Según el día hay que acudir a trauma primero"},
+            {"x_percentage": 71.047, "y_percentage": 81.418, "text": "Nutrición y dietética", "building": "Pabellón B", "floor": "P.Bj", "comment": "Es en el mismo lugar que traumatología"},
+            {"x_percentage": 74.866, "y_percentage": 80.867, "text": "Odontoestomología", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 76.093, "y_percentage": 57.097, "text": "Neumología", "building": "Pabellón B", "floor": "P.1", "comment": ""},
+            {"x_percentage": 73.873, "y_percentage": 73.165, "text": "Gasometría", "building": "Pabellón B", "floor": "P.1", "comment": ""},
+            {"x_percentage": 75.865, "y_percentage": 66.849, "text": "Espirometría", "building": "Pabellón B", "floor": "P.1", "comment": "(Esta información necesita ser verificada)"},
+            {"x_percentage": 78.158, "y_percentage": 64.310, "text": "Cirugía Mayor Torácica", "building": "Pabellón B", "floor": "P.1", "comment": ""},
+            {"x_percentage": 71.581, "y_percentage": 16.768, "text": "Ginecología Urgencias", "building": "Edificio Maternidad", "floor": "P.4", "comment": ""},
+            {"x_percentage": 43.927, "y_percentage": 64.224, "text": "Analí­ticas", "building": "Patio Central", "floor": "P.Bj", "comment": "Se trata de un prefabricado temporal que se ubica al lado del acceso al Pabellón A desde el patio interior"},
+            {"x_percentage": 38.116, "y_percentage": 39.242, "text": "Unidad del dolor", "building": "Pabellón A", "floor": "P.2", "comment": "Acceso B3. (Esta información necesita ser verificada y concretada)"},
+            {"x_percentage": 50.845, "y_percentage": 2.000, "text": "Bar La Terracita (escaleras)", "building": "Fuera del recinto", "floor": "P.Bj", "comment": "<a href='https://maps.app.goo.gl/3ua3tKknqiyAPZmk7' class='link' target='blank'>Enlace a Google Maps</a>"},
+            {"x_percentage": 73.797, "y_percentage": 78.735, "text": "Unidad del Íctus", "building": "Pabellón B", "floor": "P.3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
+            {"x_percentage": 73.797, "y_percentage": 78.735, "text": "Cirugí­a de Colon", "building": "Pabellón B", "floor": "P.3", "comment": "Está a la altura de judiciales CNP, en la siguiente planta"},
+            {"x_percentage": 31.016, "y_percentage": 47.786, "text": "Diálisis", "building": "Pabellón A", "floor": "P.3", "comment": ""},
+            {"x_percentage": 71.199, "y_percentage": 81.143, "text": "Cirugía Ortopédica", "building": "Pabellón B", "floor": "P.Bj", "comment": "Es en el mismo lugar que traumatología"},
+            {"x_percentage": 78.151, "y_percentage": 61.404, "text": "Electromiografía ", "building": "Pabellón B", "floor": "P.3", "comment": "Acceso por Neurofisiología"},
+            {"x_percentage": 30.863, "y_percentage": 53.082, "text": "Consulta Básica Urgencias", "building": "Edificio A", "floor": "P.Bj", "comment": "Mandan aquí a los traumas que llevan lesionados más de una semana. Se accede desde rayos-x de urgencias, como si se fuera hacia la calle"},
+            {"x_percentage": 78.151, "y_percentage": 61.404, "text": "Neurofisiología", "building": "Pabellón B", "floor": "P.3", "comment": "Aquí está electromiografía y Unidad del sueño"},
+            {"x_percentage": 78.151, "y_percentage": 61.404, "text": "Unidad del sueño", "building": "Edificio B", "floor": "P.3", "comment": "Está en la sala Neurofisiología"},
+            {"x_percentage": 31.780, "y_percentage": 68.900, "text": "Mamografías", "building": "Pabellón A", "floor": "P.1", "comment": "Enfrente de Rayos-X, dónde se hacen las ecografías. En el caso de las eco el sobre se puede entregar en la consulta 32"},
+            {"x_percentage": 32.162, "y_percentage": 77.497, "text": "Marcapasos-Cardiología", "building": "Pabellón A", "floor": "P.2", "comment": "Se puede acceder también por la planta baja, en unas escaleras al fondo, pasado el TAC"},
+            {"x_percentage": 65.667, "y_percentage": 81.424, "text": "Servicios-WC-Lavabos", "building": "Edificio B", "floor": "P.Bj", "comment": "En trauma hay unos lavabos al fondo de la sala. Son los más cercanos al bus y con poca afluencia."},
+            {"x_percentage": 27.807, "y_percentage": 12.573, "text": "Bar Hospital", "building": "Dentro del recinto", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 1.299, "y_percentage": 59.066, "text": "Bar Julivert (Chino)", "building": "Fuera del recinto", "floor": "P.Bj", "comment": "<a href='https://maps.app.goo.gl/6V4DYeJYCzdDxKEW9' class='link' target='blank'>Enlace a Google Maps</a>"},
+            {"x_percentage": 44.268, "y_percentage": 63.888, "text": "Preoperatorios", "building": "Pabellón A", "floor": "P.Bj", "comment": "<b>Paso 1.-</b> Analítica (antes de las 09:00); <b>Paso 2.-</b> Electrocardiograma en Cardiología (planta 2ª Pabellón A); <b>Paso 3.-</b> Anestesista (planta 1 del Edificio Quirúrgico. Antes de las 10:00)"},
+            {"x_percentage": 0.000, "y_percentage": 0.000, "text": "Diálisis - Xirivella (Diaverum)", "building": "Carrer dels Corretgers, nº 68", "floor": "<a href='https://maps.app.goo.gl/KTUJVTGXqhtsYRte7' class='link' target='blank'>Enlace a Google Maps</a>", "comment": "Llévate bocata y cargador de móvil", "meta": 0},
+            {"x_percentage": 0.000, "y_percentage": 0.000, "text": "Urgencias", "building": "La Nueva Fe", "floor": "<a href='https://maps.app.goo.gl/EWB2GnLGvdahAvD6A' class='link' target='blank'>Enlace a Google Maps</a>", "comment": "<a href='https://maps.app.goo.gl/EWB2GnLGvdahAvD6A' class='link' target='blank'>Enlace a Google Maps</a>", "comment": "Se viene aquí para <b>Oftalmología</b> a partir de ciertos horarios (posiblemente a partir de las 15:00 los laborables y siempre los no laborables). (Esta información necesita ser concretada)", "meta": 0},
+            {"x_percentage": 13.080, "y_percentage": 25.294, "text": "Terapia del dolor", "building": "Pabellón Quirúrgico", "floor": "P.1", "comment": ""},
+            {"x_percentage": 13.235, "y_percentage": 25.503, "text": "Cirugía Mayor Ambulatoria", "building": "Edificio Quirúrgico", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 71.749, "y_percentage": 16.584, "text": "Oncología Ginecológica", "building": "Edificio Maternidad", "floor": "P.Bj", "comment": ""},
+            {"x_percentage": 13.467, "y_percentage": 25.225, "text": "UCI", "building": "Pabellón Quirúrgico", "floor": "P.4", "comment": ""},
+        ];
+
+        var last_updates = ["<b>30-10-2023</b> Añadido el punto Analíticas (Gracias por la colaboración)",
+            "<b>30-10-2023</b> Añadido el punto Unidad del Dolor (Gracias por la colaboración)",
+            "<b>30-10-2023</b> Incluído el apartado Últimas Actualizaciones",
+            "<b>30-10-2023</b> Incluído el apartado Proponer Nuevo Punto",
+            "<b>31-10-2023</b> Incluído el apartado Proponer modificación",
+            "<b>31-10-2023</b> Añadido punto Bar/Almuerzo (Gracias por la colaboración)",
+            "<b>31-10-2023</b> Se han especificado como obligatorios algunos campos mínimos para la introducción de puntos",
+            "<b>31-10-2023</b> Se ha añadido un enlace a un pequeño videotutorial en la parte superior derecha de la página",
+            "<b>03-11-2023</b> Se añade punto: Unidad del Íctus (Gracias por la colaboración)",
+            "<b>03-11-2023</b> Se añade punto: Cirugía de Cólon (Gracias por la colaboración)",
+            "<b>03-11-2023</b> Se añade punto: Diálisis (Gracias por la colaboración)",
+            "<b>06-11-2023</b> Se añade punto: Cirugía Ortopédica (en el mismo lugar que trauma)",
+            "<b>06-11-2023</b> Se modifica Ecografías: se indica que el sobre se puede entregar en consulta 32",
+            "<b>06-11-2023</b> Se modifica Nutrición y Dietética: se indica que está en el mismo lugar que trauma",
+            "<b>07-11-2023</b> Se quita tutorial de Youtube y se añade enlace a APK para Android v.1.00",
+            "<b>07-11-2023</b> Actualización de la APK a la v.1.03: ahora se borra el caché de forma automática y se confirma el envío el datos con un mensaje",
+            "<b>07-11-2023</b> Mapa modificado para ubicar correctamente el edificio de maternidad y puntos asociados",
+            "<b>07-11-2023</b> Actualización de la APK a la v.1.04: se ha añadido un texto en la parte superior izquierda con la versión de la APK para saber cuando actualizarla",
+            "<b>08-11-2023</b> Actualización de la APK a la v.1.05: se ha añadido un mensaje de error cuando no hay conexión y no se carga la página. La app de Android funciona cargando la web online y necesita conexión",
+            "<b>08-11-2023</b> Se modifica el punto Ortopantografía y se ubica correctamente. Se especifica que se trata de 'Radiografía de la boca'",
+            "<b>09-11-2023</b> Se añade punto Electromiografía: planta 3 por digestivo (Gracias por la colaboración)",
+            "<b>09-11-2023</b> Actualización de la APK a la v.1.06: ahora se puede ampliar la imagen con los dedos sobre la pantalla",
+            "<b>10-11-2023</b> Se añade punto Consulta Básica de Urgencias: mandan aquí a los de trauma que llevan más de una semana lesionados",
+            "<b>10-11-2023</b> Se modifica punto Neurofisiología: la unidad se ha trasladado a la planta 3ª",
+            "<b>10-11-2023</b> Se añade punto Unidad del sueño: está en la zona de Neurofisiología",
+            "<b>10-11-2023</b> Actualización de la APK a la v.1.07: ahora sale un mensaje cuando se pulsa el botón atrás de Android y se puede elegir si salir de la aplicación. Se ha modifica también el icono de la aplicación",
+            "<b>11-11-2023</b> Se añade punto Mamografía: está en el mismo lugar que las ecografías, enfrente de rayos-x",
+            "<b>11-11-2023</b> Actualización de la APK a la v.1.08: cuando se pulsa el botón atrás de Android vuelve a la ventana de inicio y no sale de la APP. Se muestra un mensaje informando que no se puede descagar la APK desde la propia APP de Android",
+            "<b>11-11-2023</b> Se ha incluido una fotografía de Google maps sobre la cual se muestra el mapa",
+            "<b>12-11-2023</b> Se han personalizado los mensajes que arroja la web cuando se envía información",
+            "<b>13-11-2023</b> La APK de Android pasa a considerarse estable. No se esperan más actualizaciones en breve.",
+            "<b>13-11-2023</b> Se añade punto: Diálisis - Xirivella. Incluye un enlace a Google Maps",
+            "<b>14-11-2023</b> Actualización de la APK a la v.1.09: Permite abrir enlaces externos. Por ejemplo, puede abrir el enlace a Diálisis de Xirivella en Google Maps o puede abrir enlace a la descarga de la APK de Android",
+            "<b>14-11-2023</b> Se añade punto: Hospital La Nueva Fe. Incluye un enlace a Google Maps",
+            "<b>15-11-2023</b> Se agrupan los menús en un botón desplegable arriba a la izquierda. Se incluye un formulario de contacto",
+            "<b>15-11-2023</b> Añadidos nuevos puntos: Cirugía Mayor, Terapia del dolor, Oncología Ginecológica y UCI",
+        ];
+    </script>
+
+    <script>
+        // **********
+        // Inicio
+        // **********
+
+        window.onbeforeunload = function() {
+        // Vacía el caché del navegador
+        window.location.reload(true);
+        }
+
+        // Este código se ejecutará una vez que se haya cargado completamente el DOM
+        document.addEventListener("DOMContentLoaded", function() {
+            mostrar_ventana(0)  // Cambiar a 2 para acceder a modo ubicar punto ... 0 para mostrar pantalla inicial
+            const menuButton = document.getElementById('options-button');
+            const headerOptions = document.getElementById('header-options');
+
+            // Función para mostrar u ocultar el menú
+            function toggleMenu() {
+                //headerOptions.classList.toggle('hidden');
+                if (headerOptions.style.display === "block"){
+                headerOptions.style.display = "none";
+                } else {
+                    headerOptions.style.display = "block";
+                }
+            }
+
+            // Evento para mostrar u ocultar el menú al hacer clic en el botón
+            menuButton.addEventListener('click', function(event) {
+                event.stopPropagation();
+                toggleMenu();
+            });
+
+            // Evento para ocultar el menú al hacer clic fuera del menú
+            document.addEventListener('click', function(event) {
+                if (!headerOptions.contains(event.target) && event.target !== menuButton) {
+                    headerOptions.classList.add('hidden');
+                    if (headerOptions.style.display == "block"){
+                    headerOptions.style.display = "none";
+                    } 
+                }
+            });
+
+            // Evento para ocultar el menú al seleccionar una de sus opciones
+            headerOptions.addEventListener('click', function() {
+                headerOptions.classList.add('hidden');
+                toggleMenu()
+            });
+        });
+
+        function mostrar_ventana(num) {
+            // Declaración de todas las ventanas disponibles
+            const test_image = document.getElementById("test_image")
+            const show_image = document.getElementById("show_image")
+            const list_places = document.getElementById("list_places")
+            const updates = document.getElementById("updates")
+            const new_point = document.getElementById("new_point")
+            const edit_point = document.getElementById("edit_point")
+            const container_contact_form = document.getElementById("container-contact-form")
+            const contenedor_circulo = document.getElementById("contenedor-circulo")
+            // Se activa la lista de lugares
+            if (num == 0) {
+            show_image.style.display = "none";
+            test_image.style.display = "none";
+            updates.style.display = "none";
+            new_point.style.display = "none";
+            edit_point.style.display = "none";
+            container_contact_form.style.display = "none";
+            contenedor_circulo.style.display = "none";
+            list_places.style.display = "block"; 
+            }
+            // Se activa el mapa del lugar elegido
+            if (num == 1) {
+            list_places.style.display = "none"; 
+            test_image.style.display = "none";
+            updates.style.display = "none";
+            new_point.style.display = "none";
+            edit_point.style.display = "none";
+            container_contact_form.style.display  = "none";
+            contenedor_circulo.style.display = "none";
+            show_image.style.display = "block";
+            }
+            // Se activa el test para comprabación de puntos
+            if (num == 2) {
+            list_places.style.display = "none"; 
+            show_image.style.display = "none";
+            updates.style.display = "none";
+            new_point.style.display = "none";
+            edit_point.style.display = "none";
+            container_contact_form.style.display  = "none";
+            contenedor_circulo.style.display = "none";
+            test_image.style.display = "block";
+            }
+            // Se activa la ventana últimas actualizaciones
+            if (num == 3) {
+            list_places.style.display = "none"; 
+            show_image.style.display = "none";
+            test_image.style.display = "none";
+            new_point.style.display = "none";
+            edit_point.style.display = "none";
+            container_contact_form.style.display  = "none";
+            contenedor_circulo.style.display = "none";
+            updates.style.display = "block";
+            }
+            // Se activa la ventana nuevo punto
+            if (num == 4) {
+            list_places.style.display = "none"; 
+            show_image.style.display = "none";
+            test_image.style.display = "none";
+            updates.style.display = "none";
+            edit_point.style.display = "none";
+            container_contact_form.style.display  = "none";
+            contenedor_circulo.style.display = "none";
+            new_point.style.display = "block";
+
+            new_x = 50
+            new_y = 50
+            showPoint_new({x_percentage: new_x, y_percentage: new_y});
+            }
+            // Se activa la ventana editar punto
+            if (num == 5) {
+            const container_edit_image = document.getElementById("container_edit_image")
+            list_places.style.display = "none"; 
+            show_image.style.display = "none";
+            test_image.style.display = "none";
+            updates.style.display = "none";
+            new_point.style.display = "none";
+            container_contact_form.style.display  = "none";
+            contenedor_circulo.style.display = "none";
+            edit_point.style.display = "block";
+            container_edit_image.display = "block"
+            }
+            // Se activa la ventana formulario de contacto
+            if (num == 6) {
+            list_places.style.display = "none"; 
+            show_image.style.display = "none";
+            test_image.style.display = "none";
+            updates.style.display = "none";
+            new_point.style.display = "none";
+            edit_point.style.display = "none";
+            contenedor_circulo.style.display = "none";
+            container_contact_form.style.display = "block"
+            }
+        }
+
+        // El usuario pulsa el botón "atrás" en el navegador.
+        window.addEventListener('popstate', function(event) {
+            handleClick()
+        });
+
+        // El usuario pulsa el título de la página y vuelve al inicio
+        const h1_click = document.getElementById("header")
+        h1_click.addEventListener("click", function (){
+            mostrar_ventana(0);
+        })
+
+        // *************************************************************
+        // Muestra el listado inicial y un cuadro de búsqueda
+        // *************************************************************
+        const showBackButton = document.getElementById("show_back");
+        const buscarInput = document.getElementById("buscar");
+        showBackButton.addEventListener("click", handleClick);
+        buscarInput.addEventListener("input", mostrarResultados);
+
+        mostrarResultados(); // Mostrar resultados iniciales
+
+        // Función que se llamará cuando se haga clic en el botón
+        function handleClick() {
+            mostrar_ventana(0)
+        }
+
+        function mostrarResultados() {
+        const puntosLista = document.getElementById("puntos-lista");
+        puntosLista.innerHTML = "";
+        var filtro = quitarAcentos(buscarInput.value.toLowerCase());
+        
+        // Ordenar el array por la clave "text" de menor a mayor
+        test_point.sort((a, b) => a.text.localeCompare(b.text));
+        
+        test_point.forEach(function(point, index) {
+            var texto = quitarAcentos(point.text.toLowerCase());
+            if (texto.includes(filtro)) {
+                var listItem = document.createElement("li");
+                listItem.style.fontSize = "50px";
+                listItem.innerHTML = `<strong>${point.text}</strong>, ${point.building}, ${point.floor}`;
+                listItem.setAttribute("data-index", index);
+                // Listener que funciona cuando se hace click en un lugar de la lista
+                listItem.addEventListener("click", function() {
+                    const container_show_image = document.getElementById("container_show_image")
+                    var dataIndex = this.getAttribute("data-index");
+                    var place_text = document.getElementById("place_data");
+                    var data = test_point[dataIndex];
+                    mostrar_ventana(1);
+                    container_show_image.style.display = "block";
+                    showPoint_show(data);
+                    place_text.innerHTML = `<strong>${data.text}</strong><br>${data.building} - ${data.floor}`;
+                    if (data.comment != ""){
+                        place_text.innerHTML = place_text.innerHTML + "<br>" + `<b>Comentarios:</b> ${data.comment}`
+                    }
+                    // Pasando datos para actualizar punto
+                    show_data_edit(data)
+                    if (data.meta == 0){
+                        container_show_image.style.display = "none";
+                    }
+                });
+                puntosLista.appendChild(listItem);
+            }
+        });
+        }
+
+        function quitarAcentos(texto) {
+            return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
+        // *************************************************************
+        // Muestra información sobre el lugar y el punto en el mapa
+        // *************************************************************
+
+        // Función para mostrar el punto
+        function showPoint_show(place) {
+        const show_point = document.getElementById("show_point");
+        const show_point_text = document.getElementById("show-point-text")
+        show_point.style.left = place.x_percentage + "%";
+        show_point.style.top = place.y_percentage + "%";
+        // Texto del punto
+        show_point_text.innerHTML = place.floor;
+        show_point_text.style.color ="white";
+        show_point_text.style.fontWeight ="bold";
+        show_point_text.style.whiteSpace ="nowrap";
+        show_point_text.style.overflow ="visible";
+        show_point_text.style.textAlign = "center";
+        show_point_text.style.transform = "translate(100%,0%)"
+        }
+
+        // ****************************************
+        // Establece los puntos
+        // mostrar_ventana(2)
+        // ****************************************
+        const container_image = document.getElementById("container_image");
+
+        // Función para mostrar el punto
+        function showPoint(pointArg) {
+            const point = document.getElementById("point");
+            const coordinates = document.getElementById("coordinates");
+            point.style.left = pointArg.x_percentage + "%";
+            point.style.top = pointArg.y_percentage + "%";
+            var x_percentage = pointArg.x_percentage.toFixed(3);
+            var y_percentage = pointArg.y_percentage.toFixed(3);
+            coordinates.innerHTML = `{"x_percentage": ${x_percentage}, "y_percentage": ${y_percentage},
+            "text": "", "building": "Pabellón A", "floor": "0", "comment": ""},`;
+        }
+
+        // Event listener para detectar clicks en el contenedor de la imagen
+        container_image.addEventListener("click", function (event) {
+            const containerRect = container_image.getBoundingClientRect();
+            const containerWidth = containerRect.width;
+            const containerHeight = containerRect.height;
+
+            let x = (event.clientX - containerRect.left) / containerWidth * 100;
+            let y = (event.clientY - containerRect.top) / containerHeight * 100;
+
+            x = Math.max(0, Math.min(100, x));
+            y = Math.max(0, Math.min(100, y));
+
+            showPoint({x_percentage: x, y_percentage: y});
+        });
+
+        // *************************************************************
+        // Ultimas actualizaciones
+        // *************************************************************
+
+        const updates_button = document.getElementById("last_updates");
+        updates_button.addEventListener("click", mostrarUpdates);
+
+        function mostrarUpdates() {
+        const updatesLista = document.getElementById("updates-lista");
+        var reversedUpdates = last_updates.slice().reverse();
+        updatesLista.innerHTML = ""
+        
+        reversedUpdates.forEach(function(update){
+            var listItem = document.createElement("li");
+            listItem.style.fontSize = "50px";
+            listItem.innerHTML = update;
+            updatesLista.appendChild(listItem)
+        })
+
+        mostrar_ventana(3)
+        }
+
+        // *************************************************************
+        // Introducir nuevo punto
+        // *************************************************************
+        const new_point_start = document.getElementById("new_point_proposal");
+        new_point_start.addEventListener("click", new_point_start_button);
+
+        const container_new_image = document.getElementById("container_new_image");
+        var new_x = 0
+        var new_y = 0
+
+        var button_new = document.getElementById("send_new_point");
+
+        function new_point_start_button (){
+        mostrar_ventana(4)
+        const lugar_new = document.getElementById("lugar");
+        const edificio_new = document.getElementById("edificio");
+        const planta_new = document.getElementById("planta");
+        const observaciones_new = document.getElementById("observaciones");
+
+        lugar_new.value = "";
+        edificio_new.value = "";
+        planta_new.value = "";
+        observaciones_new.value = "";
+        }
+
+        // Añade un EventListener para el evento "click"
+        button_new.addEventListener("click", function () {
+            const lugar_new = document.getElementById("lugar");
+            const edificio_new = document.getElementById("edificio");
+            const planta_new = document.getElementById("planta");
+            const observaciones_new = document.getElementById("observaciones");
+            if (lugar_new.value == "") {
+            lugar_new.focus();
+            return
+            }
+            if (edificio_new.value == "") {
+            edificio_new.focus();
+            return
+            }
+            if (planta_new.value == "") {
+            planta_new.focus();
+            return
+            }
+            
+            var texto = `Nuevo punto:
+            {"x_percentage": ${new_x}, "y_percentage": ${new_y}, "text": "${lugar_new.value}", "building": "${edificio_new.value}", "floor": "${planta_new.value}", "comment": "${observaciones_new.value}"},`;
+            send_mail(texto,"")
+            mostrar_ventana(0)
+        }); 
+
+
+        // Función para mostrar el punto
+        function showPoint_new(pointArg) {
+        const new_point_map = document.getElementById("new_point_map");
+        new_point_map.style.left = pointArg.x_percentage + "%";
+        new_point_map.style.top = pointArg.y_percentage + "%";
+        }
+
+        // Event listener para detectar clicks en el contenedor de la imagen
+        container_new_image.addEventListener("click", function (event) {
+        const containerRect = container_new_image.getBoundingClientRect();
+        const containerWidth = containerRect.width;
+        const containerHeight = containerRect.height;
+
+        let x = (event.clientX - containerRect.left) / containerWidth * 100;
+        let y = (event.clientY - containerRect.top) / containerHeight * 100;
+
+        new_x = Math.max(0, Math.min(100, x)).toFixed(3);
+        new_y = Math.max(0, Math.min(100, y)).toFixed(3);
+
+        showPoint_new({x_percentage: new_x, y_percentage: new_y});
+        });
+
+
+        // *************************************************************
+        // Editar un punto
+        // *************************************************************
+        const edit_point_start = document.getElementById("edit_point_proposal");
+        edit_point_start.addEventListener("click", edit_point_start_button);
+
+        const container_edit_image = document.getElementById("container_edit_image");
+        var edit_x = 0 // TODO
+        var edit_y = 0 // TODO
+
+        var button_edit = document.getElementById("send_edit_point");
+
+        function show_data_edit(data){
+        const lugar_edit = document.getElementById("edit_lugar");
+        const edificio_edit = document.getElementById("edit_edificio");
+        const planta_edit = document.getElementById("edit_planta");
+        const observaciones_edit = document.getElementById("edit_observaciones");
+        lugar_edit.value = data.text;
+        edificio_edit.value = data.building;
+        planta_edit.value = data.floor;
+        observaciones_edit.value = data.comment;
+        showPoint_edit(data);
+        if (data.meta == 0){
+            const container_show_image = document.getElementById("container_edit_image")
+            container_edit_image.style.display = "none";
+        }
+        }
+
+        function edit_point_start_button (){
+        mostrar_ventana(5);
+        const lugar_edit = document.getElementById("edit_lugar");
+        //lugar_edit.focus()
+        }
+
+        // Añade un EventListener para el evento "click"
+        button_edit.addEventListener("click", function () {
+            const lugar_edit = document.getElementById("edit_lugar");
+            const edificio_edit = document.getElementById("edit_edificio");
+            const planta_edit = document.getElementById("edit_planta");
+            const observaciones_edit = document.getElementById("edit_observaciones");
+            if (lugar_edit.value == "") {
+            lugar_edit.focus();
+            return
+            }
+            if (edificio_edit.value == "") {
+            edificio_edit.focus();
+            return
+            }
+            if (planta_edit.value == "") {
+            planta_edit.focus();
+            return
+            }
+            var texto = `Punto editado:
+            {"x_percentage": ${edit_x}, "y_percentage": ${edit_y}, "text": "${lugar_edit.value}", "building": "${edificio_edit.value}", "floor": "${planta_edit.value}", "comment": "${observaciones_edit.value}"},`;
+            send_mail(texto,"")
+            mostrar_ventana(0)
+        }); 
+
+
+        // Función para mostrar el punto
+        function showPoint_edit(pointArg) {
+        const edit_point_map = document.getElementById("edit_point_map");
+        edit_point_map.style.left = pointArg.x_percentage + "%";
+        edit_point_map.style.top = pointArg.y_percentage + "%";
+        edit_x = pointArg.x_percentage
+        edit_y = pointArg.y_percentage
+        }
+
+        // Event listener para detectar clicks en el contenedor de la imagen
+        container_edit_image.addEventListener("click", function (event) {
+        const containerRect = container_edit_image.getBoundingClientRect();
+        const containerWidth = containerRect.width;
+        const containerHeight = containerRect.height;
+
+        let x = (event.clientX - containerRect.left) / containerWidth * 100;
+        let y = (event.clientY - containerRect.top) / containerHeight * 100;
+
+        edit_x = Math.max(0, Math.min(100, x)).toFixed(3);
+        edit_y = Math.max(0, Math.min(100, y)).toFixed(3);
+
+        showPoint_edit({x_percentage: edit_x, y_percentage: edit_y});
+        });
+
+        // Función para mostrar la alerta personalizada
+        function showCustomAlert(title_alert, text_alert) {
+        // Muestra el fondo semitransparente
+        document.querySelector('.overlay').style.display = 'block';
+
+        // Configura el contenido de la alerta
+        document.getElementById('custom-alert-title').innerText = title_alert;
+        document.getElementById('custom-alert-text').innerText = text_alert;
+
+        // Muestra la alerta
+        document.getElementById('custom-alert').style.display = 'block';
+
+        // Agrega un evento de clic al fondo del documento
+        document.addEventListener('click', handleDocumentClick);
+        }
+
+        // Función para manejar el clic en el fondo del documento
+        function handleDocumentClick(event) {
+        // Si el clic no está dentro del cuadro de diálogo, oculta la alerta
+        if (!document.getElementById('custom-alert').contains(event.target)) {
+            hideCustomAlert();
+            // Oculta el fondo semitransparente
+            document.querySelector('.overlay').style.display = 'none';
+        }
+        }
+
+        // Función para ocultar la alerta personalizada
+        function hideCustomAlert() {
+        // Oculta la alerta
+        document.getElementById('custom-alert').style.display = 'none';
+
+        // Oculta el fondo semitransparente
+        document.querySelector('.overlay').style.display = 'none';
+
+        // Elimina el evento de clic del fondo del documento
+        document.removeEventListener('click', handleDocumentClick);
+        }
+
+        //Añadir un click event listener en enlace_APK para cuando se descargue el enlace
+        var android_active = false
+        function descarga_android(){
+            var enlace_APK = document.getElementById("enlace-APK");
+            if (enlace_APK && !android_active){
+            enlace_APK.onclick = function () {
+                alert("Sólo se puede descagar la APK a través de la web. Abre el explorador y entra en https://mapahospital.ovh");
+            }
+            android_active = true;
+            }
+        }
+
+
+        // *********************************************
+        // ENVIAR DATOS CON UN FORMULARIO
+        // *********************************************
+        const contact_button = document.getElementById("contact-button");
+        contact_button.addEventListener("click", contact_form);
+
+        const container_contact_form = document.getElementById("container-contact-form");
+
+        var button_send_contact_form = document.getElementById("button-send-contact-form");
+
+        function contact_form(){
+        mostrar_ventana(6)
+        const form_name = document.getElementById("form-name");
+        const form_email = document.getElementById("form-email");
+        const form_title = document.getElementById("form-title");
+        const form_text = document.getElementById("form-text");
+
+        form_name.value = "";
+        form_email.value = "";
+        form_title.value = "";
+        form_text.value = "";
+
+        form_name.focus();
+        }
+
+        // Añade un EventListener para el evento "click"
+        button_send_contact_form.addEventListener("click", function () {
+        const form_name = document.getElementById("form-name");
+        const form_mail = document.getElementById("form-mail");
+        const form_title = document.getElementById("form-title");
+        const form_text = document.getElementById("form-text");
+
+        if (form_text.value == "") {
+            form_text.focus();
+            return
+        }
+        
+        var texto_form = "Nombre: " + form_name.value + "\nEmail: " + form_mail.value + "\nAsunto: " + form_title.value + "\nTexto: " + form_text.value;
+        
+        send_mail(texto_form,"form");
+
+        mostrar_ventana(0);
+        }); 
+
+
+        // Función para mostrar el punto
+        function showPoint_new(pointArg) {
+        const new_point_map = document.getElementById("new_point_map");
+        new_point_map.style.left = pointArg.x_percentage + "%";
+        new_point_map.style.top = pointArg.y_percentage + "%";
+        }
+
+        // Event listener para detectar clicks en el contenedor de la imagen
+        container_new_image.addEventListener("click", function (event) {
+        const containerRect = container_new_image.getBoundingClientRect();
+        const containerWidth = containerRect.width;
+        const containerHeight = containerRect.height;
+
+        let x = (event.clientX - containerRect.left) / containerWidth * 100;
+        let y = (event.clientY - containerRect.top) / containerHeight * 100;
+
+        new_x = Math.max(0, Math.min(100, x)).toFixed(3);
+        new_y = Math.max(0, Math.min(100, y)).toFixed(3);
+
+        showPoint_new({x_percentage: new_x, y_percentage: new_y});
+        });
+
+
+        // ********************************************
+        // ENVIAR UN CORREO CON PHP
+        // ********************************************
+        function send_mail(message,tipo){
+        fetch('send_mail.php', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            },
+            body: 'mensaje=' + message
+        })
+        .then(response => {
+            if (response.ok) {
+            if (tipo=="form"){
+                showCustomAlert("Mensaje enviado con éxito",'Gracias por colaborar');
+            }else{
+                showCustomAlert("Mensaje enviado con éxito",'Una vez revisado se añadirá la información.\n\nGracias por colaborar');
+            }
+            
+            } else {
+            showCustomAlert("Error de envío", 'Lo siento, hubo un problema al enviar el mensaje');
+            }
+        })
+        .catch(error => {
+            showCustomAlert("Error de envío", 'Lo siento, hubo un problema al enviar el mensaje');
+        });
+        }
+    </script>
 </body>
 </html>
 
