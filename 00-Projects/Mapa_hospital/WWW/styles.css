@@ -168,8 +168,8 @@ ul {
   margin-top: 0px;
 }
 
-/* Listados */
-#list_places, #updates{
+/* Listados places y updates */
+.lists{
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -183,8 +183,8 @@ ul {
   flex-direction: column;
 }
 
-/* Elementos de los listados */
-#list_places li,  #updates li {
+/* Elementos de los listados places y updates */
+.lists li {
   background-color: #f0f0f0;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -200,7 +200,7 @@ ul {
   cursor: default;
 }
 
-/* Efecto del hover sobre los elementos de la lista de lugares */
+/* Efecto particular del hover sobre los elementos de la lista de lugares */
 #list_places li:hover {
   background-color: #c0c0c0;
   color: #160d4d;
@@ -214,7 +214,6 @@ input[type="text"] {
   border-radius: 5px;
   margin-bottom: 10px;
 }
-
 
 /*  SHOW IMAGE */
 #place_data, 
@@ -485,14 +484,14 @@ button#button-send-contact-form:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
+  height: 60vh;
 }
 
 #circulo {
-  width: 40px; 
-  height: 40px; 
-  border: 4px solid #333; 
-  border-top: 4px solid transparent; 
+  width: 160px; 
+  height: 160px; 
+  border: 10px solid #333; 
+  border-top: 10px solid transparent; 
   border-radius: 50%; 
   animation: girar 1s linear infinite; 
 }

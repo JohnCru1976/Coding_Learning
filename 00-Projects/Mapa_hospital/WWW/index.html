@@ -32,20 +32,17 @@
                 </div>
             </div>
         </div>
-        <!--<div class="scroll-container">-->
+        <!-- Círculo de espera -->
+        <div id="contenedor-circulo">
+            <div id="circulo"></div>
+        </div>
         <!-- Listado con los lugares del hospital con cuadro de búsqueda -->
-        <div id="list_places">
+        <div id="list_places" class="lists">
             <input type="text" id="buscar" placeholder="Buscar...">
             <div class="scroll-container" id="child-container">
                 <ul id="puntos-lista"></ul>
             </div>
         </div>
-
-        <!-- Círculo de espera -->
-        <div id="contenedor-circulo">
-            <div id="circulo"></div>
-        </div>
-
         <!-- Imagen que muestra la información del lugar -->
         <div id="show_image">
             <a href="#" id="show_back">Volver atrás</a>
@@ -73,7 +70,7 @@
             </div>
         </div>  
         <!-- Ultimas actualizaciones -->
-        <div id="updates">
+        <div id="updates" class="lists">
             <a href="#" id="updates_back">Volver atrás</a>            
             <p id="updates_title">Últimas actualizaciones</p>
             <div class="scroll-container">
