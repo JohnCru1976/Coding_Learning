@@ -55,34 +55,38 @@ document.addEventListener("DOMContentLoaded", function() {
     const new_point = document.getElementById("new_point")
     const edit_point = document.getElementById("edit_point")
     const container_contact_form = document.getElementById("container-contact-form")
+    const contenedor_circulo = document.getElementById("contenedor-circulo")
     // Se activa la lista de lugares
     if (num == 0) {
       show_image.style.display = "none";
       test_image.style.display = "none";
-      updates.style.display = "none"
-      new_point.style.display = "none"
-      edit_point.style.display = "none"
-      container_contact_form.style.display = "none"
+      updates.style.display = "none";
+      new_point.style.display = "none";
+      edit_point.style.display = "none";
+      container_contact_form.style.display = "none";
+      contenedor_circulo.style.display = "none";
       list_places.style.display = "block"; 
     }
     // Se activa el mapa del lugar elegido
     if (num == 1) {
       list_places.style.display = "none"; 
       test_image.style.display = "none";
-      updates.style.display = "none"
-      new_point.style.display = "none"
-      edit_point.style.display = "none"
-      container_contact_form.style.display  = "none"
+      updates.style.display = "none";
+      new_point.style.display = "none";
+      edit_point.style.display = "none";
+      container_contact_form.style.display  = "none";
+      contenedor_circulo.style.display = "none";
       show_image.style.display = "block";
     }
     // Se activa el test para comprabación de puntos
     if (num == 2) {
       list_places.style.display = "none"; 
       show_image.style.display = "none";
-      updates.style.display = "none"
-      new_point.style.display = "none"
-      edit_point.style.display = "none"
-      container_contact_form.style.display  = "none"
+      updates.style.display = "none";
+      new_point.style.display = "none";
+      edit_point.style.display = "none";
+      container_contact_form.style.display  = "none";
+      contenedor_circulo.style.display = "none";
       test_image.style.display = "block";
     }
     // Se activa la ventana últimas actualizaciones
@@ -90,20 +94,22 @@ document.addEventListener("DOMContentLoaded", function() {
       list_places.style.display = "none"; 
       show_image.style.display = "none";
       test_image.style.display = "none";
-      new_point.style.display = "none"
-      edit_point.style.display = "none"
-      container_contact_form.style.display  = "none"
-      updates.style.display = "block"
+      new_point.style.display = "none";
+      edit_point.style.display = "none";
+      container_contact_form.style.display  = "none";
+      contenedor_circulo.style.display = "none";
+      updates.style.display = "block";
     }
     // Se activa la ventana nuevo punto
     if (num == 4) {
       list_places.style.display = "none"; 
       show_image.style.display = "none";
       test_image.style.display = "none";
-      updates.style.display = "none"
-      edit_point.style.display = "none"
-      container_contact_form.style.display  = "none"
-      new_point.style.display = "block"
+      updates.style.display = "none";
+      edit_point.style.display = "none";
+      container_contact_form.style.display  = "none";
+      contenedor_circulo.style.display = "none";
+      new_point.style.display = "block";
 
       new_x = 50
       new_y = 50
@@ -115,10 +121,11 @@ document.addEventListener("DOMContentLoaded", function() {
       list_places.style.display = "none"; 
       show_image.style.display = "none";
       test_image.style.display = "none";
-      updates.style.display = "none"
-      new_point.style.display = "none"
-      container_contact_form.style.display  = "none"
-      edit_point.style.display = "block"
+      updates.style.display = "none";
+      new_point.style.display = "none";
+      container_contact_form.style.display  = "none";
+      contenedor_circulo.style.display = "none";
+      edit_point.style.display = "block";
       container_edit_image.display = "block"
     }
     // Se activa la ventana formulario de contacto
@@ -126,9 +133,10 @@ document.addEventListener("DOMContentLoaded", function() {
       list_places.style.display = "none"; 
       show_image.style.display = "none";
       test_image.style.display = "none";
-      updates.style.display = "none"
-      new_point.style.display = "none"
-      edit_point.style.display = "none"
+      updates.style.display = "none";
+      new_point.style.display = "none";
+      edit_point.style.display = "none";
+      contenedor_circulo.style.display = "none";
       container_contact_form.style.display = "block"
     }
   }

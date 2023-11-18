@@ -473,6 +473,30 @@ button#button-send-contact-form:hover {
 #updates, 
 #new_point,
 #edit_point,
-#container-contact-form{
+#container-contact-form,
+#list_places{
   display: none;
+}
+
+/* Efecto círculo espera */
+#contenedor-circulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Ajusta la altura y el ancho según sea necesario */
+}
+
+#circulo {
+  width: 40px; /* Ancho del círculo */
+  height: 40px; /* Altura del círculo */
+  border: 4px solid #333; /* Grosor y color del borde */
+  border-top: 4px solid transparent; /* Borde superior transparente para crear el efecto de círculo de espera */
+  border-radius: 50%; /* Forma el círculo */
+  animation: girar 1s linear infinite; /* Animación de giro */
+}
+
+@keyframes girar {
+  100% {
+    transform: rotate(360deg); /* Rotación completa */
+  }
 }
