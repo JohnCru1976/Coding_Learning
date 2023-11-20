@@ -2,10 +2,12 @@ package com.example.mapahospital
 
 import android.app.DownloadManager
 import android.content.Context
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import android.view.View
 import android.webkit.CookieManager
 import android.webkit.URLUtil
 import android.webkit.WebChromeClient
@@ -17,8 +19,6 @@ import android.webkit.WebViewClient
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
-
-
 class MainActivity : AppCompatActivity() {
     lateinit var myWebView: WebView
 
@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         myWebView = findViewById(R.id.webView)
         clearWebViewCache(myWebView)
-        myWebView.loadUrl("https://mapahospital.ovh")
         myWebView.webChromeClient = WebChromeClient()
 
         val webSettings = myWebView.settings
@@ -40,20 +39,40 @@ class MainActivity : AppCompatActivity() {
         webSettings.displayZoomControls = false
 
         myWebView.webViewClient = object : WebViewClient() {
-            override fun onReceivedError(view: WebView, request: WebResourceRequest, error: WebResourceError) {
+            var loadingPageShown = false
+
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                if (!loadingPageShown) {
+                    loadingPageShown = true
+                    // Una vez que se haya cargado la página de espera, carga la URL principal
+                    myWebView.loadUrl("https://mapahospital.ovh")
+                }
+            }
+
+            override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+                val url = request?.url.toString()
+                if (URLUtil.isNetworkUrl(url)) {
+                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    startActivity(intent)
+                    return true
+                }
+                return false
+            }
+
+            override fun onReceivedError(
+                view: WebView,
+                request: WebResourceRequest,
+                error: WebResourceError
+            ) {
                 super.onReceivedError(view, request, error)
                 // Carga una página de error personalizada
                 myWebView.loadUrl("file:///android_asset/error.html")
             }
-            //override fun onPageFinished(view: WebView, url: String) {
-            //    myWebView.evaluateJavascript("javascript:descarga_android()", null)
-            //}
-            override fun onPageFinished(view: WebView?, url: String?) {
-                super.onPageFinished(view, url)
-                // Llama a la función JavaScript después de que la página se haya cargado completamente
-                view?.evaluateJavascript("javascript:descarga_android()", null)
-            }
         }
+
+        // Cargar la página de espera
+        myWebView.loadUrl("file:///android_asset/waiting.html")
     }
 
     override fun onBackPressed() {
@@ -84,5 +103,15 @@ class MainActivity : AppCompatActivity() {
         // Limpia el almacenamiento local
         WebStorage.getInstance().deleteAllData()
     }
-}
 
+    private fun showLoadingPage() {
+        // Mostrar la página de espera
+        myWebView.loadUrl("file:///android_asset/waiting.html")
+        myWebView.visibility = View.INVISIBLE
+    }
+
+    private fun hideLoadingPage() {
+        // Ocultar la página de espera y mostrar el WebView
+        myWebView.visibility = View.VISIBLE
+    }
+}

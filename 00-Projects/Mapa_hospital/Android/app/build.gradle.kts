@@ -11,8 +11,8 @@ android {
         applicationId = "com.example.mapahospital"
         minSdk = 24
         targetSdk = 33
-        versionCode = 9
-        versionName = "1.08"
+        versionCode = 11
+        versionName = "1.10"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
