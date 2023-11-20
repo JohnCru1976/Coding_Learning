@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /* Efecto círculo espera */
+        #contenedor-circulo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        }
+
+        #circulo {
+        width: 160px; 
+        height: 160px; 
+        border: 10px solid #333; 
+        border-top: 10px solid transparent; 
+        border-radius: 50%; 
+        animation: girar 1s linear infinite; 
+        }
+
+        @keyframes girar {
+            100% {
+            transform: rotate(360deg);
+        }
+}
+    </style>
+</head>
+<body>
+    <!-- Círculo de espera -->
+    <div id="contenedor-circulo">
+        <div id="circulo"></div>
+    </div>
+</body>
+</html>
+
