@@ -130,9 +130,13 @@ h1 {
 
 /* Imágenes en general */
 .map-image {
-width: 100%;
-height: 100%;
-object-fit: contain;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Configuración del punto en el mapa */
@@ -152,14 +156,12 @@ object-fit: contain;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
 }
 
-/********************** LISTADOS (LUGARES Y UPDATES **********************/
-
-/* Barra de búsqueda */
-#buscar{
-  font-size: 1.3em;
-  padding: 10px;
-  width: 98.3%;
+/* Coordenadas en modo test */
+#coordinates {
+  text-align: center;
 }
+
+/********************** LISTADOS (LUGARES Y UPDATES) **********************/
 
 /* Listados en general */
 ul {
@@ -207,6 +209,17 @@ ul {
   transition: background-color 0.6s ease, color 0.6s ease;
 }
 
+/*************************** CAJAS DE TEXTO **********************/
+/* Formatos de las cajas de formulario */
+.forms {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* Cajas input generales */
 input[type="text"] {
   width: 100%;
   padding: 10px 0px 10px 10px;
@@ -215,162 +228,8 @@ input[type="text"] {
   margin-bottom: 10px;
 }
 
-/*  SHOW IMAGE */
-#place_data, 
-#updates_title, 
-#new_point_text,
-#edit_point_text,
-#contact_point_text {
-  color: #333;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: #f0f0f0;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  text-align: center;
-}
-
-#show_image {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 100%;
-}
-
-#show_back, 
-#edit_point_proposal,
-#contact_point_back{
-  display: block;
-  text-align: center;
-  background-color: #0078d4;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-bottom: 20px;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-#show_back:hover, 
-#edit_point_proposal:hover {
-  background-color: #00539f;
-  transition: background-color 0.6s ease;
-}
-
-#container_show_image {
-  text-align: center;
-}
-
-#container_show_image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-#show_point {
-  text-align: center;
-  color:black;
-}
-
-/* MAPA PARA TEST */
-
-#test_image, 
-#new_point,
-#edit_point,
-#container-contact-form {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 100%;
-}
-
-#back, 
-#updates_back, 
-#new_point_back, 
-#edit_point_back,
-#contact_point_back {
-  display: block;
-  text-align: center;
-  background-color: #0078d4;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  text-decoration: none;
-  margin-bottom: 20px;
-}
-
-#back:hover, 
-#updates_back:hover, 
-#new_point_back:hover,
-#edit_point_back:hover,
-#contact_point_back:hover {
-  background-color: #00539f;
-  transition: background-color 0.6s ease;
-}
-
-#container_image, 
-#container_new_image, 
-#container_edit_image {
-  text-align: center;
-}
-
-#container_image img, 
-#container_new_image img, 
-#container_edit_image img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-#coordinates {
-  text-align: center;
-}
-
-/* Nuevo punto */
-
-#text_input, 
-#edit_text_input,
-#form_input {
-  background-color: #f0f0f0;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  margin-top: 10px;
-}
-
-label {
-  display: block;
-  font-size: 0.7em;
-  margin-top: 10px;
-  margin-bottom: 2px;
-  color: red;
-}
-
-textarea, 
-#lugar, 
-#edificio, 
-#planta, 
-#observaciones,
-#edificio_text,
-#planta_text,
-#edit_lugar, 
-#edit_edificio, 
-#edit_planta, 
-#edit_observaciones,
-#form-name,
-#form-mail,
-#form-title,
-#form-text {
+/* Cajas de texto */
+.text-boxes {
   width: 97%;
   padding: 10px;
   border: 1px solid #ddd;
@@ -379,24 +238,55 @@ textarea,
   font-size: 1em; 
 }
 
-textarea:focus, 
-#lugar:focus, 
-#edificio:focus, 
-#planta:focus, 
-#observaciones:focus,
-#edificio_text:focus,
-#planta_text:focus,
-#edit_lugar:focus, 
-#edit_edificio:focus, 
-#edit_planta:focus, 
-#edit_observaciones:focus {
+/* Cajas de texto cogiendo focus */
+.text-boxes:focus {
   background-color:rgb(246, 247, 237);
   box-shadow: 8px 8px 15px rgb(0, 0, 0);
 }
 
-button#send_new_point, 
-button#send_edit_point,
-button#button-send-contact-form{
+/* Formato de los label campo requerido */
+label {
+  display: block;
+  font-size: 0.7em;
+  margin-top: 10px;
+  margin-bottom: 2px;
+  color: red;
+}
+
+/* Barra de búsqueda */
+#buscar{
+  font-size: 1.3em;
+  padding: 10px;
+  width: 98.3%;
+}
+
+/************************* SECCIONES ************************/
+/* Formato caja general de la sección */
+.section-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 100%;
+}
+
+/*  Título de cada sección */
+.title-section {
+  color: #333;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Botones de las secciones */
+.section-buttons{
   display: block;
   text-align: center;
   background-color: #0078d4;
@@ -404,6 +294,17 @@ button#button-send-contact-form{
   padding: 10px;
   border-radius: 5px;
   text-decoration: none;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.section-buttons:hover{
+  background-color: #00539f;
+  transition: background-color 0.6s ease;
+}
+
+/* Botones de envío de información */
+.send-buttons{
   margin-top: 20px;
   font-size: 1.5em;
   font-weight: bold;
@@ -412,18 +313,9 @@ button#button-send-contact-form{
   margin-top: 20px;
 }
 
-button#send_new_point:hover, 
-button#send_edit_point:hover,
-button#button-send-contact-form:hover {
+.send-buttons:hover {
   background-color: #00539f;
   transition: background-color 0.6s ease;
-}
-
-#updates_title, 
-#new_point_text, 
-#edit_point_text,
-#contact_point_text{
-  font-weight: bold;
 }
 
 /* Estilos CSS para el cuadro de diálogo personalizado */
@@ -469,13 +361,7 @@ button#button-send-contact-form:hover {
 }
 
 /* Pantallas ocultas*/
-#test_image, 
-#show_image, 
-#updates, 
-#new_point,
-#edit_point,
-#container-contact-form,
-#list_places{
+.hide-section{
   display: none;
 }
 

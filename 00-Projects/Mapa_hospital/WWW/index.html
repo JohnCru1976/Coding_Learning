@@ -34,18 +34,18 @@
             <div id="circulo"></div>
         </div>
         <!-- Listado con los lugares del hospital con cuadro de búsqueda -->
-        <div id="list_places" class="lists">
+        <div id="list_places" class="lists hide-section">
             <input type="text" id="buscar" placeholder="Buscar...">
             <div class="scroll-container" id="child-container">
                 <ul id="puntos-lista"></ul>
             </div>
         </div>
         <!-- Imagen que muestra la información del lugar -->
-        <div id="show_image">
-            <a href="#" id="show_back">Volver atrás</a>
+        <div id="show_image" class="section-container hide-section">
+            <a href="#" id="show_back" class="section-buttons">Volver atrás</a>
             <div class="scroll-container">
-                <p id="place_data">Datos del lugar</p>
-                <p id="edit_point_proposal">Comunicar Modificación</p>
+                <p id="place_data" class="title-section">Datos del lugar</p>
+                <p id="edit_point_proposal" class="section-buttons">Comunicar Modificación</p>
                 <div id="container_show_image" class="container-with-image">
                     <img id="mapa-show" class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
                     <div id="show_point" class="point-class">
@@ -55,8 +55,8 @@
             </div>
         </div> 
         <!-- Imagen para crear los puntos con hardcoding -->
-        <div id="test_image">
-            <a href="#" id="back">Volver atrás</a>
+        <div id="test_image" class="section-container hide-section">
+            <a href="#" id="back" class="section-buttons">Volver atrás</a>
             <div id="container_image" class="container-with-image">
                 <img class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
                 <div id="point" class="point-class"></div>
@@ -67,28 +67,28 @@
             </div>
         </div>  
         <!-- Ultimas actualizaciones -->
-        <div id="updates" class="lists">
-            <a href="#" id="updates_back">Volver atrás</a>            
-            <p id="updates_title">Últimas actualizaciones</p>
+        <div id="updates" class="lists hide-section">
+            <a href="#" id="updates_back" class="section-buttons">Volver atrás</a>            
+            <p id="updates_title" class="title-section">Últimas actualizaciones</p>
             <div class="scroll-container">
                 <ul id="updates-lista"></ul>
             </div>
             
         </div> 
         <!-- Nuevo punto -->
-        <div id="new_point">
-            <a href="#" id="new_point_back">Volver atrás</a>
-            <p id="new_point_text">Introduce nuevo punto</p>
+        <div id="new_point" class="section-container hide-section">
+            <a href="#" id="new_point_back" class="section-buttons">Volver atrás</a>
+            <p id="new_point_text" class="title-section">Introduce nuevo punto</p>
             <div class="scroll-container">
                 <!-- Campos de introducción de texto -->
-                <div id="text_input">
+                <div id="text_input" class="forms">
                         <label for="lugar">* Campo obligatorio</label>
-                        <input type="text" id="lugar" name="lugar" placeholder="Lugar (ej. Traumatología)...">
+                        <input type="text" id="lugar" class="text-boxes" name="lugar" placeholder="Lugar (ej. Traumatología)...">
                         <label for="edificio">* Campo obligatorio</label>
-                        <input type="text" id="edificio" name="edificio_text" placeholder="Edificio (ej. Pabellón A)...">   
+                        <input type="text" id="edificio" class="text-boxes" name="edificio_text" placeholder="Edificio (ej. Pabellón A)...">   
                         <label for="planta">* Campo obligatorio</label>
-                        <input type="text" id="planta" name="planta_text" placeholder="Planta (ej. Planta Bj)...">
-                        <textarea id="observaciones" name="observaciones" rows="4" placeholder="Observaciones..."></textarea>
+                        <input type="text" id="planta" class="text-boxes" name="planta_text" placeholder="Planta (ej. Planta Bj)...">
+                        <textarea id="observaciones" class="text-boxes" name="observaciones" rows="4" placeholder="Observaciones..."></textarea>
                 </div>
                 <p id="new_point_text">Haz click en el mapa para establecer el punto</p>
                 <div id="container_new_image" class="container-with-image">
@@ -97,26 +97,26 @@
                 </div>
             
                 <div style="text-align: center;">
-                    <button id="send_new_point">Enviar Información</button>
+                    <button id="send_new_point" class="section-buttons send-buttons">Enviar Información</button>
                 </div>
             </div>
         </div>
         <!-- Editar un punto -->
-        <div id="edit_point">
-            <a href="#" id="edit_point_back">Volver atrás</a>
+        <div id="edit_point" class="section-container hide-section">
+            <a href="#" id="edit_point_back" class="section-buttons">Volver atrás</a>
             <p id="edit_point_text">Modificar datos</p>
             <div class="scroll-container">
                 <!-- Campos de introducción de texto -->
-                <div id="edit_text_input">
+                <div id="edit_text_input" class="forms">
                     <label for="edit_lugar">* Campo obligatorio</label>
-                    <input type="text" id="edit_lugar" name="edit_lugar" placeholder="Lugar (ej. Traumatología)...">
+                    <input type="text" id="edit_lugar" class="text-boxes" name="edit_lugar" placeholder="Lugar (ej. Traumatología)...">
                     <label for="edit_edificio">* Campo obligatorio</label>
-                    <input type="text" id="edit_edificio" name="edit_edificio_text" placeholder="Edificio (ej. Pabellón A)...">
+                    <input type="text" id="edit_edificio" class="text-boxes" name="edit_edificio_text" placeholder="Edificio (ej. Pabellón A)...">
                     <label for="edit_planta">* Campo obligatorio</label>
-                    <input type="text" id="edit_planta" name="edit_planta_text" placeholder="Planta (ej. Planta Bj)...">
-                    <textarea id="edit_observaciones" name="edit_observaciones" rows="4" placeholder="Observaciones..."></textarea>
+                    <input type="text" id="edit_planta" class="text-boxes" name="edit_planta_text" placeholder="Planta (ej. Planta Bj)...">
+                    <textarea id="edit_observaciones" class="text-boxes" name="edit_observaciones" rows="4" placeholder="Observaciones..."></textarea>
                 </div>
-                <p id="edit_point_text">Haz click en el mapa para establecer el punto</p>
+                <p id="edit_point_text" class="title-section">Haz click en el mapa para establecer el punto</p>
                 <div id="container_edit_image" class="container-with-image">
                     <div id="zoomImage-edit">
                         <img class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
@@ -125,25 +125,25 @@
                 </div>
             
                 <div style="text-align: center;">
-                    <button id="send_edit_point">Enviar Información</button>
+                    <button id="send_edit_point" class="section-buttons send-buttons">Enviar Información</button>
                 </div>
             </div>
         </div>
         <!-- Formulario de contacto -->
-        <div id="container-contact-form">
-            <a href="#" id="contact_point_back">Volver atrás</a>
-            <p id="contact_point_text">Formulario de contacto</p>
+        <div id="container-contact-form" class="section-container hide-section">
+            <a href="#" id="contact_point_back" class="section-buttons">Volver atrás</a>
+            <p id="contact_point_text" class="title-section">Formulario de contacto</p>
             <div class="scroll-container">
                 <!-- Campos de introducción de texto -->
-                <div id="form_input">
-                        <input type="text" id="form-name" class="form-contact" name="name" placeholder="Nombre... (no requerido)">
-                        <input type="text" id="form-mail" class="form-contact" name="mail" placeholder="Email... (no requerido)">   
-                        <input type="text" id="form-title" class="form-contact" name="title" placeholder="Asunto... (no requerido)">
-                        <textarea id="form-text" name="text" class="form-contact" rows="4" placeholder="Texto... (requerido)"></textarea>
+                <div id="form_input" class="forms">
+                        <input type="text" id="form-name" class="form-contact text-boxes" name="name" placeholder="Nombre... (no requerido)">
+                        <input type="text" id="form-mail" class="form-contact text-boxes" name="mail" placeholder="Email... (no requerido)">   
+                        <input type="text" id="form-title" class="form-contact text-boxes" name="title" placeholder="Asunto... (no requerido)">
+                        <textarea id="form-text" name="text" class="form-contact text-boxes" rows="4" placeholder="Texto... (requerido)"></textarea>
                 </div>
             
                 <div style="text-align: center;">
-                    <button id="button-send-contact-form">Enviar Información</button>
+                    <button id="button-send-contact-form" class="section-buttons send-buttons">Enviar Información</button>
                 </div>
             </div>
         </div>
