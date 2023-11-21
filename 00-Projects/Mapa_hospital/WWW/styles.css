@@ -35,6 +35,10 @@ a{
 #child-container{
   height: 84vh;
 }
+/* Ancho general de los scroll */
+::-webkit-scrollbar {
+  width: 5px; 
+}
 
 /********************** HEADER **********************/
 
@@ -273,7 +277,7 @@ label {
 }
 
 /*  Título de cada sección */
-.title-section {
+.title-section{
   color: #333;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -283,6 +287,10 @@ label {
   border-radius: 5px;
   text-align: center;
   font-weight: bold;
+}
+
+#place_data{
+  font-weight: normal;
 }
 
 /* Botones de las secciones */
