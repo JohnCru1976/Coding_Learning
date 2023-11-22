@@ -306,6 +306,8 @@ label {
   text-decoration: none;
   margin-bottom: 20px;
   cursor: pointer;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
 }
 
 .section-buttons:hover{
