@@ -300,7 +300,7 @@ label {
 /******************* BOTONES *****************/
 /* Botones de las secciones */
 .section-buttons{
-  display: block;
+  display: flex;
   font-family: 1em;
   text-align: center;
   background-color: #0078d4;
@@ -312,6 +312,10 @@ label {
   cursor: pointer;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  height: 2.5em;
+  align-items: center;
+  justify-content: center;
+  padding:10px;
 }
 
 .section-buttons:hover{
@@ -329,11 +333,12 @@ label {
   display:flex;
   flex: 1;
   margin-top: 0px;
-  align-items: center;
-  justify-content: center;
 }
 .button-double-left{
-  margin-right: 2%;
+  margin-right: 1.5%;
+}
+.button-double-right{
+  margin-left: 1.5%;
 }
 /* Botones de envío de información */
 .send-buttons{
