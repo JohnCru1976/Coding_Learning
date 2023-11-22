@@ -31,6 +31,10 @@ a{
   overflow-y: auto;
   height: 77vh;
 }
+/* Scroll reducido */
+.scroll-mini{
+  height: 72vh;
+}
 /* Scroll de la lista inicial */
 #child-container{
   height: 82vh;
