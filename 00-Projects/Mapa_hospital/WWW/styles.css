@@ -29,11 +29,11 @@ a{
 .scroll-container{
   flex: 1;
   overflow-y: auto;
-  height: 76vh;
+  height: 77vh;
 }
 /* Scroll de la lista inicial */
 #child-container{
-  height: 84vh;
+  height: 82vh;
 }
 /* Ancho general de los scroll */
 ::-webkit-scrollbar {
