@@ -42,10 +42,12 @@
         </div>
         <!-- Imagen que muestra la información del lugar -->
         <div id="show_image" class="section-container hide-section">
-            <a href="#" id="show_back" class="section-buttons">Volver atrás</a>
+            <div class="flex-box">
+                <a href="#" id="show_back" class="section-buttons button-double button-double-left">Volver atrás</a>
+                <p id="edit_point_proposal" class="section-buttons button-double">Comunicar Modificación</p>
+            </div>
             <div class="scroll-container">
                 <p id="place_data" class="title-section">Datos del lugar</p>
-                <p id="edit_point_proposal" class="section-buttons">Comunicar Modificación</p>
                 <div id="container_show_image" class="container-with-image">
                     <img id="mapa-show" class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
                     <div id="show_point" class="point-class">
@@ -275,6 +277,7 @@
             "<b>15-11-2023</b> Añadidos nuevos puntos: Cirugía Mayor, Terapia del dolor, Oncología Ginecológica y UCI",
             "<b>19-11-2023</b> Web optimizada. Ventanas ajustadas. Reducción tamaño de imagen",
             "<b>20-11-2023</b> Actualización de la APK a la v.1.10: cambios menores. Texto superior de versión movido a la derecha. Ventana de espera mientras carga la página.",
+            "<b>22-11-2023</b> El botón para modificar un punto se ubica en la parte superior para mayor claridad",
         ];
     </script>
 
@@ -298,9 +301,14 @@
             function toggleMenu() {
                 //headerOptions.classList.toggle('hidden');
                 if (headerOptions.style.display === "block"){
-                headerOptions.style.display = "none";
+                    headerOptions.style.display = "none";
                 } else {
                     headerOptions.style.display = "block";
+
+                    // Muestra el fondo semitransparente
+                    document.querySelector('.overlay').style.display = 'block';
+                    // Agrega un evento de clic al fondo del documento
+                    document.addEventListener('click', handleDocumentClick);
                 }
             }
 
