@@ -12,6 +12,8 @@ body {
 /* Contenedor general */
 #global-container {
   height: 100vh;
+  max-width: 800px;
+  margin: auto;
 }
 
 /* Enlaces en general */
