@@ -234,6 +234,8 @@
             {"x_percentage": 13.235, "y_percentage": 25.503, "text": "Cirugía Mayor Ambulatoria", "building": "Edificio Quirúrgico", "floor": "P.Bj", "comment": ""},
             {"x_percentage": 71.749, "y_percentage": 16.584, "text": "Oncología Ginecológica", "building": "Edificio Maternidad", "floor": "P.Bj", "comment": ""},
             {"x_percentage": 13.467, "y_percentage": 25.225, "text": "UCI", "building": "Pabellón Quirúrgico", "floor": "P.4", "comment": ""},
+            {"x_percentage": 70.359, "y_percentage": 50.305, "text": "Flujometrias", "building": "Pabellón B", "floor": "P.B", "comment": ""},
+            {"x_percentage": 72.806, "y_percentage": 75.882, "text": "Cirugía ambulatoria (visita)", "building": "Pabellón B", "floor": "P.1", "comment": "Es visita al médico"},
         ];
 
         var last_updates = ["<b>30-10-2023</b> Añadido el punto Analíticas (Gracias por la colaboración)",
@@ -275,6 +277,7 @@
             "<b>19-11-2023</b> Web optimizada. Ventanas ajustadas. Reducción tamaño de imagen",
             "<b>20-11-2023</b> Actualización de la APK a la v.1.10: cambios menores. Texto superior de versión movido a la derecha. Ventana de espera mientras carga la página.",
             "<b>22-11-2023</b> El botón para modificar un punto se ubica en la parte superior para mayor claridad",
+            "<b>22-11-2023</b> Añadidos puntos Flujometría y Cirugía ambulatoria (visitas). Gracias por la colaboración",
         ];
     </script>
 
@@ -652,7 +655,6 @@
         // *************************************************************
         const edit_point_start = document.getElementById("edit_point_proposal");
         edit_point_start.addEventListener("click", edit_point_start_button);
-
         const container_edit_image = document.getElementById("container_edit_image");
         var edit_x = 0 // TODO
         var edit_y = 0 // TODO
@@ -660,25 +662,28 @@
         var button_edit = document.getElementById("send_edit_point");
 
         function show_data_edit(data){
-        const lugar_edit = document.getElementById("edit_lugar");
-        const edificio_edit = document.getElementById("edit_edificio");
-        const planta_edit = document.getElementById("edit_planta");
-        const observaciones_edit = document.getElementById("edit_observaciones");
-        lugar_edit.value = data.text;
-        edificio_edit.value = data.building;
-        planta_edit.value = data.floor;
-        observaciones_edit.value = data.comment;
-        showPoint_edit(data);
-        if (data.meta == 0){
-            const container_show_image = document.getElementById("container_edit_image")
-            container_edit_image.style.display = "none";
-        }
+            const lugar_edit = document.getElementById("edit_lugar");
+            const edificio_edit = document.getElementById("edit_edificio");
+            const planta_edit = document.getElementById("edit_planta");
+            const observaciones_edit = document.getElementById("edit_observaciones");
+            const edit_point_click = document.getElementById("edit_point_click");
+            container_edit_image.style.display = "block";
+            edit_point_click.style.display = "block";
+            lugar_edit.value = data.text;
+            edificio_edit.value = data.building;
+            planta_edit.value = data.floor;
+            observaciones_edit.value = data.comment;
+            showPoint_edit(data);
+            if (data.meta == 0){
+                container_edit_image.style.display = "none";
+                edit_point_click.style.display = "none";
+            }
         }
 
         function edit_point_start_button (){
-        mostrar_ventana(5);
-        const lugar_edit = document.getElementById("edit_lugar");
-        //lugar_edit.focus()
+            mostrar_ventana(5);
+            const lugar_edit = document.getElementById("edit_lugar");
+            //lugar_edit.focus()
         }
 
         // Añade un EventListener para el evento "click"
@@ -708,42 +713,42 @@
 
         // Función para mostrar el punto
         function showPoint_edit(pointArg) {
-        const edit_point_map = document.getElementById("edit_point_map");
-        edit_point_map.style.left = pointArg.x_percentage + "%";
-        edit_point_map.style.top = pointArg.y_percentage + "%";
-        edit_x = pointArg.x_percentage
-        edit_y = pointArg.y_percentage
+            const edit_point_map = document.getElementById("edit_point_map");
+            edit_point_map.style.left = pointArg.x_percentage + "%";
+            edit_point_map.style.top = pointArg.y_percentage + "%";
+            edit_x = pointArg.x_percentage
+            edit_y = pointArg.y_percentage
         }
 
         // Event listener para detectar clicks en el contenedor de la imagen
         container_edit_image.addEventListener("click", function (event) {
-        const containerRect = container_edit_image.getBoundingClientRect();
-        const containerWidth = containerRect.width;
-        const containerHeight = containerRect.height;
+            const containerRect = container_edit_image.getBoundingClientRect();
+            const containerWidth = containerRect.width;
+            const containerHeight = containerRect.height;
 
-        let x = (event.clientX - containerRect.left) / containerWidth * 100;
-        let y = (event.clientY - containerRect.top) / containerHeight * 100;
+            let x = (event.clientX - containerRect.left) / containerWidth * 100;
+            let y = (event.clientY - containerRect.top) / containerHeight * 100;
 
-        edit_x = Math.max(0, Math.min(100, x)).toFixed(3);
-        edit_y = Math.max(0, Math.min(100, y)).toFixed(3);
+            edit_x = Math.max(0, Math.min(100, x)).toFixed(3);
+            edit_y = Math.max(0, Math.min(100, y)).toFixed(3);
 
-        showPoint_edit({x_percentage: edit_x, y_percentage: edit_y});
-        });
+            showPoint_edit({x_percentage: edit_x, y_percentage: edit_y});
+            });
 
-        // Función para mostrar la alerta personalizada
-        function showCustomAlert(title_alert, text_alert) {
-        // Muestra el fondo semitransparente
-        document.querySelector('.overlay').style.display = 'block';
+            // Función para mostrar la alerta personalizada
+            function showCustomAlert(title_alert, text_alert) {
+            // Muestra el fondo semitransparente
+            document.querySelector('.overlay').style.display = 'block';
 
-        // Configura el contenido de la alerta
-        document.getElementById('custom-alert-title').innerText = title_alert;
-        document.getElementById('custom-alert-text').innerText = text_alert;
+            // Configura el contenido de la alerta
+            document.getElementById('custom-alert-title').innerText = title_alert;
+            document.getElementById('custom-alert-text').innerText = text_alert;
 
-        // Muestra la alerta
-        document.getElementById('custom-alert').style.display = 'block';
+            // Muestra la alerta
+            document.getElementById('custom-alert').style.display = 'block';
 
-        // Agrega un evento de clic al fondo del documento
-        document.addEventListener('click', handleDocumentClick);
+            // Agrega un evento de clic al fondo del documento
+            document.addEventListener('click', handleDocumentClick);
         }
 
         // Función para manejar el clic en el fondo del documento
@@ -826,24 +831,24 @@
 
         // Función para mostrar el punto
         function showPoint_new(pointArg) {
-        const new_point_map = document.getElementById("new_point_map");
-        new_point_map.style.left = pointArg.x_percentage + "%";
-        new_point_map.style.top = pointArg.y_percentage + "%";
+            const new_point_map = document.getElementById("new_point_map");
+            new_point_map.style.left = pointArg.x_percentage + "%";
+            new_point_map.style.top = pointArg.y_percentage + "%";
         }
 
         // Event listener para detectar clicks en el contenedor de la imagen
         container_new_image.addEventListener("click", function (event) {
-        const containerRect = container_new_image.getBoundingClientRect();
-        const containerWidth = containerRect.width;
-        const containerHeight = containerRect.height;
+            const containerRect = container_new_image.getBoundingClientRect();
+            const containerWidth = containerRect.width;
+            const containerHeight = containerRect.height;
 
-        let x = (event.clientX - containerRect.left) / containerWidth * 100;
-        let y = (event.clientY - containerRect.top) / containerHeight * 100;
+            let x = (event.clientX - containerRect.left) / containerWidth * 100;
+            let y = (event.clientY - containerRect.top) / containerHeight * 100;
 
-        new_x = Math.max(0, Math.min(100, x)).toFixed(3);
-        new_y = Math.max(0, Math.min(100, y)).toFixed(3);
+            new_x = Math.max(0, Math.min(100, x)).toFixed(3);
+            new_y = Math.max(0, Math.min(100, y)).toFixed(3);
 
-        showPoint_new({x_percentage: new_x, y_percentage: new_y});
+            showPoint_new({x_percentage: new_x, y_percentage: new_y});
         });
 
 
