@@ -79,7 +79,10 @@
         </div> 
         <!-- Nuevo punto -->
         <div id="new_point" class="section-container hide-section">
-            <a href="#" id="new_point_back" class="section-buttons">Volver atrás</a>
+            <div class="flex-box">
+                <a href="#" id="new_point_back" class="section-buttons button-double button-double-left">Volver atrás</a>
+                <p id="send_new_point" class="section-buttons button-double">Enviar Información</p>
+            </div>
             <p id="new_point_text" class="title-section">Introduce nuevo punto</p>
             <div class="scroll-container">
                 <!-- Campos de introducción de texto -->
@@ -97,15 +100,14 @@
                     <img class="map-image" src="images/mapa_hospital.png" alt="mapa-hospital" />
                     <div id="new_point_map" class="point-class"></div>
                 </div>
-            
-                <div style="text-align: center;">
-                    <button id="send_new_point" class="section-buttons send-buttons">Enviar Información</button>
-                </div>
             </div>
         </div>
         <!-- Editar un punto -->
         <div id="edit_point" class="section-container hide-section">
-            <a href="#" id="edit_point_back" class="section-buttons">Volver atrás</a>
+            <div class="flex-box">
+                <a href="#" id="edit_point_back" class="section-buttons button-double button-double-left">Volver atrás</a>
+                <p id="send_edit_point" class="section-buttons button-double">Enviar Información</p>
+            </div>
             <p class="title-section">Modificar datos</p>
             <div class="scroll-container">
                 <!-- Campos de introducción de texto -->
@@ -125,15 +127,14 @@
                         <div id="edit_point_map" class="point-class"></div>
                     </div>
                 </div>
-            
-                <div style="text-align: center;">
-                    <button id="send_edit_point" class="section-buttons send-buttons">Enviar Información</button>
-                </div>
             </div>
         </div>
         <!-- Formulario de contacto -->
         <div id="container-contact-form" class="section-container hide-section">
-            <a href="#" id="contact_point_back" class="section-buttons">Volver atrás</a>
+            <div class="flex-box">
+                <a href="#" id="contact_point_back" class="section-buttons button-double button-double-left">Volver atrás</a>
+                <p id="button-send-contact-form" class="section-buttons button-double">Enviar Información</p>
+            </div>
             <p id="contact_point_text" class="title-section">Formulario de contacto</p>
             <div class="scroll-container">
                 <!-- Campos de introducción de texto -->
@@ -142,10 +143,6 @@
                         <input type="text" id="form-mail" class="form-contact text-boxes" name="mail" placeholder="Email (no requerido)">   
                         <input type="text" id="form-title" class="form-contact text-boxes" name="title" placeholder="Asunto (no requerido)">
                         <textarea id="form-text" name="text" class="form-contact text-boxes" rows="4" placeholder="Texto (requerido)"></textarea>
-                </div>
-            
-                <div style="text-align: center;">
-                    <button id="button-send-contact-form" class="section-buttons send-buttons">Enviar Información</button>
                 </div>
             </div>
         </div>
@@ -589,16 +586,16 @@
         var button_new = document.getElementById("send_new_point");
 
         function new_point_start_button (){
-        mostrar_ventana(4)
-        const lugar_new = document.getElementById("lugar");
-        const edificio_new = document.getElementById("edificio");
-        const planta_new = document.getElementById("planta");
-        const observaciones_new = document.getElementById("observaciones");
+            mostrar_ventana(4)
+            const lugar_new = document.getElementById("lugar");
+            const edificio_new = document.getElementById("edificio");
+            const planta_new = document.getElementById("planta");
+            const observaciones_new = document.getElementById("observaciones");
 
-        lugar_new.value = "";
-        edificio_new.value = "";
-        planta_new.value = "";
-        observaciones_new.value = "";
+            lugar_new.value = "";
+            edificio_new.value = "";
+            planta_new.value = "";
+            observaciones_new.value = "";
         }
 
         // Añade un EventListener para el evento "click"
@@ -636,17 +633,17 @@
 
         // Event listener para detectar clicks en el contenedor de la imagen
         container_new_image.addEventListener("click", function (event) {
-        const containerRect = container_new_image.getBoundingClientRect();
-        const containerWidth = containerRect.width;
-        const containerHeight = containerRect.height;
+            const containerRect = container_new_image.getBoundingClientRect();
+            const containerWidth = containerRect.width;
+            const containerHeight = containerRect.height;
 
-        let x = (event.clientX - containerRect.left) / containerWidth * 100;
-        let y = (event.clientY - containerRect.top) / containerHeight * 100;
+            let x = (event.clientX - containerRect.left) / containerWidth * 100;
+            let y = (event.clientY - containerRect.top) / containerHeight * 100;
 
-        new_x = Math.max(0, Math.min(100, x)).toFixed(3);
-        new_y = Math.max(0, Math.min(100, y)).toFixed(3);
+            new_x = Math.max(0, Math.min(100, x)).toFixed(3);
+            new_y = Math.max(0, Math.min(100, y)).toFixed(3);
 
-        showPoint_new({x_percentage: new_x, y_percentage: new_y});
+            showPoint_new({x_percentage: new_x, y_percentage: new_y});
         });
 
 
@@ -795,37 +792,35 @@
         var button_send_contact_form = document.getElementById("button-send-contact-form");
 
         function contact_form(){
-        mostrar_ventana(6)
-        const form_name = document.getElementById("form-name");
-        const form_email = document.getElementById("form-email");
-        const form_title = document.getElementById("form-title");
-        const form_text = document.getElementById("form-text");
+            mostrar_ventana(6)
+            const form_name = document.getElementById("form-name");
+            const form_email = document.getElementById("form-mail");
+            const form_title = document.getElementById("form-title");
+            const form_text = document.getElementById("form-text");
 
-        form_name.value = "";
-        form_email.value = "";
-        form_title.value = "";
-        form_text.value = "";
-
-        form_name.focus();
+            form_name.value = "";
+            form_email.value = "";
+            form_title.value = "";
+            form_text.value = "";
         }
 
         // Añade un EventListener para el evento "click"
         button_send_contact_form.addEventListener("click", function () {
-        const form_name = document.getElementById("form-name");
-        const form_mail = document.getElementById("form-mail");
-        const form_title = document.getElementById("form-title");
-        const form_text = document.getElementById("form-text");
+            const form_name = document.getElementById("form-name");
+            const form_mail = document.getElementById("form-mail");
+            const form_title = document.getElementById("form-title");
+            const form_text = document.getElementById("form-text");
 
-        if (form_text.value == "") {
-            form_text.focus();
-            return
-        }
-        
-        var texto_form = "Nombre: " + form_name.value + "\nEmail: " + form_mail.value + "\nAsunto: " + form_title.value + "\nTexto: " + form_text.value;
-        
-        send_mail(texto_form,"form");
+            if (form_text.value == "") {
+                form_text.focus();
+                return
+            }
+            
+            var texto_form = "Nombre: " + form_name.value + "\nEmail: " + form_mail.value + "\nAsunto: " + form_title.value + "\nTexto: " + form_text.value;
+            
+            send_mail(texto_form,"form");
 
-        mostrar_ventana(0);
+            mostrar_ventana(0);
         }); 
 
 
