@@ -302,6 +302,8 @@
                 //headerOptions.classList.toggle('hidden');
                 if (headerOptions.style.display === "block"){
                     headerOptions.style.display = "none";
+                    // Oculta el fondo semitransparente
+                    document.querySelector('.overlay').style.display = 'none';
                 } else {
                     headerOptions.style.display = "block";
 

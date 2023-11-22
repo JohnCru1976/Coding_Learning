@@ -37,7 +37,7 @@ a{
 }
 /* Ancho general de los scroll */
 ::-webkit-scrollbar {
-  width: 5px; 
+  width: 0px; 
 }
 
 /********************** HEADER **********************/
