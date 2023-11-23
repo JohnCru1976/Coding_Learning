@@ -255,8 +255,9 @@ input[type="text"] {
 }
 
 /* Formato de los label campo requerido */
-label {
+.forms > .label-form {
   display: block;
+  font-family: Arial, sans-serif;
   font-size: 0.6em;
   margin-top: 10px;
   margin-bottom: 2px;
