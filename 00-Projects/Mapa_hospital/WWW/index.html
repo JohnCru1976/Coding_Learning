@@ -158,8 +158,10 @@
         <div class="overlay"></div>
         
     </div>
+
     <!-- scripts -->
     <script>
+
         var test_point = [
             {"x_percentage": 71.123, "y_percentage": 80.867, "text": "Traumatología", "building": "Pabellón B", "floor": "P.Bj", "comment": ""},
             {"x_percentage": 13.293, "y_percentage": 28.735, "text": "Paranestesia", "building": "Pabellón Quirúrgico", "floor": "P.1", "comment": ""},
@@ -350,92 +352,92 @@
             const contenedor_circulo = document.getElementById("contenedor-circulo")
             // Se activa la lista de lugares
             if (num == 0) {
-            show_image.style.display = "none";
-            test_image.style.display = "none";
-            updates.style.display = "none";
-            new_point.style.display = "none";
-            edit_point.style.display = "none";
-            container_contact_form.style.display = "none";
-            contenedor_circulo.style.display = "none";
-            list_places.style.display = "block"; 
+                show_image.style.display = "none";
+                test_image.style.display = "none";
+                updates.style.display = "none";
+                new_point.style.display = "none";
+                edit_point.style.display = "none";
+                container_contact_form.style.display = "none";
+                contenedor_circulo.style.display = "none";
+                list_places.style.display = "block"; 
             }
             // Se activa el mapa del lugar elegido
             if (num == 1) {
-            list_places.style.display = "none"; 
-            test_image.style.display = "none";
-            updates.style.display = "none";
-            new_point.style.display = "none";
-            edit_point.style.display = "none";
-            container_contact_form.style.display  = "none";
-            contenedor_circulo.style.display = "none";
-            show_image.style.display = "block";
+                list_places.style.display = "none"; 
+                test_image.style.display = "none";
+                updates.style.display = "none";
+                new_point.style.display = "none";
+                edit_point.style.display = "none";
+                container_contact_form.style.display  = "none";
+                contenedor_circulo.style.display = "none";
+                show_image.style.display = "block";
             }
             // Se activa el test para comprabación de puntos
             if (num == 2) {
-            list_places.style.display = "none"; 
-            show_image.style.display = "none";
-            updates.style.display = "none";
-            new_point.style.display = "none";
-            edit_point.style.display = "none";
-            container_contact_form.style.display  = "none";
-            contenedor_circulo.style.display = "none";
-            test_image.style.display = "block";
+                list_places.style.display = "none"; 
+                show_image.style.display = "none";
+                updates.style.display = "none";
+                new_point.style.display = "none";
+                edit_point.style.display = "none";
+                container_contact_form.style.display  = "none";
+                contenedor_circulo.style.display = "none";
+                test_image.style.display = "block";
             }
             // Se activa la ventana últimas actualizaciones
             if (num == 3) {
-            list_places.style.display = "none"; 
-            show_image.style.display = "none";
-            test_image.style.display = "none";
-            new_point.style.display = "none";
-            edit_point.style.display = "none";
-            container_contact_form.style.display  = "none";
-            contenedor_circulo.style.display = "none";
-            updates.style.display = "block";
+                list_places.style.display = "none"; 
+                show_image.style.display = "none";
+                test_image.style.display = "none";
+                new_point.style.display = "none";
+                edit_point.style.display = "none";
+                container_contact_form.style.display  = "none";
+                contenedor_circulo.style.display = "none";
+                updates.style.display = "block";
             }
             // Se activa la ventana nuevo punto
             if (num == 4) {
-            list_places.style.display = "none"; 
-            show_image.style.display = "none";
-            test_image.style.display = "none";
-            updates.style.display = "none";
-            edit_point.style.display = "none";
-            container_contact_form.style.display  = "none";
-            contenedor_circulo.style.display = "none";
-            new_point.style.display = "block";
+                list_places.style.display = "none"; 
+                show_image.style.display = "none";
+                test_image.style.display = "none";
+                updates.style.display = "none";
+                edit_point.style.display = "none";
+                container_contact_form.style.display  = "none";
+                contenedor_circulo.style.display = "none";
+                new_point.style.display = "block";
 
-            new_x = 50
-            new_y = 50
-            showPoint_new({x_percentage: new_x, y_percentage: new_y});
+                new_x = 50
+                new_y = 50
+                showPoint_new({x_percentage: new_x, y_percentage: new_y});
             }
             // Se activa la ventana editar punto
             if (num == 5) {
-            const container_edit_image = document.getElementById("container_edit_image")
-            list_places.style.display = "none"; 
-            show_image.style.display = "none";
-            test_image.style.display = "none";
-            updates.style.display = "none";
-            new_point.style.display = "none";
-            container_contact_form.style.display  = "none";
-            contenedor_circulo.style.display = "none";
-            edit_point.style.display = "block";
-            container_edit_image.display = "block"
+                const container_edit_image = document.getElementById("container_edit_image");
+                list_places.style.display = "none"; 
+                show_image.style.display = "none";
+                test_image.style.display = "none";
+                updates.style.display = "none";
+                new_point.style.display = "none";
+                container_contact_form.style.display  = "none";
+                contenedor_circulo.style.display = "none";
+                edit_point.style.display = "block";
+                container_edit_image.display = "block";
             }
             // Se activa la ventana formulario de contacto
             if (num == 6) {
-            list_places.style.display = "none"; 
-            show_image.style.display = "none";
-            test_image.style.display = "none";
-            updates.style.display = "none";
-            new_point.style.display = "none";
-            edit_point.style.display = "none";
-            contenedor_circulo.style.display = "none";
-            container_contact_form.style.display = "block"
+                list_places.style.display = "none"; 
+                show_image.style.display = "none";
+                test_image.style.display = "none";
+                updates.style.display = "none";
+                new_point.style.display = "none";
+                edit_point.style.display = "none";
+                contenedor_circulo.style.display = "none";
+                container_contact_form.style.display = "block";
             }
         }
 
         // El usuario pulsa el botón "atrás" en el navegador.
         window.addEventListener('popstate', function(event) {
-            handleClick()
+            handleClick();
         });
 
         // El usuario pulsa el título de la página y vuelve al inicio
@@ -471,7 +473,7 @@
             var texto = quitarAcentos(point.text.toLowerCase());
             if (texto.includes(filtro)) {
                 var listItem = document.createElement("li");
-                listItem.style.fontSize = "50px";
+                //listItem.style.fontSize = "50px";
                 listItem.innerHTML = `<strong>${point.text}</strong>, ${point.building}, ${point.floor}`;
                 listItem.setAttribute("data-index", index);
                 // Listener que funciona cuando se hace click en un lugar de la lista
@@ -485,7 +487,7 @@
                     showPoint_show(data);
                     place_text.innerHTML = `<strong>${data.text}</strong><br>${data.building} - ${data.floor}`;
                     if (data.comment != ""){
-                        place_text.innerHTML = place_text.innerHTML + "<br>" + `<b>Comentarios:</b> ${data.comment}`
+                        place_text.innerHTML = place_text.innerHTML + "<br>" + `<b>Comentarios:</b> ${data.comment}`;
                     }
                     // Pasando datos para actualizar punto
                     show_data_edit(data)
@@ -569,7 +571,7 @@
         
         reversedUpdates.forEach(function(update){
             var listItem = document.createElement("li");
-            listItem.style.fontSize = "50px";
+            //listItem.style.fontSize = "50px";
             listItem.innerHTML = update;
             updatesLista.appendChild(listItem)
         })
