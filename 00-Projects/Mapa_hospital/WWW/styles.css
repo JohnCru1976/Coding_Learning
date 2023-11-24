@@ -246,6 +246,7 @@ input[type="text"] {
   border-radius: 5px;
   font-family: Arial, sans-serif;
   font-size: 1em; 
+  resize: none;
 }
 
 /* Cajas de texto cogiendo focus */
