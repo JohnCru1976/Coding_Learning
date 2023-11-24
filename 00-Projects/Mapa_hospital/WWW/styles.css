@@ -141,7 +141,6 @@ h1 {
 /* Imágenes en general */
 .map-image {
   width: 100%;
-  height: 100%;
   object-fit: contain;
   max-width: 100%;
   height: auto;
@@ -204,7 +203,7 @@ ul {
   padding-top: 0px;
   margin-bottom: 10px;
   cursor: pointer;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 /* Configuración particular para elementos de updates */
@@ -259,15 +258,15 @@ input[type="text"] {
 .forms > .label-form {
   display: block;
   font-family: Arial, sans-serif;
-  font-size: 0.6em;
   margin-top: 10px;
   margin-bottom: 2px;
   color: red;
+  font-size: 0.6em;
 }
 
 /* Barra de búsqueda */
 #buscar{
-  font-size: 1.3em;
+  font-size: 1.2em;
   padding: 10px;
   width: 98.3%;
 }
@@ -347,7 +346,7 @@ input[type="text"] {
 /* Botones de envío de información */
 .send-buttons{
   margin-top: 20px;
-  font-size: 1.5em;
+  font-size: 1em;
   font-weight: bold;
   width: 100%;
   margin: 0 auto;

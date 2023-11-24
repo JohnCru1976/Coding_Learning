@@ -87,11 +87,11 @@
             <div class="scroll-container scroll-mini">
                 <!-- Campos de introducción de texto -->
                 <div id="text_input" class="forms">
-                        <label class="label-form">* Campo obligatorio</label>
+                        <label for="lugar" class="label-form">* Campo obligatorio</label>
                         <input type="text" id="lugar" class="text-boxes" name="lugar" placeholder="Lugar (ej. Traumatología)">
-                        <label class="label-form">* Campo obligatorio</label>
+                        <label for="edificio" class="label-form">* Campo obligatorio</label>
                         <input type="text" id="edificio" class="text-boxes" name="edificio_text" placeholder="Edificio (ej. Pabellón A)">   
-                        <label class="label-form">* Campo obligatorio</label>
+                        <label for="planta" class="label-form">* Campo obligatorio</label>
                         <input type="text" id="planta" class="text-boxes" name="planta_text" placeholder="Planta (ej. Planta Bj)">
                         <textarea id="observaciones" class="text-boxes" name="observaciones" rows="4" placeholder="Observaciones"></textarea>
                 </div>
@@ -112,13 +112,13 @@
             <div class="scroll-container scroll-mini">
                 <!-- Campos de introducción de texto -->
                 <div id="edit_text_input" class="forms">
-                    <label class="label-form">* Campo obligatorio</label>
-                    <input type="text" id="edit_lugar" class="text-boxes" name="edit_lugar" placeholder="Lugar (ej. Traumatología)">
-                    <label class="label-form">* Campo obligatorio</label>
+                    <label for="edit_lugar" class="label-form">* Campo obligatorio</label>
+                    <input type="text" id="edit_lugar" class="text-boxes" name="edit_lugar_text" placeholder="Lugar (ej. Traumatología)">
+                    <label for="edit_edificio" class="label-form">* Campo obligatorio</label>
                     <input type="text" id="edit_edificio" class="text-boxes" name="edit_edificio_text" placeholder="Edificio (ej. Pabellón A)">
-                    <label class="label-form">* Campo obligatorio</label>
+                    <label for="edit_planta" class="label-form">* Campo obligatorio</label>
                     <input type="text" id="edit_planta" class="text-boxes" name="edit_planta_text" placeholder="Planta (ej. Planta Bj)">
-                    <textarea id="edit_observaciones" class="text-boxes" name="edit_observaciones" rows="4" placeholder="Observaciones"></textarea>
+                    <textarea id="edit_observaciones" class="text-boxes" name="edit_observaciones_text" rows="4" placeholder="Observaciones"></textarea>
                 </div>
                 <p id="edit_point_click" class="title-section">Haz click en el mapa para establecer el punto</p>
                 <div id="container_edit_image" class="container-with-image">
@@ -139,11 +139,11 @@
             <div class="scroll-container scroll-mini">
                 <!-- Campos de introducción de texto -->
                 <div id="form_input" class="forms">
-                        <input type="text" id="form-name" class="form-contact text-boxes" name="name" placeholder="Nombre (no requerido)">
-                        <input type="text" id="form-mail" class="form-contact text-boxes" name="mail" placeholder="Email (no requerido)">   
-                        <input type="text" id="form-title" class="form-contact text-boxes" name="title" placeholder="Asunto (no requerido)">
-                        <label class="label-form">* Campo obligatorio</label>
-                        <textarea id="form-text" name="text" class="form-contact text-boxes" rows="8" placeholder="Texto"></textarea>
+                        <input type="text" id="form-name" class="text-boxes" name="name" placeholder="Nombre (no requerido)">
+                        <input type="text" id="form-mail" class="text-boxes" name="mail" placeholder="Email (no requerido)">   
+                        <input type="text" id="form-title" class="text-boxes" name="title" placeholder="Asunto (no requerido)">
+                        <label for="form-text" class="label-form">* Campo obligatorio</label>
+                        <textarea id="form-text" name="text" class="text-boxes" rows="8" placeholder="Texto"></textarea>
                 </div>
             </div>
         </div>
@@ -290,8 +290,8 @@
         // **********
 
         window.onbeforeunload = function() {
-        // Vacía el caché del navegador
-        window.location.reload(true);
+            // Vacía el caché del navegador
+            window.location.reload(true);
         }
 
         // Este código se ejecutará una vez que se haya cargado completamente el DOM
@@ -442,8 +442,8 @@
 
         // El usuario pulsa el título de la página y vuelve al inicio
         const h1_click = document.getElementById("header")
-        h1_click.addEventListener("click", function (){
-            mostrar_ventana(0);
+            h1_click.addEventListener("click", function (){
+                mostrar_ventana(0);
         })
 
         // *************************************************************
@@ -473,7 +473,6 @@
             var texto = quitarAcentos(point.text.toLowerCase());
             if (texto.includes(filtro)) {
                 var listItem = document.createElement("li");
-                //listItem.style.fontSize = "50px";
                 listItem.innerHTML = `<strong>${point.text}</strong>, ${point.building}, ${point.floor}`;
                 listItem.setAttribute("data-index", index);
                 // Listener que funciona cuando se hace click en un lugar de la lista
@@ -510,18 +509,18 @@
 
         // Función para mostrar el punto
         function showPoint_show(place) {
-        const show_point = document.getElementById("show_point");
-        const show_point_text = document.getElementById("show-point-text")
-        show_point.style.left = place.x_percentage + "%";
-        show_point.style.top = place.y_percentage + "%";
-        // Texto del punto
-        show_point_text.innerHTML = place.floor;
-        show_point_text.style.color ="white";
-        show_point_text.style.fontWeight ="bold";
-        show_point_text.style.whiteSpace ="nowrap";
-        show_point_text.style.overflow ="visible";
-        show_point_text.style.textAlign = "center";
-        show_point_text.style.transform = "translate(100%,0%)"
+            const show_point = document.getElementById("show_point");
+            const show_point_text = document.getElementById("show-point-text")
+            show_point.style.left = place.x_percentage + "%";
+            show_point.style.top = place.y_percentage + "%";
+            // Texto del punto
+            show_point_text.innerHTML = place.floor;
+            show_point_text.style.color ="white";
+            show_point_text.style.fontWeight ="bold";
+            show_point_text.style.whiteSpace ="nowrap";
+            show_point_text.style.overflow ="visible";
+            show_point_text.style.textAlign = "center";
+            show_point_text.style.transform = "translate(100%,0%)";
         }
 
         // ****************************************
@@ -571,7 +570,6 @@
         
         reversedUpdates.forEach(function(update){
             var listItem = document.createElement("li");
-            //listItem.style.fontSize = "50px";
             listItem.innerHTML = update;
             updatesLista.appendChild(listItem)
         })
@@ -632,9 +630,9 @@
 
         // Función para mostrar el punto
         function showPoint_new(pointArg) {
-        const new_point_map = document.getElementById("new_point_map");
-        new_point_map.style.left = pointArg.x_percentage + "%";
-        new_point_map.style.top = pointArg.y_percentage + "%";
+            const new_point_map = document.getElementById("new_point_map");
+            new_point_map.style.left = pointArg.x_percentage + "%";
+            new_point_map.style.top = pointArg.y_percentage + "%";
         }
 
         // Event listener para detectar clicks en el contenedor de la imagen
@@ -756,24 +754,24 @@
 
         // Función para manejar el clic en el fondo del documento
         function handleDocumentClick(event) {
-        // Si el clic no está dentro del cuadro de diálogo, oculta la alerta
-        if (!document.getElementById('custom-alert').contains(event.target)) {
-            hideCustomAlert();
-            // Oculta el fondo semitransparente
-            document.querySelector('.overlay').style.display = 'none';
-        }
+            // Si el clic no está dentro del cuadro de diálogo, oculta la alerta
+            if (!document.getElementById('custom-alert').contains(event.target)) {
+                hideCustomAlert();
+                // Oculta el fondo semitransparente
+                document.querySelector('.overlay').style.display = 'none';
+            }
         }
 
         // Función para ocultar la alerta personalizada
         function hideCustomAlert() {
-        // Oculta la alerta
-        document.getElementById('custom-alert').style.display = 'none';
+            // Oculta la alerta
+            document.getElementById('custom-alert').style.display = 'none';
 
-        // Oculta el fondo semitransparente
-        document.querySelector('.overlay').style.display = 'none';
+            // Oculta el fondo semitransparente
+            document.querySelector('.overlay').style.display = 'none';
 
-        // Elimina el evento de clic del fondo del documento
-        document.removeEventListener('click', handleDocumentClick);
+            // Elimina el evento de clic del fondo del documento
+            document.removeEventListener('click', handleDocumentClick);
         }
 
         //Añadir un click event listener en enlace_APK para cuando se descargue el enlace
