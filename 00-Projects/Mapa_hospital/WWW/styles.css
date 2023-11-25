@@ -14,6 +14,7 @@ body {
   height: 100vh;
   max-width: 1200px;
   margin: auto;
+  font-size: 1em;
 }
 
 /* Enlaces en general */
@@ -32,10 +33,12 @@ a{
   flex: 1;
   overflow-y: auto;
   height: 77vh;
+  font-size: 1em;
 }
 /* Scroll reducido */
 .scroll-mini{
   height: 72vh;
+  font-size: 1em;
 }
 /* Scroll de la lista inicial */
 #child-container{
@@ -256,7 +259,8 @@ input[type="text"] {
 }
 
 /* Formato de los label campo requerido */
-.forms > .label-form {
+.label-form {
+  width: 97%;
   display: block;
   font-family: Arial, sans-serif;
   margin-top: 10px;
@@ -282,6 +286,7 @@ input[type="text"] {
   margin: 20px auto;
   padding: 20px;
   max-width: 100%;
+  font-size: 1em;
 }
 
 /*  Título de cada sección */
