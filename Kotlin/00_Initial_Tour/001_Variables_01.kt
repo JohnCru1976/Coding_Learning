@@ -1,5 +1,8 @@
 // Val - Read Only
 // Var - Mutable
+/* Variables can be declared outside the main() function 
+at the beginning of your program. Variables declared in 
+this way are said to be declared at top level. */
 
 val popcorn = 5    // There are 5 boxes of popcorn
 val hotdog = 7     // There are 7 hotdogs
