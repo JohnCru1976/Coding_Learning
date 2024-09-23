@@ -1,4 +1,5 @@
 /*
+LISTS
 Lists store items in the order that they are added.
 Allow for duplicate items.
  */
