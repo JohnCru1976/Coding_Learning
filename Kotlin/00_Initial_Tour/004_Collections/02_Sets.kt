@@ -1,4 +1,5 @@
 /*
+    SETS
     Whereas lists are ordered and allow duplicate items, 
     sets are unordered and only store unique items.
     As sets are unordered, you can't access an item at a particular index.
