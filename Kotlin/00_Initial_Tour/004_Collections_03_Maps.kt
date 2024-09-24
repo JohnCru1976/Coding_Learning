@@ -51,5 +51,20 @@ fun main(){
     // *** CHECK KEY ***
     println(readOnlyJuiceMenu.containsKey("kiwi"))
     // true
+
+    // *** OBTAIN KEYS-VALUES ***
+    println(readOnlyJuiceMenu.keys)
+    // [apple, kiwi, orange]
+    println(readOnlyJuiceMenu.values)
+    // [100, 190, 100]
+
+    // *** To check that A KEY or VALUE is in a map, use the in operator ***
+    println("orange" in readOnlyJuiceMenu.keys)
+    // true
+    // Alternatively, you don't need to use the keys property
+    println("orange" in readOnlyJuiceMenu)
+    // true
+    println(200 in readOnlyJuiceMenu.values)
+    // false
 }
 
