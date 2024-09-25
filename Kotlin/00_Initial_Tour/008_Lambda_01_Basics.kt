@@ -45,7 +45,7 @@ fun lambdaAsParameterMap () {
     // [3, -6, 9, -12, 15, -18]
 }
 
-// Defining functions types
+// *** DEFINING FUNCTION TYPES ***
 fun functionTypes(){
 
     val upperCaseString: (String) -> String = { text -> text.uppercase() }
@@ -53,3 +53,24 @@ fun functionTypes(){
     println(upperCaseString("hello"))
     // HELLO
 }
+
+// *** RETURN FROM A FUNCTION ***
+// Lambda expressions can be returned from a function. 
+// So that the compiler understands what type the lambda expression returned is, 
+// you must declare a function type.
+// EXAMPLE
+fun toSeconds(time: String): (Int) -> Int = when (time) {
+    "hour" -> { value -> value * 60 * 60 }
+    "minute" -> { value -> value * 60 }
+    "second" -> { value -> value }
+    else -> { value -> value }
+}
+
+fun main() {
+    val timesInMinutes = listOf(2, 10, 15, 1)
+    val min2sec = toSeconds("minute")
+    val totalTimeInSeconds = timesInMinutes.map(min2sec).sum()
+    println("Total time is $totalTimeInSeconds secs")
+    // Total time is 1680 secs
+}
+
