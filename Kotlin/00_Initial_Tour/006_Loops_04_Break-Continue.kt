@@ -5,6 +5,8 @@
 
  fun main(){
     breakExample()
+    continueExample()
+    labelsExample()
  }
 
 // BREAK
@@ -41,7 +43,7 @@
 
  // BREAK AND CONTINUE LABELS
  fun labelsExample(){
-    println("LABES EXAMPLE")
+    println("LABEL EXAMPLE")
 
     outerloop@ for(i in 1..100){
         println("Outer loop i=$i")
